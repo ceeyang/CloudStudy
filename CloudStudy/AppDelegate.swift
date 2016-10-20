@@ -12,13 +12,69 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    var window : UIWindow?
+    var homeVC = MainTabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    
+        window                     = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        //MARK: - Add 3DTouch Icon
+        creatShortcutItem()
+        
+        //MARK: - 程序已经启动了,进入后台后, 3DTouch 入口 -
+        if #available(iOS 9.0, *) {
+            if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+                if shortcutItem.type == "com.daisy.AllIHave-Swift.firstButton" {
+                    //homeVC.navigationController?.pushViewController( MoveViewController(), animated: true)
+                } else if shortcutItem.type == "com.daisy.AllIHave-Swift.secondButton" {
+                    //homeVC.navigationController?.pushViewController( _DTouchViewController(), animated: true)
+                }
+                return false;
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        //initHomeVC()
+        initLoginVC()
+        
         return true
     }
+    
+    //MARK: - ShortcutItem -
+    func creatShortcutItem() {
+        
+        if #available(iOS 9.0, *) {
+            let icon  = UIApplicationShortcutIcon(type: .share)
+            let item0 = UIApplicationShortcutItem(type: "com.daisy.AllIHave-Swift.firstButton", localizedTitle: "Move View", localizedSubtitle: nil, icon: icon, userInfo: nil)
+            let item1 = UIApplicationShortcutItem(type: "com.daisy.AllIHave-Swift.secondButton", localizedTitle: "Second View", localizedSubtitle: "There is no vc to push!", icon: icon, userInfo: nil)
+            UIApplication.shared.shortcutItems = [item0,item1];
+        }
+        
+    }
+    
+    //MARK: - 程序未启动时 3DTouch 入口 -
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        if shortcutItem.type == "com.daisy.AllIHave-Swift.firstButton" {
+//            homeVC.navigationController?.pushViewController( MoveViewController(), animated: true)
+        } else if shortcutItem.type == "com.daisy.AllIHave-Swift.secondButton" {
+//            homeVC.navigationController?.pushViewController( _DTouchViewController(), animated: true)
+        }
+    }
+    
+    func initHomeVC() {
+        homeVC                     = MainTabBarController()
+        homeVC.createChildVC()
+        window?.rootViewController = homeVC
+    }
+    
+    func initLoginVC() {
+        window?.rootViewController = LoginViewController()
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -46,6 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack
 
+    @available(iOS 10.0, *)
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -76,16 +133,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Saving support
 
     func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        if #available(iOS 10.0, *) {
+            let context = persistentContainer.viewContext
+            if context.hasChanges {
+                do {
+                    try context.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
             }
+        } else {
+            // Fallback on earlier versions
         }
     }
 

@@ -1,0 +1,6 @@
+framework module Pods_CloudStudy {
+  umbrella header "Pods-CloudStudy-umbrella.h"
+
+  export *
+  module * { export * }
+}
