@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import SwiftyJSON
+import Alamofire
 
 class LoginViewController: UIViewController {
 
@@ -31,6 +33,8 @@ class LoginViewController: UIViewController {
     
     func setupUI() {
         loginView = LoginView()
+        loginView.siteText?.text    = "测试部"
+        loginView.accountText?.text = "yxc"
         view.addSubview(loginView)
         loginView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
@@ -51,15 +55,23 @@ class LoginViewController: UIViewController {
         let appSystem = "iOS ".appendingFormat("%lu", UIDevice.current.systemVersion)
         
         let dic             = NSMutableDictionary()
-        dic["login_id"]     = loginView.accountText
+        dic["login_id"]     = loginView.accountText?.text
         //dic["password"]     = password
-        dic["password"]     = "NyWYiW4LjsA=" //MARK: - 加密算法没实现,密码已经写死...
+        dic["password"]     = "XxUHayLsPnI=" //MARK: - 加密算法没实现,密码已经写死...
         dic["appMachine"]   = getDeviceVersion()
         dic["appSystem"]    = appSystem
-        dic["company_name"] = loginView.siteText
+        dic["company_name"] = loginView.siteText?.text
         dic["client_type"]  = 0
-        
-        
+   
+        RequestManager.shared.requestCommonDataWith(url: LoginURL, parameters: dic) { [weak self] response in
+ 
+            if (response.result.value != nil) {
+                let json = JSON(data: response.data!)
+                print("\(json)")
+            } else {
+                print("请求失败: \(response.description)")
+            }
+        }
     }
     
 

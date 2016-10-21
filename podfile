@@ -8,4 +8,6 @@ target 'CloudStudy' do
   # Pods for CloudStudy
 pod 'SnapKit', '~> 3.0.2'
 pod 'Alamofire', '~> 4.0'
+pod 'FaveButton', '~> 2.0.0'
+pod 'SwiftyJSON'
 end

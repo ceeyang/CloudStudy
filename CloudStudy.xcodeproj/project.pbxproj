@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150AE93F1DB9AC11002EAFEA /* RULFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE93E1DB9AC11002EAFEA /* RULFile.swift */; };
 		15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */; };
 		15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFC1DB85BAD00C8DD94 /* ViewController.swift */; };
 		15C39D001DB85BAD00C8DD94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C39CFE1DB85BAD00C8DD94 /* Main.storyboard */; };
@@ -990,6 +991,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		150AE93E1DB9AC11002EAFEA /* RULFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RULFile.swift; sourceTree = "<group>"; };
 		15C39CF71DB85BAD00C8DD94 /* CloudStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		15C39CFC1DB85BAD00C8DD94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
@@ -2198,6 +2200,7 @@
 			children = (
 				15C3A4D51DB8C59400C8DD94 /* Category */,
 				15C39D471DB8668F00C8DD94 /* CommonTool.swift */,
+				150AE93E1DB9AC11002EAFEA /* RULFile.swift */,
 				15C3A4DA1DB8C9D000C8DD94 /* RequestManager.swift */,
 			);
 			path = GlobalFile;
@@ -4325,6 +4328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15C3A4CE1DB89C3300C8DD94 /* LoginViewController.swift in Sources */,
+				150AE93F1DB9AC11002EAFEA /* RULFile.swift in Sources */,
 				15C39D481DB8668F00C8DD94 /* CommonTool.swift in Sources */,
 				15C3A4D21DB89CEE00C8DD94 /* LoginView.swift in Sources */,
 				15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */,
@@ -4467,7 +4471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y8MK4UJH8L;
 				INFOPLIST_FILE = CloudStudy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daisy.CloudStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4482,7 +4486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y8MK4UJH8L;
 				INFOPLIST_FILE = CloudStudy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daisy.CloudStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

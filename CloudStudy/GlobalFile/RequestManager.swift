@@ -7,13 +7,15 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 
 class RequestManager: NSObject {
 
     static let shared = RequestManager()
     
-    func requestCommonDataWith(url:NSURL,parameters:NSDictionary) -> Void {
-        
+    func requestCommonDataWith(url:String,parameters:NSDictionary,completion:@escaping (DataResponse<Any>) -> Void){
+        let dic  = parameters.JSONString() as? [String : AnyObject]
+        Alamofire.request(url, method: .post, parameters:dic, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: completion)
     }
 }

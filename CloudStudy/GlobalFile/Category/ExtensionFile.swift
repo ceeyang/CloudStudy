@@ -33,14 +33,18 @@ extension String {
 }
 
 //MARK: - NSDictionary
-//extension NSDictionary{
-//    public func JSONString() -> NSDictionary {
-//        let data:NSData!      = try?NSJSONSerialization.dataWithJSONObject(self, options: [])
-//        let testStr           = NSString(data: data, encoding: NSUTF8StringEncoding)
-//        let dict:NSDictionary = ["json":testStr!]
-//        return dict
-//    }
-//}
+extension NSDictionary{
+    
+    public func JSONString() -> NSDictionary {
+        
+        let data = try!JSONSerialization.data(withJSONObject: self, options: [])
+        let strJson=NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+        let dict:NSDictionary = ["json":strJson!]
+        return dict
+    }
+}
+
+
 
 /*------------------------- 我是萌萌哒的分割线 -------- #^_^# ---------------------------------------*/
 //MARK: - UIButton
