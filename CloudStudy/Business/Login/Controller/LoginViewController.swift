@@ -40,24 +40,22 @@ class LoginViewController: UIViewController {
             make.edges.equalTo(view)
         }
         
+        
         //解决弱引用的三种方式: 
         //①: [unowned self]  跟 _unsafe_unretained 类似  不推荐使用
         //②: 在swift中 有特殊的写法 ,跟OC __weak 相似  [weak self]
         //③: weak var weakSelf = self
         loginView.loginBtnAction = { [weak self] (button) in
             self?.loginRequest()
-            button.setTitle("Logining....", for: .normal)
         }
     }
     
     func loginRequest() {
         
-        let appSystem = "iOS ".appendingFormat("%lu", UIDevice.current.systemVersion)
-        
+        let appSystem       = "iOS ".appendingFormat("%lu", UIDevice.current.systemVersion)
         let dic             = NSMutableDictionary()
         dic["login_id"]     = loginView.accountText?.text
-        //dic["password"]     = password
-        dic["password"]     = "XxUHayLsPnI=" //MARK: - 加密算法没实现,密码已经写死...
+        dic["password"]     = DESUtils.encryptUseDES(loginView.paswordText?.text, key: kPwdKey)
         dic["appMachine"]   = getDeviceVersion()
         dic["appSystem"]    = appSystem
         dic["company_name"] = loginView.siteText?.text

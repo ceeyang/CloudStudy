@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		150AE93F1DB9AC11002EAFEA /* RULFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE93E1DB9AC11002EAFEA /* RULFile.swift */; };
+		150AE9441DB9DFEE002EAFEA /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9431DB9DFEE002EAFEA /* DESUtils.m */; };
+		150AE94B1DB9E73C002EAFEA /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AE94A1DB9E73C002EAFEA /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		150AE94D1DB9E982002EAFEA /* ConstString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE94C1DB9E982002EAFEA /* ConstString.swift */; };
 		15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */; };
 		15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFC1DB85BAD00C8DD94 /* ViewController.swift */; };
 		15C39D001DB85BAD00C8DD94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C39CFE1DB85BAD00C8DD94 /* Main.storyboard */; };
@@ -992,6 +995,12 @@
 
 /* Begin PBXFileReference section */
 		150AE93E1DB9AC11002EAFEA /* RULFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RULFile.swift; sourceTree = "<group>"; };
+		150AE9421DB9DFEE002EAFEA /* DESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESUtils.h; sourceTree = "<group>"; };
+		150AE9431DB9DFEE002EAFEA /* DESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESUtils.m; sourceTree = "<group>"; };
+		150AE9471DB9E698002EAFEA /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		150AE9491DB9E73C002EAFEA /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		150AE94A1DB9E73C002EAFEA /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		150AE94C1DB9E982002EAFEA /* ConstString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstString.swift; sourceTree = "<group>"; };
 		15C39CF71DB85BAD00C8DD94 /* CloudStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		15C39CFC1DB85BAD00C8DD94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
@@ -1990,6 +1999,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150AE9401DB9DFB9002EAFEA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				150AE9471DB9E698002EAFEA /* Bridging-Header.h */,
+				150AE9481DB9E73C002EAFEA /* NSData+Base64 */,
+				150AE9411DB9DFEE002EAFEA /* DES */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		150AE9411DB9DFEE002EAFEA /* DES */ = {
+			isa = PBXGroup;
+			children = (
+				150AE9421DB9DFEE002EAFEA /* DESUtils.h */,
+				150AE9431DB9DFEE002EAFEA /* DESUtils.m */,
+			);
+			path = DES;
+			sourceTree = "<group>";
+		};
+		150AE9481DB9E73C002EAFEA /* NSData+Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				150AE9491DB9E73C002EAFEA /* NSData+Base64.h */,
+				150AE94A1DB9E73C002EAFEA /* NSData+Base64.m */,
+			);
+			path = "NSData+Base64";
+			sourceTree = "<group>";
+		};
 		15C39CEE1DB85BAD00C8DD94 = {
 			isa = PBXGroup;
 			children = (
@@ -2012,9 +2049,10 @@
 			isa = PBXGroup;
 			children = (
 				15C3A4C81DB89B2100C8DD94 /* SystemFile */,
-				15C39D4B1DB8971400C8DD94 /* AppResource */,
-				15C39D0F1DB85E0700C8DD94 /* Business */,
 				15C39D441DB8664D00C8DD94 /* GlobalFile */,
+				15C39D0F1DB85E0700C8DD94 /* Business */,
+				150AE9401DB9DFB9002EAFEA /* Library */,
+				15C39D4B1DB8971400C8DD94 /* AppResource */,
 			);
 			path = CloudStudy;
 			sourceTree = "<group>";
@@ -2202,6 +2240,7 @@
 				15C39D471DB8668F00C8DD94 /* CommonTool.swift */,
 				150AE93E1DB9AC11002EAFEA /* RULFile.swift */,
 				15C3A4DA1DB8C9D000C8DD94 /* RequestManager.swift */,
+				150AE94C1DB9E982002EAFEA /* ConstString.swift */,
 			);
 			path = GlobalFile;
 			sourceTree = "<group>";
@@ -4329,11 +4368,13 @@
 			files = (
 				15C3A4CE1DB89C3300C8DD94 /* LoginViewController.swift in Sources */,
 				150AE93F1DB9AC11002EAFEA /* RULFile.swift in Sources */,
+				150AE9441DB9DFEE002EAFEA /* DESUtils.m in Sources */,
 				15C39D481DB8668F00C8DD94 /* CommonTool.swift in Sources */,
 				15C3A4D21DB89CEE00C8DD94 /* LoginView.swift in Sources */,
 				15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */,
 				15C39D391DB8624A00C8DD94 /* ActivityViewController.swift in Sources */,
 				15C39D4A1DB8948900C8DD94 /* MainNavigationController.swift in Sources */,
+				150AE94D1DB9E982002EAFEA /* ConstString.swift in Sources */,
 				15C39D031DB85BAD00C8DD94 /* CloudStudy.xcdatamodeld in Sources */,
 				15C39D171DB8613B00C8DD94 /* MainTabBarController.swift in Sources */,
 				15C39D431DB8629D00C8DD94 /* PersonalViewController.swift in Sources */,
@@ -4343,6 +4384,7 @@
 				15C3A4D71DB8C59C00C8DD94 /* UIView+Frame.swift in Sources */,
 				15C3A4D01DB89CD600C8DD94 /* GuideViewController.swift in Sources */,
 				15C3A4D41DB8C36400C8DD94 /* UserInfo.swift in Sources */,
+				150AE94B1DB9E73C002EAFEA /* NSData+Base64.m in Sources */,
 				15C3A4DB1DB8C9D000C8DD94 /* RequestManager.swift in Sources */,
 				15C39D3F1DB8628600C8DD94 /* AskViewController.swift in Sources */,
 				15C3A4D91DB8C5E600C8DD94 /* ExtensionFile.swift in Sources */,
@@ -4475,6 +4517,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daisy.CloudStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/pro/Desktop/Swift/CloudStudy/CloudStudy/Library/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -4490,6 +4533,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daisy.CloudStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/pro/Desktop/Swift/CloudStudy/CloudStudy/Library/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

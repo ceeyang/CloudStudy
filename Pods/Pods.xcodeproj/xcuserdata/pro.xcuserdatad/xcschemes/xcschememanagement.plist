@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyBase64.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,22 +42,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>158CCC4178427362C9D1FE94A4B05A48</key>
+		<key>1CCE09A26CC220F54F0F5BBD9AC6F5E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4492876C3BA16BF1055C8BCA58F77A9D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>75FB6C76058E46BB7BEF7BDE14DF0460</key>
+		<key>4EB939363CA24D0F74BE54E0C73D89FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7AEEC1FACD47E0119CFEF07DED041A0F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>936EDD2E2F20C4D351857A579D98B805</key>
 		<dict>
 			<key>primary</key>
 			<true/>
