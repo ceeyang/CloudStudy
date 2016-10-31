@@ -1010,6 +1010,7 @@
 		15C3A4D71DB8C59C00C8DD94 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3A4D61DB8C59C00C8DD94 /* UIView+Frame.swift */; };
 		15C3A4D91DB8C5E600C8DD94 /* ExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3A4D81DB8C5E600C8DD94 /* ExtensionFile.swift */; };
 		15C3A4DB1DB8C9D000C8DD94 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3A4DA1DB8C9D000C8DD94 /* RequestManager.swift */; };
+		15D906DB1DC6E9F80065BD6E /* ImagePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D906DA1DC6E9F80065BD6E /* ImagePlayer.swift */; };
 		15EF593A1DC48B5C005B7FED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59351DC48B5C005B7FED /* Default-568h@2x.png */; };
 		15EF593B1DC48B5C005B7FED /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59361DC48B5C005B7FED /* Default.png */; };
 		15EF593C1DC48B5C005B7FED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59371DC48B5C005B7FED /* Default@2x.png */; };
@@ -2028,6 +2029,7 @@
 		15C3A4D61DB8C59C00C8DD94 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		15C3A4D81DB8C5E600C8DD94 /* ExtensionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionFile.swift; sourceTree = "<group>"; };
 		15C3A4DA1DB8C9D000C8DD94 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		15D906DA1DC6E9F80065BD6E /* ImagePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePlayer.swift; sourceTree = "<group>"; };
 		15EF59351DC48B5C005B7FED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		15EF59361DC48B5C005B7FED /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		15EF59371DC48B5C005B7FED /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2090,6 +2092,7 @@
 		150AE9AF1DB9F195002EAFEA /* SwiftLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				15D906D91DC6E9F80065BD6E /* ImagePlayer */,
 				150AE9D81DB9FC64002EAFEA /* SwiftModel */,
 				150AE9B11DB9F195002EAFEA /* PKHUD */,
 			);
@@ -3376,6 +3379,14 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		15D906D91DC6E9F80065BD6E /* ImagePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				15D906DA1DC6E9F80065BD6E /* ImagePlayer.swift */,
+			);
+			path = ImagePlayer;
+			sourceTree = "<group>";
+		};
 		62FA3F963140A665DB38732D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -4512,6 +4523,7 @@
 				15C39D151DB8606A00C8DD94 /* HomeViewController.swift in Sources */,
 				15C3A4D71DB8C59C00C8DD94 /* UIView+Frame.swift in Sources */,
 				15C3A4D01DB89CD600C8DD94 /* GuideViewController.swift in Sources */,
+				15D906DB1DC6E9F80065BD6E /* ImagePlayer.swift in Sources */,
 				15C3A4D41DB8C36400C8DD94 /* UserInfo.swift in Sources */,
 				150AE9D01DB9F195002EAFEA /* PKHUDRotatingImageView.swift in Sources */,
 				150AE9D11DB9F195002EAFEA /* PKHUDSquareBaseView.swift in Sources */,

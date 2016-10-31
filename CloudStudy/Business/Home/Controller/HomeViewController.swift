@@ -8,36 +8,78 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController,UIScrollViewDelegate {
+    
+    var navigationBar : HomeSearchBar!
+    var imagePlayer   : ImagePlayer!
+    var scrollview    : UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.yellow
-        
-        
-        print(UserInfo.shared.sid)
+        setupUI()
     }
 
     func setupUI() {
+        view.backgroundColor = UIColor.white
+        navigationController?.navigationBar.isHidden = true
         
+        /** main scrollview */
+        scrollview = UIScrollView(frame:UIEdgeInsetsInsetRect(view.frame, UIEdgeInsetsMake(-20, 0, 0, 0)))
+        scrollview.showsVerticalScrollIndicator = true
+        scrollview.isScrollEnabled = true
+        scrollview.delegate = self
+        scrollview.contentSize = CGSize(width: 0, height: kScreenHeight + 200)
+        view.addSubview(scrollview)
+        
+        /** Search Bar */
+        let searchBar = HomeSearchBar()
+        view.addSubview(searchBar)
+        searchBar.snp.makeConstraints { (make) in
+            make.left.top.right.equalTo(view)
+            make.height.equalTo(64)
+        }
+        navigationBar = searchBar
+        
+        imagePlayer = ImagePlayer(frame:CGRect(x: 0, y: 0, width: kScreenWidth, height: 200))
+        scrollview.addSubview(imagePlayer)
+        imagePlayer.imageArr = ["banner_bg_1","banner_bg_1","banner_bg_1"]
+        imagePlayer.reloadData()
+        
+        addAction()
     }
     
+    
+    func addAction() {
+        navigationBar.searchBtnAction  = { (sender:UIButton) in
+            print(sender)
+        }
+        navigationBar.messageBtnAction = { (sender:UIButton) in
+            print(sender)
+        }
+        navigationBar.qrCodeBtnAction  = { (sender:UIButton) in
+            print(sender)
+        }
+        imagePlayer.imageDidSelectedAction = { (index:Int) in
+            print(index)
+        }
+    }
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offY = scrollview.contentOffset.y + 20
+        if offY  < 0 {
+            navigationBar.isHidden = true
+        } else if offY <= imagePlayer.frame.size.height {
+            navigationBar.isHidden = false
+            navigationBar.updateNavigationBarStatus(alpha:offY/imagePlayer.frame.size.height)
+        } else {
+            navigationBar.isHidden = false
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

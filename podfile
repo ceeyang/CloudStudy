@@ -10,7 +10,7 @@ pod 'SnapKit', '~> 3.0.2'
 pod 'Alamofire', '~> 4.0'
 pod 'FaveButton', '~> 2.0.0'
 pod 'SwiftyJSON'
-#pod 'PKHUD'
+pod 'Kingfisher'
 pod 'SwiftyBase64'
 pod 'AlamofireObjectMapper', '~> 4.0'
 end
