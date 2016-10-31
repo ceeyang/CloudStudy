@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         loginView = LoginView()
         loginView.siteText?.text    = "测试部"
         loginView.accountText?.text = "yxc"
+        loginView.paswordText?.text = "123456"
         view.addSubview(loginView)
         loginView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
@@ -46,6 +47,7 @@ class LoginViewController: UIViewController {
         //②: 在swift中 有特殊的写法 ,跟OC __weak 相似  [weak self]
         //③: weak var weakSelf = self
         loginView.loginBtnAction = { [weak self] (button) in
+            HUD.show(.labeledProgress(title: "", subtitle: "登录中···"))
             self?.loginRequest()
         }
     }
@@ -61,13 +63,21 @@ class LoginViewController: UIViewController {
         dic["company_name"] = loginView.siteText?.text
         dic["client_type"]  = 0
    
-        RequestManager.shared.requestCommonDataWith(url: LoginURL, parameters: dic) { [weak self] response in
+        RequestManager.shared.requestCommonDataWith(url: LoginURL, parameters: dic) { response in
  
-            if (response.result.value != nil) {
-                let json = JSON(data: response.data!)
-                print("\(json)")
-            } else {
-                print("请求失败: \(response.description)")
+            HUD.hide()
+            
+            switch response.result {
+            case .success(let value):
+                let json         = JSON(value)
+                let userInofData = response.data
+                UserInfo.shared.parseUserInfoWithData(Json: json["data"])
+                UserDefaults.standard.set(true, forKey: kUSER_HADEVERLOGIN)
+                UserDefaults.standard.set(userInofData, forKey: kUSER_UserInfoData)
+                AppDelegate.shared.buildKeyWindow()
+                
+            case .failure(let error):
+                print(error)
             }
         }
     }

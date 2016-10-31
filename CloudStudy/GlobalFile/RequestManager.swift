@@ -16,6 +16,7 @@ class RequestManager: NSObject {
     
     func requestCommonDataWith(url:String,parameters:NSDictionary,completion:@escaping (DataResponse<Any>) -> Void){
         let dic  = parameters.JSONString() as? [String : AnyObject]
+        //Alamofire.request(url, method: .post, parameters: dic, encoding: URLEncoding.default, headers: nil)
         Alamofire.request(url, method: .post, parameters:dic, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: completion)
     }
 }

@@ -9,36 +9,38 @@
 import UIKit
 import CoreData
 
+let kFirstButton  = "com.daisy.AllIHave-Swift.firstButton"
+let kSecondButton = "com.daisy.AllIHave-Swift.firstButton"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static let shared = AppDelegate()
+    
     var window : UIWindow?
     var homeVC = MainTabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-        window                     = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        
         //MARK: - Add 3DTouch Icon
         creatShortcutItem()
+        
+        buildKeyWindow()
+        //initLoginVC()
         
         //MARK: - 程序已经启动了,进入后台后, 3DTouch 入口 -
         if #available(iOS 9.0, *) {
             if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
-                if shortcutItem.type == "com.daisy.AllIHave-Swift.firstButton" {
-                    //homeVC.navigationController?.pushViewController( MoveViewController(), animated: true)
-                } else if shortcutItem.type == "com.daisy.AllIHave-Swift.secondButton" {
-                    //homeVC.navigationController?.pushViewController( _DTouchViewController(), animated: true)
+                if shortcutItem.type == kFirstButton {
+                    /** Do something */
+                } else if shortcutItem.type == kSecondButton {
+                    /** Do something */
                 }
                 return false;
             }
         } else {
             // Fallback on earlier versions
         }
-        
-        //initHomeVC()
-        initLoginVC()
         
         return true
     }
@@ -48,8 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if #available(iOS 9.0, *) {
             let icon  = UIApplicationShortcutIcon(type: .share)
-            let item0 = UIApplicationShortcutItem(type: "com.daisy.AllIHave-Swift.firstButton", localizedTitle: "Move View", localizedSubtitle: nil, icon: icon, userInfo: nil)
-            let item1 = UIApplicationShortcutItem(type: "com.daisy.AllIHave-Swift.secondButton", localizedTitle: "Second View", localizedSubtitle: "There is no vc to push!", icon: icon, userInfo: nil)
+            let item0 = UIApplicationShortcutItem(type: kFirstButton, localizedTitle: "First View", localizedSubtitle: nil, icon: icon, userInfo: nil)
+            let item1 = UIApplicationShortcutItem(type: kSecondButton, localizedTitle: "Second View", localizedSubtitle: "There is no vc to push!", icon: icon, userInfo: nil)
             UIApplication.shared.shortcutItems = [item0,item1];
         }
         
@@ -58,21 +60,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - 程序未启动时 3DTouch 入口 -
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        if shortcutItem.type == "com.daisy.AllIHave-Swift.firstButton" {
-//            homeVC.navigationController?.pushViewController( MoveViewController(), animated: true)
-        } else if shortcutItem.type == "com.daisy.AllIHave-Swift.secondButton" {
-//            homeVC.navigationController?.pushViewController( _DTouchViewController(), animated: true)
+        if shortcutItem.type == kFirstButton {
+            /** Do something */
+        } else if shortcutItem.type == kSecondButton {
+            /** Do something */
         }
     }
     
-    func initHomeVC() {
+    public func buildKeyWindow() {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window!.makeKeyAndVisible()
+        
+        let isNotFristOpen = UserDefaults.standard.bool(forKey: kIsNotFirstLaunch)
+        let isLogined      = UserDefaults.standard.bool(forKey: kUSER_HADEVERLOGIN)
+        if isNotFristOpen {
+            if isLogined {
+                initHomeVC()
+            } else {
+                initLoginVC()
+            }
+        } else {
+            window!.rootViewController   = GuideViewController()
+        }
+    }
+    
+    public func initHomeVC() {
+        UserInfo.shared.parseUserInfoFromHistoryData()
         homeVC                     = MainTabBarController()
         homeVC.createChildVC()
-        window?.rootViewController = homeVC
+        window!.rootViewController = homeVC
     }
     
     func initLoginVC() {
-        window?.rootViewController = LoginViewController()
+        window!.rootViewController = LoginViewController()
     }
     
 

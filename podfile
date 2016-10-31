@@ -12,4 +12,5 @@ pod 'FaveButton', '~> 2.0.0'
 pod 'SwiftyJSON'
 #pod 'PKHUD'
 pod 'SwiftyBase64'
+pod 'AlamofireObjectMapper', '~> 4.0'
 end

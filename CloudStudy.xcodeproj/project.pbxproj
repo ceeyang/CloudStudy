@@ -8,9 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		150AE93F1DB9AC11002EAFEA /* RULFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE93E1DB9AC11002EAFEA /* RULFile.swift */; };
-		150AE9441DB9DFEE002EAFEA /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9431DB9DFEE002EAFEA /* DESUtils.m */; };
-		150AE94B1DB9E73C002EAFEA /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AE94A1DB9E73C002EAFEA /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		150AE94D1DB9E982002EAFEA /* ConstString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE94C1DB9E982002EAFEA /* ConstString.swift */; };
+		150AE9AD1DB9F01C002EAFEA /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9A91DB9F01C002EAFEA /* DESUtils.m */; };
+		150AE9AE1DB9F01C002EAFEA /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9AC1DB9F01C002EAFEA /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		150AE9C61DB9F195002EAFEA /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9B21DB9F195002EAFEA /* FrameView.swift */; };
+		150AE9C71DB9F195002EAFEA /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9B31DB9F195002EAFEA /* HUD.swift */; };
+		150AE9C81DB9F195002EAFEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 150AE9B41DB9F195002EAFEA /* Images.xcassets */; };
+		150AE9C91DB9F195002EAFEA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 150AE9B51DB9F195002EAFEA /* Info.plist */; };
+		150AE9CA1DB9F195002EAFEA /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9B71DB9F195002EAFEA /* PKHUD.swift */; };
+		150AE9CB1DB9F195002EAFEA /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9B81DB9F195002EAFEA /* PKHUDAnimating.swift */; };
+		150AE9CC1DB9F195002EAFEA /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9B91DB9F195002EAFEA /* PKHUDAnimation.swift */; };
+		150AE9CD1DB9F195002EAFEA /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BA1DB9F195002EAFEA /* PKHUDAssets.swift */; };
+		150AE9CE1DB9F195002EAFEA /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BB1DB9F195002EAFEA /* PKHUDErrorView.swift */; };
+		150AE9CF1DB9F195002EAFEA /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BC1DB9F195002EAFEA /* PKHUDProgressView.swift */; };
+		150AE9D01DB9F195002EAFEA /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BD1DB9F195002EAFEA /* PKHUDRotatingImageView.swift */; };
+		150AE9D11DB9F195002EAFEA /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BE1DB9F195002EAFEA /* PKHUDSquareBaseView.swift */; };
+		150AE9D21DB9F195002EAFEA /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BF1DB9F195002EAFEA /* PKHUDSuccessView.swift */; };
+		150AE9D31DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C01DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift */; };
+		150AE9D41DB9F195002EAFEA /* PKHUDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C11DB9F195002EAFEA /* PKHUDTextView.swift */; };
+		150AE9D51DB9F195002EAFEA /* PKHUDWideBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C21DB9F195002EAFEA /* PKHUDWideBaseView.swift */; };
+		150AE9D61DB9F195002EAFEA /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C31DB9F195002EAFEA /* Window.swift */; };
+		150AE9D71DB9F195002EAFEA /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */; };
+		150AE9DA1DB9FC64002EAFEA /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9D91DB9FC64002EAFEA /* ModelManager.swift */; };
+		150AE9E61DBF55A1002EAFEA /* HomeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */; };
 		15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */; };
 		15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFC1DB85BAD00C8DD94 /* ViewController.swift */; };
 		15C39D001DB85BAD00C8DD94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C39CFE1DB85BAD00C8DD94 /* Main.storyboard */; };
@@ -990,17 +1010,43 @@
 		15C3A4D71DB8C59C00C8DD94 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3A4D61DB8C59C00C8DD94 /* UIView+Frame.swift */; };
 		15C3A4D91DB8C5E600C8DD94 /* ExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3A4D81DB8C5E600C8DD94 /* ExtensionFile.swift */; };
 		15C3A4DB1DB8C9D000C8DD94 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3A4DA1DB8C9D000C8DD94 /* RequestManager.swift */; };
+		15EF593A1DC48B5C005B7FED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59351DC48B5C005B7FED /* Default-568h@2x.png */; };
+		15EF593B1DC48B5C005B7FED /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59361DC48B5C005B7FED /* Default.png */; };
+		15EF593C1DC48B5C005B7FED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59371DC48B5C005B7FED /* Default@2x.png */; };
+		15EF593D1DC48B5C005B7FED /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59381DC48B5C005B7FED /* LaunchImage@2x.png */; };
+		15EF593E1DC48B5C005B7FED /* LaunchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59391DC48B5C005B7FED /* LaunchImage@3x.png */; };
 		F481345F13AAC9B24B7B651F /* Pods_CloudStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A659D1150A1F2B241D36597D /* Pods_CloudStudy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		150AE93E1DB9AC11002EAFEA /* RULFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RULFile.swift; sourceTree = "<group>"; };
-		150AE9421DB9DFEE002EAFEA /* DESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESUtils.h; sourceTree = "<group>"; };
-		150AE9431DB9DFEE002EAFEA /* DESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESUtils.m; sourceTree = "<group>"; };
 		150AE9471DB9E698002EAFEA /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		150AE9491DB9E73C002EAFEA /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		150AE94A1DB9E73C002EAFEA /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		150AE94C1DB9E982002EAFEA /* ConstString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstString.swift; sourceTree = "<group>"; };
+		150AE9A81DB9F01C002EAFEA /* DESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESUtils.h; sourceTree = "<group>"; };
+		150AE9A91DB9F01C002EAFEA /* DESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESUtils.m; sourceTree = "<group>"; };
+		150AE9AB1DB9F01C002EAFEA /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		150AE9AC1DB9F01C002EAFEA /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		150AE9B21DB9F195002EAFEA /* FrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
+		150AE9B31DB9F195002EAFEA /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		150AE9B41DB9F195002EAFEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		150AE9B51DB9F195002EAFEA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		150AE9B61DB9F195002EAFEA /* PKHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKHUD.h; sourceTree = "<group>"; };
+		150AE9B71DB9F195002EAFEA /* PKHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUD.swift; sourceTree = "<group>"; };
+		150AE9B81DB9F195002EAFEA /* PKHUDAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimating.swift; sourceTree = "<group>"; };
+		150AE9B91DB9F195002EAFEA /* PKHUDAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimation.swift; sourceTree = "<group>"; };
+		150AE9BA1DB9F195002EAFEA /* PKHUDAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAssets.swift; sourceTree = "<group>"; };
+		150AE9BB1DB9F195002EAFEA /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
+		150AE9BC1DB9F195002EAFEA /* PKHUDProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDProgressView.swift; sourceTree = "<group>"; };
+		150AE9BD1DB9F195002EAFEA /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
+		150AE9BE1DB9F195002EAFEA /* PKHUDSquareBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSquareBaseView.swift; sourceTree = "<group>"; };
+		150AE9BF1DB9F195002EAFEA /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
+		150AE9C01DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSystemActivityIndicatorView.swift; sourceTree = "<group>"; };
+		150AE9C11DB9F195002EAFEA /* PKHUDTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDTextView.swift; sourceTree = "<group>"; };
+		150AE9C21DB9F195002EAFEA /* PKHUDWideBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDWideBaseView.swift; sourceTree = "<group>"; };
+		150AE9C31DB9F195002EAFEA /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowRootViewController.swift; sourceTree = "<group>"; };
+		150AE9D91DB9FC64002EAFEA /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchBar.swift; sourceTree = "<group>"; };
 		15C39CF71DB85BAD00C8DD94 /* CloudStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		15C39CFC1DB85BAD00C8DD94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
@@ -1982,6 +2028,11 @@
 		15C3A4D61DB8C59C00C8DD94 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		15C3A4D81DB8C5E600C8DD94 /* ExtensionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionFile.swift; sourceTree = "<group>"; };
 		15C3A4DA1DB8C9D000C8DD94 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		15EF59351DC48B5C005B7FED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		15EF59361DC48B5C005B7FED /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		15EF59371DC48B5C005B7FED /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		15EF59381DC48B5C005B7FED /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
+		15EF59391DC48B5C005B7FED /* LaunchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@3x.png"; sourceTree = "<group>"; };
 		4D173FB5E8DBBBCDAE9DA8AC /* Pods-CloudStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudStudy/Pods-CloudStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8C7E698D9592A855CA7CA0 /* Pods-CloudStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudStudy/Pods-CloudStudy.release.xcconfig"; sourceTree = "<group>"; };
 		A659D1150A1F2B241D36597D /* Pods_CloudStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2003,28 +2054,80 @@
 			isa = PBXGroup;
 			children = (
 				150AE9471DB9E698002EAFEA /* Bridging-Header.h */,
-				150AE9481DB9E73C002EAFEA /* NSData+Base64 */,
-				150AE9411DB9DFEE002EAFEA /* DES */,
+				150AE9AF1DB9F195002EAFEA /* SwiftLibrary */,
+				150AE9A61DB9F01C002EAFEA /* OCLibrary */,
 			);
 			path = Library;
 			sourceTree = "<group>";
 		};
-		150AE9411DB9DFEE002EAFEA /* DES */ = {
+		150AE9A61DB9F01C002EAFEA /* OCLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				150AE9421DB9DFEE002EAFEA /* DESUtils.h */,
-				150AE9431DB9DFEE002EAFEA /* DESUtils.m */,
+				150AE9A71DB9F01C002EAFEA /* DES */,
+				150AE9AA1DB9F01C002EAFEA /* NSData+Base64 */,
+			);
+			path = OCLibrary;
+			sourceTree = "<group>";
+		};
+		150AE9A71DB9F01C002EAFEA /* DES */ = {
+			isa = PBXGroup;
+			children = (
+				150AE9A81DB9F01C002EAFEA /* DESUtils.h */,
+				150AE9A91DB9F01C002EAFEA /* DESUtils.m */,
 			);
 			path = DES;
 			sourceTree = "<group>";
 		};
-		150AE9481DB9E73C002EAFEA /* NSData+Base64 */ = {
+		150AE9AA1DB9F01C002EAFEA /* NSData+Base64 */ = {
 			isa = PBXGroup;
 			children = (
-				150AE9491DB9E73C002EAFEA /* NSData+Base64.h */,
-				150AE94A1DB9E73C002EAFEA /* NSData+Base64.m */,
+				150AE9AB1DB9F01C002EAFEA /* NSData+Base64.h */,
+				150AE9AC1DB9F01C002EAFEA /* NSData+Base64.m */,
 			);
 			path = "NSData+Base64";
+			sourceTree = "<group>";
+		};
+		150AE9AF1DB9F195002EAFEA /* SwiftLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				150AE9D81DB9FC64002EAFEA /* SwiftModel */,
+				150AE9B11DB9F195002EAFEA /* PKHUD */,
+			);
+			path = SwiftLibrary;
+			sourceTree = "<group>";
+		};
+		150AE9B11DB9F195002EAFEA /* PKHUD */ = {
+			isa = PBXGroup;
+			children = (
+				150AE9B21DB9F195002EAFEA /* FrameView.swift */,
+				150AE9B31DB9F195002EAFEA /* HUD.swift */,
+				150AE9B41DB9F195002EAFEA /* Images.xcassets */,
+				150AE9B51DB9F195002EAFEA /* Info.plist */,
+				150AE9B61DB9F195002EAFEA /* PKHUD.h */,
+				150AE9B71DB9F195002EAFEA /* PKHUD.swift */,
+				150AE9B81DB9F195002EAFEA /* PKHUDAnimating.swift */,
+				150AE9B91DB9F195002EAFEA /* PKHUDAnimation.swift */,
+				150AE9BA1DB9F195002EAFEA /* PKHUDAssets.swift */,
+				150AE9BB1DB9F195002EAFEA /* PKHUDErrorView.swift */,
+				150AE9BC1DB9F195002EAFEA /* PKHUDProgressView.swift */,
+				150AE9BD1DB9F195002EAFEA /* PKHUDRotatingImageView.swift */,
+				150AE9BE1DB9F195002EAFEA /* PKHUDSquareBaseView.swift */,
+				150AE9BF1DB9F195002EAFEA /* PKHUDSuccessView.swift */,
+				150AE9C01DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift */,
+				150AE9C11DB9F195002EAFEA /* PKHUDTextView.swift */,
+				150AE9C21DB9F195002EAFEA /* PKHUDWideBaseView.swift */,
+				150AE9C31DB9F195002EAFEA /* Window.swift */,
+				150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */,
+			);
+			path = PKHUD;
+			sourceTree = "<group>";
+		};
+		150AE9D81DB9FC64002EAFEA /* SwiftModel */ = {
+			isa = PBXGroup;
+			children = (
+				150AE9D91DB9FC64002EAFEA /* ModelManager.swift */,
+			);
+			path = SwiftModel;
 			sourceTree = "<group>";
 		};
 		15C39CEE1DB85BAD00C8DD94 = {
@@ -2100,6 +2203,7 @@
 		15C39D131DB85E2100C8DD94 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2248,6 +2352,11 @@
 		15C39D4B1DB8971400C8DD94 /* AppResource */ = {
 			isa = PBXGroup;
 			children = (
+				15EF59351DC48B5C005B7FED /* Default-568h@2x.png */,
+				15EF59361DC48B5C005B7FED /* Default.png */,
+				15EF59371DC48B5C005B7FED /* Default@2x.png */,
+				15EF59381DC48B5C005B7FED /* LaunchImage@2x.png */,
+				15EF59391DC48B5C005B7FED /* LaunchImage@3x.png */,
 				15C39D4C1DB8971400C8DD94 /* all_cover_bg@2x.png */,
 				15C39D4D1DB8971400C8DD94 /* ask_arrow_line@2x.png */,
 				15C39D4E1DB8971400C8DD94 /* ask_icon_best@2x.png */,
@@ -3428,6 +3537,7 @@
 				15C3A4A61DB8971A00C8DD94 /* train_giveup_class.png in Resources */,
 				15C3A3831DB8971A00C8DD94 /* new_icon_list_cream@3x.png in Resources */,
 				15C3A2AF1DB8971A00C8DD94 /* icon_tab_my_resource@2x.png in Resources */,
+				150AE9C81DB9F195002EAFEA /* Images.xcassets in Resources */,
 				15C3A1171DB8971900C8DD94 /* big_course_input_bg@2x.png in Resources */,
 				15C3A3241DB8971A00C8DD94 /* new_active_type_test@2x.png in Resources */,
 				15C3A45D1DB8971A00C8DD94 /* nwe_tab_ask_topic_pre@2x.png in Resources */,
@@ -3518,6 +3628,7 @@
 				15C3A1671DB8971900C8DD94 /* common_icon_star_gray_grade.png in Resources */,
 				15C3A3521DB8971A00C8DD94 /* new_default_14.png in Resources */,
 				15C3A29A1DB8971A00C8DD94 /* icon_tab_live_pre@3x.png in Resources */,
+				15EF593E1DC48B5C005B7FED /* LaunchImage@3x.png in Resources */,
 				15C3A1E51DB8971900C8DD94 /* default_knowledge.png in Resources */,
 				15C3A2751DB8971A00C8DD94 /* icon_tab_comment_pre@2x.png in Resources */,
 				15C3A43D1DB8971A00C8DD94 /* new_tab_ask_topic_n@2x.png in Resources */,
@@ -3528,6 +3639,7 @@
 				15C3A3731DB8971A00C8DD94 /* new_head_search_right@3x.png in Resources */,
 				15C3A1441DB8971900C8DD94 /* common_btn_bg_pre@3x.png in Resources */,
 				15C3A3661DB8971A00C8DD94 /* new_head_arrow_left_pre@2x.png in Resources */,
+				150AE9C91DB9F195002EAFEA /* Info.plist in Resources */,
 				15C3A35E1DB8971A00C8DD94 /* new_finish@2x.png in Resources */,
 				15C3A27D1DB8971A00C8DD94 /* icon_tab_download_2@2x.png in Resources */,
 				15C3A12A1DB8971900C8DD94 /* common_actionbar_bg.png in Resources */,
@@ -3650,6 +3762,7 @@
 				15C3A4191DB8971A00C8DD94 /* new_share_icon_wechat@2x.png in Resources */,
 				15C3A32B1DB8971A00C8DD94 /* new_ask_add_pre@3x.png in Resources */,
 				15C3A3851DB8971A00C8DD94 /* new_icon_list_expert@3x.png in Resources */,
+				15EF593D1DC48B5C005B7FED /* LaunchImage@2x.png in Resources */,
 				15C3A4831DB8971A00C8DD94 /* search_icon_resource_s@3x.png in Resources */,
 				15C3A1F81DB8971900C8DD94 /* del_btn_pressed@2x.png in Resources */,
 				15C3A2471DB8971A00C8DD94 /* home_icon_nav_home@3x.png in Resources */,
@@ -3903,6 +4016,7 @@
 				15C3A45C1DB8971A00C8DD94 /* nwe_tab_ask_more_pre@3x.png in Resources */,
 				15C3A2C81DB8971A00C8DD94 /* icon_tab_resource@3x.png in Resources */,
 				15C3A2931DB8971A00C8DD94 /* icon_tab_live@2x.png in Resources */,
+				15EF593C1DC48B5C005B7FED /* Default@2x.png in Resources */,
 				15C3A4BB1DB8971A00C8DD94 /* train_map_bg@2x.png in Resources */,
 				15C3A14E1DB8971900C8DD94 /* common_btn_default_pre@3x.png in Resources */,
 				15C3A3631DB8971A00C8DD94 /* new_head_arrow_left@3x.png in Resources */,
@@ -3974,6 +4088,7 @@
 				15C3A1AF1DB8971900C8DD94 /* course_btn_play@2x.png in Resources */,
 				15C3A2051DB8971900C8DD94 /* exam_top_btn_clock@2x.png in Resources */,
 				15C3A1E01DB8971900C8DD94 /* default_docx.png in Resources */,
+				15EF593B1DC48B5C005B7FED /* Default.png in Resources */,
 				15C3A22B1DB8971900C8DD94 /* home_icon_main_resource@3x.png in Resources */,
 				15C3A2911DB8971A00C8DD94 /* icon_tab_library_pre@2x.png in Resources */,
 				15C3A1271DB8971900C8DD94 /* common_actionbar_back1@3x.png in Resources */,
@@ -4074,6 +4189,7 @@
 				15C3A2D01DB8971A00C8DD94 /* icon_tab_route_my_pre@3x.png in Resources */,
 				15C3A3B31DB8971A00C8DD94 /* new_item_check@3x.png in Resources */,
 				15C3A2D71DB8971A00C8DD94 /* icon_tab_score@2x.png in Resources */,
+				15EF593A1DC48B5C005B7FED /* Default-568h@2x.png in Resources */,
 				15C3A2161DB8971900C8DD94 /* home_icon_main_exam@2x.png in Resources */,
 				15C3A2F51DB8971A00C8DD94 /* iphone6_3@2x.png in Resources */,
 				15C3A1591DB8971900C8DD94 /* common_icon_gold@2x.png in Resources */,
@@ -4366,25 +4482,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				150AE9CA1DB9F195002EAFEA /* PKHUD.swift in Sources */,
+				150AE9C61DB9F195002EAFEA /* FrameView.swift in Sources */,
+				150AE9E61DBF55A1002EAFEA /* HomeSearchBar.swift in Sources */,
 				15C3A4CE1DB89C3300C8DD94 /* LoginViewController.swift in Sources */,
+				150AE9CD1DB9F195002EAFEA /* PKHUDAssets.swift in Sources */,
 				150AE93F1DB9AC11002EAFEA /* RULFile.swift in Sources */,
-				150AE9441DB9DFEE002EAFEA /* DESUtils.m in Sources */,
+				150AE9CB1DB9F195002EAFEA /* PKHUDAnimating.swift in Sources */,
+				150AE9CF1DB9F195002EAFEA /* PKHUDProgressView.swift in Sources */,
 				15C39D481DB8668F00C8DD94 /* CommonTool.swift in Sources */,
+				150AE9AE1DB9F01C002EAFEA /* NSData+Base64.m in Sources */,
 				15C3A4D21DB89CEE00C8DD94 /* LoginView.swift in Sources */,
+				150AE9D41DB9F195002EAFEA /* PKHUDTextView.swift in Sources */,
 				15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */,
 				15C39D391DB8624A00C8DD94 /* ActivityViewController.swift in Sources */,
 				15C39D4A1DB8948900C8DD94 /* MainNavigationController.swift in Sources */,
+				150AE9D21DB9F195002EAFEA /* PKHUDSuccessView.swift in Sources */,
 				150AE94D1DB9E982002EAFEA /* ConstString.swift in Sources */,
+				150AE9D51DB9F195002EAFEA /* PKHUDWideBaseView.swift in Sources */,
+				150AE9D71DB9F195002EAFEA /* WindowRootViewController.swift in Sources */,
+				150AE9D61DB9F195002EAFEA /* Window.swift in Sources */,
 				15C39D031DB85BAD00C8DD94 /* CloudStudy.xcdatamodeld in Sources */,
 				15C39D171DB8613B00C8DD94 /* MainTabBarController.swift in Sources */,
+				150AE9D31DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift in Sources */,
 				15C39D431DB8629D00C8DD94 /* PersonalViewController.swift in Sources */,
 				15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */,
 				15C39D411DB8629000C8DD94 /* CourseViewController.swift in Sources */,
+				150AE9AD1DB9F01C002EAFEA /* DESUtils.m in Sources */,
 				15C39D151DB8606A00C8DD94 /* HomeViewController.swift in Sources */,
 				15C3A4D71DB8C59C00C8DD94 /* UIView+Frame.swift in Sources */,
 				15C3A4D01DB89CD600C8DD94 /* GuideViewController.swift in Sources */,
 				15C3A4D41DB8C36400C8DD94 /* UserInfo.swift in Sources */,
-				150AE94B1DB9E73C002EAFEA /* NSData+Base64.m in Sources */,
+				150AE9D01DB9F195002EAFEA /* PKHUDRotatingImageView.swift in Sources */,
+				150AE9D11DB9F195002EAFEA /* PKHUDSquareBaseView.swift in Sources */,
+				150AE9CE1DB9F195002EAFEA /* PKHUDErrorView.swift in Sources */,
+				150AE9CC1DB9F195002EAFEA /* PKHUDAnimation.swift in Sources */,
+				150AE9C71DB9F195002EAFEA /* HUD.swift in Sources */,
+				150AE9DA1DB9FC64002EAFEA /* ModelManager.swift in Sources */,
 				15C3A4DB1DB8C9D000C8DD94 /* RequestManager.swift in Sources */,
 				15C39D3F1DB8628600C8DD94 /* AskViewController.swift in Sources */,
 				15C3A4D91DB8C5E600C8DD94 /* ExtensionFile.swift in Sources */,

@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AlamofireObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FaveButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,12 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1CCE09A26CC220F54F0F5BBD9AC6F5E1</key>
+		<key>14DE3B2F234519D67B056C2185456D55</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4EB939363CA24D0F74BE54E0C73D89FD</key>
+		<key>1C7128D2081E1AB58CD01F54B910137C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41ED2BE90191A3B92E70E5F0147CD886</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AEEC1FACD47E0119CFEF07DED041A0F</key>
+		<key>C5CBCAA97E951CC882334464FBDF983D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>936EDD2E2F20C4D351857A579D98B805</key>
+		<key>E97EC8242E294779C22350219CFFE76D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBD082A0D35F7917EAB9DD9D3CCA9976</key>
 		<dict>
 			<key>primary</key>
 			<true/>
