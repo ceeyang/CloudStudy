@@ -1016,6 +1016,11 @@
 		15EF593C1DC48B5C005B7FED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59371DC48B5C005B7FED /* Default@2x.png */; };
 		15EF593D1DC48B5C005B7FED /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59381DC48B5C005B7FED /* LaunchImage@2x.png */; };
 		15EF593E1DC48B5C005B7FED /* LaunchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59391DC48B5C005B7FED /* LaunchImage@3x.png */; };
+		15F72B241DC8415500A8FC6F /* HomeDataRequestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B231DC8415500A8FC6F /* HomeDataRequestObject.swift */; };
+		15F72B261DC85DEE00A8FC6F /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B251DC85DEE00A8FC6F /* BannerModel.swift */; };
+		15F72B301DC86BB800A8FC6F /* HomeTopContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B2F1DC86BB800A8FC6F /* HomeTopContainer.swift */; };
+		15F72B321DC87FC300A8FC6F /* HomeDataModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B311DC87FC300A8FC6F /* HomeDataModelObject.swift */; };
+		15F72B361DC893F400A8FC6F /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B351DC893F400A8FC6F /* RegionModel.swift */; };
 		F481345F13AAC9B24B7B651F /* Pods_CloudStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A659D1150A1F2B241D36597D /* Pods_CloudStudy.framework */; };
 /* End PBXBuildFile section */
 
@@ -2035,6 +2040,11 @@
 		15EF59371DC48B5C005B7FED /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		15EF59381DC48B5C005B7FED /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		15EF59391DC48B5C005B7FED /* LaunchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@3x.png"; sourceTree = "<group>"; };
+		15F72B231DC8415500A8FC6F /* HomeDataRequestObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataRequestObject.swift; sourceTree = "<group>"; };
+		15F72B251DC85DEE00A8FC6F /* BannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		15F72B2F1DC86BB800A8FC6F /* HomeTopContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTopContainer.swift; sourceTree = "<group>"; };
+		15F72B311DC87FC300A8FC6F /* HomeDataModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataModelObject.swift; sourceTree = "<group>"; };
+		15F72B351DC893F400A8FC6F /* RegionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
 		4D173FB5E8DBBBCDAE9DA8AC /* Pods-CloudStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudStudy/Pods-CloudStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8C7E698D9592A855CA7CA0 /* Pods-CloudStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudStudy/Pods-CloudStudy.release.xcconfig"; sourceTree = "<group>"; };
 		A659D1150A1F2B241D36597D /* Pods_CloudStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2199,6 +2209,10 @@
 		15C39D121DB85E2100C8DD94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				15F72B231DC8415500A8FC6F /* HomeDataRequestObject.swift */,
+				15F72B311DC87FC300A8FC6F /* HomeDataModelObject.swift */,
+				15F72B251DC85DEE00A8FC6F /* BannerModel.swift */,
+				15F72B351DC893F400A8FC6F /* RegionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2207,6 +2221,7 @@
 			isa = PBXGroup;
 			children = (
 				150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */,
+				15F72B2F1DC86BB800A8FC6F /* HomeTopContainer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4504,6 +4519,7 @@
 				15C39D481DB8668F00C8DD94 /* CommonTool.swift in Sources */,
 				150AE9AE1DB9F01C002EAFEA /* NSData+Base64.m in Sources */,
 				15C3A4D21DB89CEE00C8DD94 /* LoginView.swift in Sources */,
+				15F72B321DC87FC300A8FC6F /* HomeDataModelObject.swift in Sources */,
 				150AE9D41DB9F195002EAFEA /* PKHUDTextView.swift in Sources */,
 				15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */,
 				15C39D391DB8624A00C8DD94 /* ActivityViewController.swift in Sources */,
@@ -4516,7 +4532,9 @@
 				15C39D031DB85BAD00C8DD94 /* CloudStudy.xcdatamodeld in Sources */,
 				15C39D171DB8613B00C8DD94 /* MainTabBarController.swift in Sources */,
 				150AE9D31DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift in Sources */,
+				15F72B241DC8415500A8FC6F /* HomeDataRequestObject.swift in Sources */,
 				15C39D431DB8629D00C8DD94 /* PersonalViewController.swift in Sources */,
+				15F72B261DC85DEE00A8FC6F /* BannerModel.swift in Sources */,
 				15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */,
 				15C39D411DB8629000C8DD94 /* CourseViewController.swift in Sources */,
 				150AE9AD1DB9F01C002EAFEA /* DESUtils.m in Sources */,
@@ -4527,9 +4545,11 @@
 				15C3A4D41DB8C36400C8DD94 /* UserInfo.swift in Sources */,
 				150AE9D01DB9F195002EAFEA /* PKHUDRotatingImageView.swift in Sources */,
 				150AE9D11DB9F195002EAFEA /* PKHUDSquareBaseView.swift in Sources */,
+				15F72B301DC86BB800A8FC6F /* HomeTopContainer.swift in Sources */,
 				150AE9CE1DB9F195002EAFEA /* PKHUDErrorView.swift in Sources */,
 				150AE9CC1DB9F195002EAFEA /* PKHUDAnimation.swift in Sources */,
 				150AE9C71DB9F195002EAFEA /* HUD.swift in Sources */,
+				15F72B361DC893F400A8FC6F /* RegionModel.swift in Sources */,
 				150AE9DA1DB9FC64002EAFEA /* ModelManager.swift in Sources */,
 				15C3A4DB1DB8C9D000C8DD94 /* RequestManager.swift in Sources */,
 				15C39D3F1DB8628600C8DD94 /* AskViewController.swift in Sources */,

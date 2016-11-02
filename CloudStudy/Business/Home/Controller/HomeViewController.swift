@@ -7,30 +7,52 @@
 //
 
 import UIKit
+import MJRefresh
+import EZSwiftExtensions
 
 class HomeViewController: UIViewController,UIScrollViewDelegate {
     
     var navigationBar : HomeSearchBar!
-    var imagePlayer   : ImagePlayer!
-    var scrollview    : UIScrollView!
+    var topContainer  : HomeTopContainer!
+    var tableView     : UITableView!
+    var header        : MJRefreshNormalHeader!
+    var footer        : MJRefreshAutoNormalFooter!
+    var dataSource    : HomeDataModelObject!
+    let homeRequestManger = HomeDataRequestObject.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        addAction()
+        addRefrsh()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     func setupUI() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.isHidden = true
         
+        dataSource = HomeDataModelObject()
+        
         /** main scrollview */
-        scrollview = UIScrollView(frame:UIEdgeInsetsInsetRect(view.frame, UIEdgeInsetsMake(-20, 0, 0, 0)))
-        scrollview.showsVerticalScrollIndicator = true
-        scrollview.isScrollEnabled = true
-        scrollview.delegate = self
-        scrollview.contentSize = CGSize(width: 0, height: kScreenHeight + 200)
-        view.addSubview(scrollview)
+        tableView = UITableView(frame:UIEdgeInsetsInsetRect(view.frame, UIEdgeInsetsMake(-20, 0, 0, 0)))
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
+        topContainer  = HomeTopContainer(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 200))
+        tableView.tableHeaderView = topContainer
+        tableView.tableFooterView = nil
+        tableView.isScrollEnabled = true
+        tableView.backgroundView  = nil
+        tableView.delegate        = dataSource
+        tableView.dataSource      = dataSource
+        tableView.separatorStyle  = .none
+        tableView.backgroundColor = UIColor.clear
+        view.addSubview(tableView)
         
         /** Search Bar */
         let searchBar = HomeSearchBar()
@@ -40,17 +62,11 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
             make.height.equalTo(64)
         }
         navigationBar = searchBar
-        
-        imagePlayer = ImagePlayer(frame:CGRect(x: 0, y: 0, width: kScreenWidth, height: 200))
-        scrollview.addSubview(imagePlayer)
-        imagePlayer.imageArr = ["banner_bg_1","banner_bg_1","banner_bg_1"]
-        imagePlayer.reloadData()
-        
-        addAction()
     }
     
-    
+    //MARK: - Actions -
     func addAction() {
+        weak var weakSelf = self
         navigationBar.searchBtnAction  = { (sender:UIButton) in
             print(sender)
         }
@@ -60,26 +76,68 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         navigationBar.qrCodeBtnAction  = { (sender:UIButton) in
             print(sender)
         }
-        imagePlayer.imageDidSelectedAction = { (index:Int) in
-            print(index)
+        
+        homeRequestManger.reloadBannerClosure = { (bannerArr) in
+            weakSelf?.endRefresh()
+            weakSelf?.topContainer.reloadBanner(bannerArr: bannerArr)
+        }
+        
+        dataSource.updateSearchBarStatus = { (offSetY) in
+            weakSelf?.updateSearchBarStatusWith(offY: offSetY + 20) //加上状态栏高度 20
         }
     }
     
+    //MARK: - Refresh -
+    func addRefrsh() {
+        header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+            self?.homeRequestManger.sendHomeLayoutRequest()
+        })
+        tableView.mj_header = header
+        
+        footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
+            let delayTime = DispatchTime.now() + Double(Int64(5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: delayTime) {
+                self?.footer.endRefreshing()
+            }
+        })
+        tableView.mj_footer = footer
+        
+        header.beginRefreshing()
+    }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offY = scrollview.contentOffset.y + 20
+    func updateSearchBarStatusWith(offY:CGFloat) {
+        
         if offY  < 0 {
             navigationBar.isHidden = true
-        } else if offY <= imagePlayer.frame.size.height {
+        } else if offY <= topContainer.height {
             navigationBar.isHidden = false
-            navigationBar.updateNavigationBarStatus(alpha:offY/imagePlayer.frame.size.height)
+            navigationBar.updateNavigationBarStatus(alpha:offY/topContainer.height)
         } else {
             navigationBar.isHidden = false
+        }
+    }
+    
+    func endRefresh() {
+        if header != nil {
+            if header.isRefreshing() {
+                header.endRefreshing()
+            }
+        }
+        if footer != nil {
+            if footer.isRefreshing() {
+                footer.endRefreshing()
+            }
+            
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        header = nil
+        footer = nil
     }
 }

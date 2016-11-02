@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import SwiftyJSON
 import Alamofire
+import EZSwiftExtensions
 
 class LoginViewController: UIViewController {
 
@@ -33,9 +34,9 @@ class LoginViewController: UIViewController {
     
     func setupUI() {
         loginView = LoginView()
-        loginView.siteText?.text    = "测试部"
-        loginView.accountText?.text = "yxc"
-        loginView.paswordText?.text = "123456"
+        loginView.siteText?.text    = "zeng"
+        loginView.accountText?.text = "zl"
+        loginView.paswordText?.text = "zl123456"
         view.addSubview(loginView)
         loginView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
@@ -54,11 +55,11 @@ class LoginViewController: UIViewController {
     
     func loginRequest() {
         
-        let appSystem       = "iOS ".appendingFormat("%lu", UIDevice.current.systemVersion)
+        let appSystem       = "iOS ".appendingFormat("%@", UIDevice.systemVersion())
         let dic             = NSMutableDictionary()
         dic["login_id"]     = loginView.accountText?.text
         dic["password"]     = DESUtils.encryptUseDES(loginView.paswordText?.text, key: kPwdKey)
-        dic["appMachine"]   = getDeviceVersion()
+        dic["appMachine"]   = UIDevice.deviceModel()
         dic["appSystem"]    = appSystem
         dic["company_name"] = loginView.siteText?.text
         dic["client_type"]  = 0
@@ -71,7 +72,7 @@ class LoginViewController: UIViewController {
             case .success(let value):
                 let json         = JSON(value)
                 let userInofData = response.data
-                UserInfo.shared.parseUserInfoWithData(Json: json["data"])
+                UserInfo.shared.parseData(json: json["data"])
                 UserDefaults.standard.set(true, forKey: kUSER_HADEVERLOGIN)
                 UserDefaults.standard.set(userInofData, forKey: kUSER_UserInfoData)
                 AppDelegate.shared.buildKeyWindow()

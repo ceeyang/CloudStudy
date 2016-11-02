@@ -16,10 +16,12 @@ class ImagePlayer: UIView,UIScrollViewDelegate {
     var imageArr:Array<String> = []
     var autoPlay:Bool          = true
     var autoPlayTime:Float     = 2.0
-    var timer:Timer!
     var currentIndex:Int       = 0
     var imageDidSelectedAction : ImageDidSelectedClosure?
+    var defaultImageName       = "banner_bg_1"
+    var defaultImage           = UIImageView()
     
+    private var timer:Timer!
     private var scrollview : UIScrollView!
     
     override init(frame: CGRect) {
@@ -40,9 +42,19 @@ class ImagePlayer: UIView,UIScrollViewDelegate {
         scrollview.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
         }
+        
+        defaultImage = UIImageView(image: UIImage(named: defaultImageName))
+        scrollview.addSubview(defaultImage)
+        defaultImage.snp.makeConstraints { (make) in
+            make.edges.equalTo(scrollview)
+        }
     }
     
     func reloadData() {
+        
+        if imageArr.count == 0 {
+            return
+        }
         
         for view in scrollview.subviews {
             view.removeFromSuperview()
@@ -50,7 +62,7 @@ class ImagePlayer: UIView,UIScrollViewDelegate {
         
         for i in 0..<imageArr.count {
             let imageView = UIImageView()
-            imageView.kf.setImage(with: URL(string:imageArr[i]), placeholder: UIImage(named: imageArr[i]), options: nil, progressBlock: nil, completionHandler: nil)
+            imageView.kf.setImage(with: URL(string:imageArr[i]), placeholder: UIImage(named: defaultImageName), options: nil, progressBlock: nil, completionHandler: nil)
             imageView.isUserInteractionEnabled = true
             imageView.tag = i
             let tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction(tap:)))

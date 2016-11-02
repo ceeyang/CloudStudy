@@ -13,4 +13,6 @@ pod 'SwiftyJSON'
 pod 'Kingfisher'
 pod 'SwiftyBase64'
 pod 'AlamofireObjectMapper', '~> 4.0'
+pod 'EZSwiftExtensions'
+pod 'MJRefresh'
 end

@@ -14,12 +14,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EZSwiftExtensions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FaveButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,11 +62,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0FFFEABB92E943D4572BE67007E62595</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>147DEE33600EA9190D4F4BF9AF6D82AB</key>
 		<dict>
 			<key>primary</key>
@@ -67,12 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2325AAA3171EAC5F1F6F50A0D83AAE3D</key>
+		<key>212E063D232DA96FF758820E10AB0D10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>614B78BEC96C3340644552560524D278</key>
+		<key>29DD99664D189A7CA206368F493B1E0B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D46ACCA4C3F2BE3B8F9A9E35B37F4A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,12 +92,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC32CA23F807D1C0DD70EF3E7BA5589F</key>
+		<key>AE8D2404232D0476B0381B4DD40C2CE7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C5CBCAA97E951CC882334464FBDF983D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7FD03F2F9887A477DDAD68157027298</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA655AD4A7175B35552B5FDAF8EFFF52</key>
 		<dict>
 			<key>primary</key>
 			<true/>
