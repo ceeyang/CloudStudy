@@ -33,6 +33,7 @@ class HomeTopContainer: UIView {
     }
     
     public func reloadBanner(bannerArr:Array<BannerModel>) {
+        self.bannerArr = bannerArr
         imageArr.removeAll()
         for model in bannerArr {
             imageArr.append(model.image!)

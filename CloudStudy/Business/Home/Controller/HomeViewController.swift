@@ -101,7 +101,6 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
             }
         })
         tableView.mj_footer = footer
-        
         header.beginRefreshing()
     }
     

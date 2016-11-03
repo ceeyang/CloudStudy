@@ -16,10 +16,11 @@ class HomeDataRequestObject: NSObject {
     
     static let shared = HomeDataRequestObject()
     
-    var reloadBannerClosure : ReloadHomeBannerClosure?
+    public var reloadBannerClosure : ReloadHomeBannerClosure?
     
+    private var layoutFinished : [String:Bool] = [:]  // 根据 content_code 判断该类是否加载完成
     
-    func sendUpdateFileRequest() {
+    public func sendUpdateFileRequest() {
         HUD.show(.label("loading..."))
         RequestManager.shared.requestCommonDataWith(url: KiOSVersionURL, parameters: nil) { response in
             HUD.hide()
@@ -42,7 +43,7 @@ class HomeDataRequestObject: NSObject {
         }
     }
     
-    func sendHomeLayoutRequest() {
+    public func sendHomeLayoutRequest() {
         HUD.show(.label("loading..."))
         RequestManager.shared.requestCommonDataWith(url: HomeLayoutURL, parameters: ["sid":UserInfo.shared.sid]) { [weak self](response) in
             HUD.hide()
@@ -76,36 +77,38 @@ class HomeDataRequestObject: NSObject {
     private func parseHomeLayoutData(regionListArr:Array<JSON>) {
         var regionArr:Array<RegionModel> = []
         for dic in regionListArr {
-
+            let module = dic["content_code"].stringValue
+            layoutFinished[module] = false
             /** 首页 ICON 特殊处理 */
-            let navList = dic["nav_list"].arrayValue
-            if navList.count != 0  {
+            if module == "navigation_module"  {
                 let region = RegionModel()
                 region.parseData(json: dic, arrayValues: ["nav_list"])
                 regionArr.append(region)
+                DispatchQueue.global().async { [weak self] in
+                    self?.startLoadingIconData(model:region)
+                }
             } else {
                 let region = RegionModel()
                 region.parseData(json: dic)
                 regionArr.append(region)
-            }
-        }
-        DispatchQueue.global().async {
-            for region in regionArr {
-                if region.nav_list?.count != 0 && region.nav_list != nil {
-                    print(region.nav_list)
-                } else {
-                    print(Thread.current,region.region_type)
+                DispatchQueue.global().async {[weak self] in
+                    self?.startLoadingModelDetail(model:region)
                 }
             }
         }
     }
     
-    private func startLoadingIconData() {
-        
+    private func startLoadingIconData(model:RegionModel) {
+        let iconJsonArr  = model.nav_list
+        var iconModelArr:Array<IconModel> = []
+        for icon in iconJsonArr! {
+            let iconModel = IconModel()
+            iconModel.parseData(json:icon as! JSON)
+            iconModelArr.append(iconModel)
+        }
     }
     
-    private func startLoadingModelDetail(model:NSDictionary) {
-        
+    private func startLoadingModelDetail(model:RegionModel) {
     }
     
 }
