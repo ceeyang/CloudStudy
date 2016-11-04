@@ -10,14 +10,15 @@ import UIKit
 import SwiftyJSON
 import EZSwiftExtensions
 
-typealias ReloadHomeBannerClosure = (_ bannerArr :Array<BannerModel>) -> Void
-
 class HomeDataRequestObject: NSObject {
     
     static let shared = HomeDataRequestObject()
     
     public var reloadBannerClosure : ReloadHomeBannerClosure?
+    public var reloadHomeDataClosure : ReloadHomeDataClosure?
     
+    
+    private var regionDataArr  : Array<RegionModel> = []
     private var layoutFinished : [String:Bool] = [:]  // 根据 content_code 判断该类是否加载完成
     
     public func sendUpdateFileRequest() {
@@ -96,15 +97,26 @@ class HomeDataRequestObject: NSObject {
                 }
             }
         }
+        regionDataArr.removeAll()
+        regionDataArr.append(contentsOf: regionArr)
     }
     
     private func startLoadingIconData(model:RegionModel) {
+        regionDataArr.removeObject(model)
         let iconJsonArr  = model.nav_list
         var iconModelArr:Array<IconModel> = []
         for icon in iconJsonArr! {
             let iconModel = IconModel()
             iconModel.parseData(json:icon as! JSON)
             iconModelArr.append(iconModel)
+        }
+        model.nav_list = iconModelArr
+        regionDataArr.append(model)
+        layoutFinished[model.content_code!] = true
+        DispatchQueue.main.async { [weak self] in
+            if self?.reloadHomeDataClosure != nil {
+                self?.reloadHomeDataClosure!((self?.regionDataArr)!)
+            }
         }
     }
     

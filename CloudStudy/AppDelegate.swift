@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let shared = AppDelegate()
     
     var window : UIWindow?
-    var homeVC = MainTabBarController()
+    var tabBarController = MainTabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
@@ -70,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public func buildKeyWindow() {
         
         window = UIWindow(frame: UIScreen.main.bounds)
+        window!.backgroundColor = kAppBaseColor
         window!.makeKeyAndVisible()
         
         let isNotFristOpen = UserDefaults.standard.bool(forKey: kIsNotFirstLaunch)
@@ -87,9 +88,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     public func initHomeVC() {
         UserInfo.shared.parseUserInfoFromHistoryData()
-        homeVC                     = MainTabBarController()
-        homeVC.createChildVC()
-        window!.rootViewController = homeVC
+        tabBarController                     = MainTabBarController()
+        tabBarController.createChildVC()
+        window!.rootViewController = tabBarController
     }
     
     func initLoginVC() {

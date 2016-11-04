@@ -9,13 +9,14 @@
 import UIKit
 
 class RegionModel: NSObject {
-    var id                : String?
-    var region_name       : String?
-    var content_code      : String?
-    var display_mode_code : String?
-    var region_type       : String?
-    var url               : String?
-    var seq               : String?
+    var id                : String?  /**< 区域id */
+    var region_name       : String?  /**< 区域名称 */
+    /** 区域编码 */
+    var content_code      : String?  /**< 区域编码 */
+    var display_mode_code : String?  /**< 展示类型 */
+    var region_type       : String?  /**< 区域类型 */
+    var url               : String?  /**< 区域数据列表信息加载URL */
+    var seq               : String?  /**< 排序字段 */
     var nav_list          : Array<Any>?
 }
 

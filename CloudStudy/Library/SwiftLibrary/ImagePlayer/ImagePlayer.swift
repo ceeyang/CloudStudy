@@ -9,8 +9,6 @@
 import UIKit
 import Kingfisher
 
-typealias ImageDidSelectedClosure = (_ index:Int)->Void
-
 class ImagePlayer: UIView,UIScrollViewDelegate {
 
     var imageArr:Array<String> = []

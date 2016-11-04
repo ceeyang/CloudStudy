@@ -31,7 +31,6 @@ let kHeightForHomePageControl     : CGFloat = 10
 let kRatioOfRankingCoverImage     : CGFloat = 0.7137
 let kHeightForStarRating          : CGFloat = 14
 
-
 //MARK: - Enum -
 enum HomeTableViewModule : Int {
     case Icon                //菜单模块
@@ -54,11 +53,11 @@ enum HomeTableViewLayoutStyle : Int {
     case BlankPage                     //空白页
 }
 
-enum HomeIconLayoutStyle : Int {
-    case FourPerRowForScrollingEnable   // 单行 x 4item ,可滚动
-    case FivePerRowForScrollingEnbale   // 单行 x 5item ,可滚动
-    case EightPerPageForScrollingEnable // 双行，每行4个，每页八个，可滚动
-    case TenPerPageForScrollingEnbale   // 双行，每行5个，每页10个，可滚动
-    case HomeIconAreaBlankPage          // 无数据，空白页
+enum HomeIconLayoutStyle : String {
+    case FourPerRowForScrollingEnable   = "1"   // 单行 x 4item ,可滚动
+    case FivePerRowForScrollingEnbale   = "2"   // 单行 x 5item ,可滚动
+    case EightPerPageForScrollingEnable = "3"   // 双行，每行4个，每页八个，可滚动
+    case TenPerPageForScrollingEnbale   = "4"   // 双行，每行5个，每页10个，可滚动
+    case HomeIconAreaBlankPage          = "5"   // 无数据，空白页
 }
 

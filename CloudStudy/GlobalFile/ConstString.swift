@@ -54,3 +54,7 @@ let NOTIFICATION_LOGIN     = "Notification_Login"
 let NOTIFICATION_LOGOUT    = "Notification_Logout"
 let NOTIFICATION_DirectoryIndicatorBtnDidSelected = "NOTIFICATION_DirectoryIndicatorBtnDidSelected"
 let NOTIFICATION_DirectoryDidSelectedWithIndex = "NOTIFICATION_DirectoryDidSelectedWithIndex"
+
+
+
+let kHomeIconCellReuseIdentifier = "kHomeIconCellReuseIdentifier"

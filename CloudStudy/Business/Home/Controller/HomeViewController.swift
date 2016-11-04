@@ -30,12 +30,18 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIView.animate(withDuration: TimeInterval(0.5)) { [weak self] in
+            self?.navigationController?.navigationBar.isHidden = false
+        }
     }
     
     func setupUI() {
         view.backgroundColor = UIColor.white
-        navigationController?.navigationBar.isHidden = true
         
         dataSource = HomeDataModelObject()
         
@@ -52,6 +58,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         tableView.dataSource      = dataSource
         tableView.separatorStyle  = .none
         tableView.backgroundColor = UIColor.clear
+        tableView.register(HomeIconCell.self, forCellReuseIdentifier: kHomeIconCellReuseIdentifier)
         view.addSubview(tableView)
         
         /** Search Bar */
@@ -82,9 +89,19 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
             weakSelf?.topContainer.reloadBanner(bannerArr: bannerArr)
         }
         
+        homeRequestManger.reloadHomeDataClosure = { (regionModelArr) in
+            weakSelf?.dataSource.dataArr = regionModelArr
+            weakSelf?.tableView.reloadData()
+        }
+        
         dataSource.updateSearchBarStatus = { (offSetY) in
             weakSelf?.updateSearchBarStatusWith(offY: offSetY + 20) //加上状态栏高度 20
         }
+        
+        dataSource.pushToControllerAction = { (controller) in
+            weakSelf?.pushVC(controller)
+        }
+        
     }
     
     //MARK: - Refresh -
