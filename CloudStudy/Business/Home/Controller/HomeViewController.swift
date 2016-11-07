@@ -35,9 +35,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UIView.animate(withDuration: TimeInterval(0.5)) { [weak self] in
-            self?.navigationController?.navigationBar.isHidden = false
-        }
+        navigationController?.navigationBar.isHidden = false
     }
     
     func setupUI() {
