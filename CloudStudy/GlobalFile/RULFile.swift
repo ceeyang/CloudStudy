@@ -19,7 +19,7 @@ let BaseURLStr     = "http://tc.zhixueyun.com/zxy-mobile-new/"
 let HomeLayoutURL = BaseURLStr + "sys/loadIndexLayout"
 
 //MARK: - News -
-let NewsURL        = BaseURLStr + "news/newsList"
+let NewsListURL        = BaseURLStr + "news/newsList"
 
 //MARK: - Course -
 let CourseNewDataURL  = BaseURLStr + "course/newestList"

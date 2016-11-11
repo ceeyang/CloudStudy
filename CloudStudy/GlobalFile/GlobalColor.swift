@@ -8,5 +8,8 @@
 
 import UIKit
 
-let kAppBaseColor = RGB(r: 243, g: 243, b: 243)
+let kAppBaseColor          = RGB(r: 243, g: 243, b: 243)
+
+let PublicTitleColor       = RGBA(r:40,  g: 60 , b:  97, a: 1.0)
+let PublicContentColor     = RGBA(r:168, g: 167, b: 185, a: 1.0)
 		

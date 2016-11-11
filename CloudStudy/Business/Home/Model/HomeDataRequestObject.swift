@@ -102,7 +102,7 @@ class HomeDataRequestObject: NSObject {
     }
     
     private func startLoadingIconData(model:RegionModel) {
-        regionDataArr.removeObject(model)
+        //regionDataArr.removeObject(model)
         let iconJsonArr  = model.nav_list
         var iconModelArr:Array<IconModel> = []
         for icon in iconJsonArr! {
@@ -111,7 +111,7 @@ class HomeDataRequestObject: NSObject {
             iconModelArr.append(iconModel)
         }
         model.nav_list = iconModelArr
-        regionDataArr.append(model)
+        //regionDataArr.append(model)
         layoutFinished[model.content_code!] = true
         DispatchQueue.main.async { [weak self] in
             if self?.reloadHomeDataClosure != nil {

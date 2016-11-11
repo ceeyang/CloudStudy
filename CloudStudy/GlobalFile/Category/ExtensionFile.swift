@@ -131,10 +131,30 @@ extension NSObject {
         }
     }
     
+    func parseData(json:JSON,overideDescriptionName:String) {
+        
+        let dic = json.dictionaryValue as NSDictionary
+        let keyArr:Array<String> = dic.allKeys as! Array<String>
+        var propertyArr:Array<String> = []
+        let hMirror = Mirror(reflecting: self)
+        for case let (label?, _) in hMirror.children {
+            propertyArr.append(label)
+        }
+        for property in propertyArr {
+            for key in keyArr {
+                if key == "description" {
+                    self.setValue(json[key].stringValue, forKey: overideDescriptionName)
+                }
+                if key == property {
+                    self.setValue(json[key].stringValue, forKey: key)
+                }
+            }
+        }
+    }
+    
     /** 支持任意类型 */
     func parseData(dic:NSDictionary) {
         
-        print(dic)
         let keyArr:Array<String> = dic.allKeys as! Array<String>
         var propertyArr:Array<String> = []
         let hMirror = Mirror(reflecting: self)

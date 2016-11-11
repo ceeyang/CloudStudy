@@ -25,7 +25,11 @@ func delay(_ delay:Double, closure:@escaping ()->()) {
         deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
 }
 
-func printLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
+func LocalizedStringFromKey(key:String) -> String {
+    return NSLocalizedString(key, comment: "")
+}
+
+func prints<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
     print("\(file)[\(line)], \(method): \(message)")
 }
 
