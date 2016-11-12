@@ -94,7 +94,7 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
     }
     
     private func pushTabbarViewControllerWith(_ viewController:UIViewController) {
-        viewController.hidesBottomBarWhenPushed = true
+        //viewController.hidesBottomBarWhenPushed = true
         if pushToControllerAction != nil {
            pushToControllerAction!(viewController)
         }

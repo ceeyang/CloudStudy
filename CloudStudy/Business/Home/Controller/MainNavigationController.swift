@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainNavigationController: UINavigationController {
+class MainNavigationController: UINavigationController,UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,23 +21,39 @@ class MainNavigationController: UINavigationController {
         self.navigationBar.setBackgroundImage(image, for: .default)
         self.navigationBar.tintColor = UIColor.white
         UIApplication.shared.statusBarStyle = .lightContent
+        self.delegate = self
+    }
+    
+    func backAction() {
+        popViewController(animated: true)
+    }
+    
+    func searchAction() {
+        presentVC(SearchViewController())
+    }
+    
+    func BarButtonItemWithTarget(_ target:Any?,action:Selector,image:String,selectedImg:String) -> UIBarButtonItem {
+        let btn = UIButton(type: .custom)
+        btn.addTarget(target, action: action, for: .touchUpInside)
+        btn.setBackgroundImage(UIImage(named:image), for: .normal)
+        btn.setBackgroundImage(UIImage(named:selectedImg), for: .highlighted)
+        return UIBarButtonItem(customView: btn)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension MainNavigationController {
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if self.viewControllers.count > 0 {
+            viewController.hidesBottomBarWhenPushed = true
+            viewController.navigationItem.leftBarButtonItem  = BarButtonItemWithTarget(self, action: #selector(backAction), image: "public_nav_btn_return_n", selectedImg: "public_nav_btn_return_n")
+            viewController.navigationItem.rightBarButtonItem = BarButtonItemWithTarget(self, action: #selector(searchAction), image: "course_nav_btn_search_click", selectedImg: "course_nav_btn_search_n")
+        }
+        super.pushViewController(viewController, animated: animated)
     }
-    */
-
 }
