@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum ImageAlignment {
+    case left,right
+}
+
 class MainNavigationController: UINavigationController,UINavigationControllerDelegate {
 
     override func viewDidLoad() {
@@ -22,6 +26,7 @@ class MainNavigationController: UINavigationController,UINavigationControllerDel
         self.navigationBar.tintColor = UIColor.white
         UIApplication.shared.statusBarStyle = .lightContent
         self.delegate = self
+        
     }
     
     func backAction() {
@@ -32,11 +37,20 @@ class MainNavigationController: UINavigationController,UINavigationControllerDel
         presentVC(SearchViewController())
     }
     
-    func BarButtonItemWithTarget(_ target:Any?,action:Selector,image:String,selectedImg:String) -> UIBarButtonItem {
+    func BarButtonItemWithTarget(_ target:Any?,action:Selector,image:String,selectedImg:String, imageAlignment:ImageAlignment) -> UIBarButtonItem {
         let btn = UIButton(type: .custom)
         btn.addTarget(target, action: action, for: .touchUpInside)
-        btn.setBackgroundImage(UIImage(named:image), for: .normal)
-        btn.setBackgroundImage(UIImage(named:selectedImg), for: .highlighted)
+        btn.setImage(UIImage(named:image), for: .normal)
+        btn.setImage(UIImage(named:selectedImg), for: .highlighted)
+        btn.frame = CGRect(x: 0, y: 0, w: 44, h: 44)
+        switch imageAlignment {
+        case .left:
+            btn.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 20)
+            break
+        case .right:
+            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, -20)
+            break
+        }
         return UIBarButtonItem(customView: btn)
     }
     
@@ -51,8 +65,8 @@ extension MainNavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if self.viewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
-            viewController.navigationItem.leftBarButtonItem  = BarButtonItemWithTarget(self, action: #selector(backAction), image: "public_nav_btn_return_n", selectedImg: "public_nav_btn_return_n")
-            viewController.navigationItem.rightBarButtonItem = BarButtonItemWithTarget(self, action: #selector(searchAction), image: "course_nav_btn_search_click", selectedImg: "course_nav_btn_search_n")
+            viewController.navigationItem.leftBarButtonItem  = BarButtonItemWithTarget(self, action: #selector(backAction), image: "public_nav_btn_return_n", selectedImg: "public_nav_btn_return_pre",imageAlignment:.left)
+            viewController.navigationItem.rightBarButtonItem = BarButtonItemWithTarget(self, action: #selector(searchAction), image: "course_nav_btn_search_n", selectedImg: "course_nav_btn_search_n_pre",imageAlignment:.right)
         }
         super.pushViewController(viewController, animated: animated)
     }
