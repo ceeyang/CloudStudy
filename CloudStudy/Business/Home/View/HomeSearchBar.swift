@@ -30,6 +30,7 @@ class HomeSearchBar: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        addAction()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -86,7 +87,6 @@ class HomeSearchBar: UIView {
             make.height.equalTo(34)
         }
         
-        addAction()
     }
     
     func addAction() {

@@ -1037,6 +1037,7 @@
 		15F72B301DC86BB800A8FC6F /* HomeTopContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B2F1DC86BB800A8FC6F /* HomeTopContainer.swift */; };
 		15F72B321DC87FC300A8FC6F /* HomeDataModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B311DC87FC300A8FC6F /* HomeDataModelObject.swift */; };
 		15F72B361DC893F400A8FC6F /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B351DC893F400A8FC6F /* RegionModel.swift */; };
+		225015351DD73DA500928050 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225015341DD73DA500928050 /* SearchViewController.swift */; };
 		F481345F13AAC9B24B7B651F /* Pods_CloudStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A659D1150A1F2B241D36597D /* Pods_CloudStudy.framework */; };
 /* End PBXBuildFile section */
 
@@ -2077,6 +2078,7 @@
 		15F72B2F1DC86BB800A8FC6F /* HomeTopContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTopContainer.swift; sourceTree = "<group>"; };
 		15F72B311DC87FC300A8FC6F /* HomeDataModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataModelObject.swift; sourceTree = "<group>"; };
 		15F72B351DC893F400A8FC6F /* RegionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
+		225015341DD73DA500928050 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4D173FB5E8DBBBCDAE9DA8AC /* Pods-CloudStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudStudy/Pods-CloudStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8C7E698D9592A855CA7CA0 /* Pods-CloudStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudStudy/Pods-CloudStudy.release.xcconfig"; sourceTree = "<group>"; };
 		A659D1150A1F2B241D36597D /* Pods_CloudStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2244,6 +2246,7 @@
 				15C39D161DB8613B00C8DD94 /* MainTabBarController.swift */,
 				15C39D141DB8606A00C8DD94 /* HomeViewController.swift */,
 				15C39D491DB8948900C8DD94 /* MainNavigationController.swift */,
+				225015341DD73DA500928050 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4901,6 +4904,7 @@
 				150AE9C71DB9F195002EAFEA /* HUD.swift in Sources */,
 				15F72B361DC893F400A8FC6F /* RegionModel.swift in Sources */,
 				150AE9DA1DB9FC64002EAFEA /* ModelManager.swift in Sources */,
+				225015351DD73DA500928050 /* SearchViewController.swift in Sources */,
 				15C3A4DB1DB8C9D000C8DD94 /* RequestManager.swift in Sources */,
 				15C39D3F1DB8628600C8DD94 /* AskViewController.swift in Sources */,
 				15C96EAC1DCCFBE80076C37A /* PathMainViewController.swift in Sources */,
@@ -5035,7 +5039,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daisy.CloudStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/pro/Desktop/Swift/CloudStudy/CloudStudy/Library/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "CloudStudy/Library/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -5051,7 +5055,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daisy.CloudStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/pro/Desktop/Swift/CloudStudy/CloudStudy/Library/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "CloudStudy/Library/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

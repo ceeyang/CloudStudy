@@ -73,7 +73,8 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     func addAction() {
         weak var weakSelf = self
         navigationBar.searchBtnAction  = { (sender:UIButton) in
-            print(sender)
+            let searchView = SearchViewController()
+            weakSelf?.pushVC(searchView)
         }
         navigationBar.messageBtnAction = { (sender:UIButton) in
             print(sender)
@@ -99,7 +100,6 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         dataSource.pushToControllerAction = { (controller) in
             weakSelf?.pushVC(controller)
         }
-        
     }
     
     //MARK: - Refresh -
