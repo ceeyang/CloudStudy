@@ -13,7 +13,7 @@ class ImagePlayer: UIView,UIScrollViewDelegate {
 
     var imageArr:Array<String> = []
     var autoPlay:Bool          = true
-    var autoPlayTime:Float     = 2.0
+    var autoPlayTime:Float     = 5.0
     var currentIndex:Int       = 0
     var imageDidSelectedAction : ImageDidSelectedClosure?
     var defaultImageName       = "banner_bg_1"

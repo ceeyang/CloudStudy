@@ -41,10 +41,8 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
         contentView.addSubview(scrollview)
         self.scrollView                           = scrollview
         
-        let pageControl                           = UIPageControl(x: 0, y: 0, w: 60, h: kHeightForHomePageControl)
+        let pageControl                           = UIPageControl()
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-        let x: CGFloat = CurrentDevice.isIphonePlus() ? ((kScreenWidth-60) / 2) : CurrentDevice.isMediumIphone() ? (kScreenWidth / 2 - 45) : (kScreenWidth / 2)
-        pageControl.center                        = CGPoint(x: x, y: 0)
         pageControl.hidesForSinglePage = true
         pageControl.currentPageIndicatorTintColor = RGBA(r: 0, g: 0, b: 0,a:0.3)
         pageControl.pageIndicatorTintColor        = RGBA(r: 0, g: 0, b: 0, a: 0.05)
@@ -64,28 +62,45 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
         
         scrollView.isHidden = false
         switch style {
-        case .FourPerRowForScrollingEnable:
+        case .FourPerRowForScrollingEnable:   // 单行 x 4item ,可滚动
+            
             iconSize          = kSizeForHomeMaxIcon
             heightForIconItem = iconSize + heightForSpace + heightForLabel
             scrollView.frame  = CGRect(x: 0, y: 19, w: kScreenWidth, h: heightForIconItem + 10)
             layoutIconStyleOne(items:items)
+            
             break
-        case .FivePerRowForScrollingEnbale:
+        case .FivePerRowForScrollingEnbale:    // 单行 x 5item ,可滚动
+            
+            scrollView.frame  = CGRect(x: 0, y: 19, w: kScreenWidth, h: heightForIconItem + 10)
+            layoutIconStyleTwo(items: items)
+            
             break
-        case .EightPerPageForScrollingEnable:
+        case .EightPerPageForScrollingEnable:  // 双行，每行4个，每页八个，可滚动
+            
+            iconSize = kSizeForHomeMaxIcon;
+            heightForIconItem = iconSize + heightForSpace + heightForLabel;
+            scrollView.frame  = CGRect(x: 0, y: 19, w: kScreenWidth, h: heightForIconItem * 2 + 38)
+            layoutIconStyleThree(items: items)
+            
             break
-        case .TenPerPageForScrollingEnbale:
+        case .TenPerPageForScrollingEnbale:    // 双行，每行5个，每页10个，可滚动
 
             scrollView.frame = CGRect(x: 0, y: 19, w: kScreenWidth, h: heightForIconItem * CGFloat(2) + 38)
             layoutIconStyleFour(items:items)
+            
             break
-        default:
+        default:                               // 无数据，空白页
             break
         }
+        
+        let maxY    = scrollView.frame.maxY
+        let centerX = scrollView.centerX
+        pageControl.frame = CGRect(origin: CGPoint(x:centerX-30, y:maxY), size: CGSize(width: 60, height: kHeightForHomePageControl))
     }
     
     private func layoutIconStyleOne(items: Array<IconModel>){
-        removeSubviews()
+        scrollView.removeSubviews()
         let widthForItem = kScreenWidth / 4
         var index = 0
         for model in items {
@@ -108,15 +123,80 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
     
     //开始布局样式2
     private func layoutIconStyleTwo(items:Array<IconModel>) {
+        scrollView.removeSubviews()
         
+        let widthForItem  = kScreenWidth / 5
+        var index         = 0
+        for model in items {
+            
+            let homeIcon  = HomeIconView(frame: CGRect(x:CGFloat(index) * widthForItem,y:0,w:widthForItem,h:scrollView.height), layoutStyle: .FivePerRowForScrollingEnbale)
+            homeIcon.tag  = index
+            homeIcon.addTapGesture(action: { [weak self](tap) in
+                if self?.iconDidSelectedAction != nil {
+                    self?.iconDidSelectedAction!(model)
+                }
+                })
+            homeIcon.setTitle(model.name!, imageName: getImageNameWith(model))
+            scrollView.addSubview(homeIcon)
+            index += 1
+        }
+        
+        let totalPage = items.count % 5 == 0 ? items.count / 5 : items.count / 5 + 1
+        scrollView.contentSize = CGSize(width: CGFloat(totalPage) * scrollView.width, height: 0)
+        pageControl.numberOfPages = totalPage
     }
     
     private func layoutIconStyleThree(items:Array<IconModel>) {
+        scrollView.removeSubviews()
         
+        let widthForItem   = kScreenWidth / 4
+        let widthForPage   = self.scrollView.frame.size.width
+        let heightForItem  = self.scrollView.frame.size.height / 2
+        
+        var heightForSpace : CGFloat = 0
+        var tempPageSpace  : CGFloat = 0
+        
+        var tempIdx        = 0
+        var idx            = 0
+        
+        for model in items {
+            if(tempIdx != 0 && tempIdx % 8 == 0) {
+                tempIdx = 0
+                tempPageSpace += widthForPage
+                heightForSpace = 0;
+            }
+            if(tempIdx != 0 && tempIdx % 4 == 0) {
+                heightForSpace += 9.5;
+            }
+            
+            let homeIcon  = HomeIconView(frame: CGRect(x:CGFloat(idx % 4) * widthForItem + tempPageSpace,
+                                                       y:CGFloat(tempIdx / 4) * heightForItem + heightForSpace,
+                                                       w:widthForItem,
+                                                       h: heightForItem - 9.5),
+                                         layoutStyle: .EightPerPageForScrollingEnable)
+            homeIcon.setTitle(model.name!, imageName: getImageNameWith(model))
+            homeIcon.tag = idx;
+            homeIcon.addTapGesture(action: { [weak self](tap) in
+                if self?.iconDidSelectedAction != nil {
+                    self?.iconDidSelectedAction!(model)
+                }
+                })
+            scrollView.addSubview(homeIcon)
+            
+            tempIdx += 1
+            idx     += 1
+        }
+        //1.总页数
+        let totalPage = items.count % 8 == 0 ? items.count / 8 : items.count / 8 + 1;
+        //2.contentSize
+        
+        scrollView.contentSize = CGSize(width: widthForPage * CGFloat(totalPage), height: 0)
+        pageControl.numberOfPages = totalPage
     }
     
     private func layoutIconStyleFour(items:Array<IconModel>) {
-        //removeSubviews()
+        scrollView.removeSubviews()
+        
         let widthForItem   :CGFloat = kScreenWidth / 5
         let widthForPage   :CGFloat = scrollView.width
         let heightForItem  :CGFloat = scrollView.height / 2
@@ -157,7 +237,9 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
 
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //
+        let offset = scrollView.contentOffset
+        let currentPage = offset.x / scrollView.frame.size.width
+        self.pageControl.currentPage = Int(currentPage)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

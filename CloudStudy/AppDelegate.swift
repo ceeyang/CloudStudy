@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     public func initHomeVC() {
         UserInfo.shared.parseUserInfoFromHistoryData()
-        tabBarController                     = MainTabBarController()
+        tabBarController = MainTabBarController()
         tabBarController.createChildVC()
         window!.rootViewController = tabBarController
     }

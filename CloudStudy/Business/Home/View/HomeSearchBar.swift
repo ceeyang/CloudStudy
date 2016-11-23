@@ -40,8 +40,6 @@ class HomeSearchBar: UIView {
     //MARK: - UI -
     func setupUI() {
         
-        
-        
         /** 背景图片 */
         kBackgroundImg = UIImageView(image: UIImage(named:"common_actionbar_bg@2x"))
         kBackgroundImg.alpha = 0

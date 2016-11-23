@@ -15,20 +15,25 @@ class RequestManager: NSObject {
     static let shared = RequestManager()
     
     /**
-     *  请求公共数据,对请求失败后的错误代码进行了处理
+     *  请求公共数据,只返回code 为0000 的情况,对请求失败后的错误代码进行了处理
      */
     func requestCommonDataWith(url:String,parameters:NSDictionary? = nil,completion: @escaping (DataResponse<Any>) -> Void){
         let dic  = parameters?.JSONString() as? [String : AnyObject]
         Alamofire.request(url, method: .post, parameters:dic, encoding: URLEncoding.default, headers: nil).responseJSON { [weak self](response) in
+            
             switch response.result {
             case .success(let value):
                 let json         = JSON(value)
-                if json["code"].stringValue != "0000" {
+                if json["code"].stringValue == "0000" {
+                    completion(response)
+                } else {
                     self?.hanedleRequestErrorWith(json: json)
                 }
-            case .failure: break
+                break
+            case .failure(let error):
+                printLog("Request Failed Url:\(url) with errorInfo:\(error)")
+                break
             }
-            completion(response)
         }
     }
     

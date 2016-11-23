@@ -34,9 +34,9 @@ class LoginViewController: UIViewController {
     
     func setupUI() {
         loginView = LoginView()
-        loginView.siteText?.text    = "zeng"
-        loginView.accountText?.text = "zl"
-        loginView.paswordText?.text = "zl123456"
+        loginView.siteText?.text    = "测试部"
+        loginView.accountText?.text = "yxc"
+        loginView.paswordText?.text = "123456"
         view.addSubview(loginView)
         loginView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
@@ -63,10 +63,13 @@ class LoginViewController: UIViewController {
         dic["appSystem"]    = appSystem
         dic["company_name"] = loginView.siteText?.text
         dic["client_type"]  = 0
+        dic["language"]     = NSLocale.current.identifier == "en_US" ? "en_US" : "zh_CN"
    
         RequestManager.shared.requestCommonDataWith(url: LoginURL, parameters: dic) { response in
  
             HUD.hide()
+            
+            printLog(response)
             
             switch response.result {
             case .success(let value):
