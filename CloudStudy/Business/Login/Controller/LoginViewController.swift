@@ -78,6 +78,8 @@ class LoginViewController: UIViewController {
                 UserInfo.shared.parseData(json: json["data"])
                 UserDefaults.standard.set(true, forKey: kUSER_HADEVERLOGIN)
                 UserDefaults.standard.set(userInofData, forKey: kUSER_UserInfoData)
+                UserDefaults.standard.synchronize()
+                
                 AppDelegate.shared.buildKeyWindow()
                 
             case .failure(let error):

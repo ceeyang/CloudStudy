@@ -80,7 +80,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
             print(sender)
         }
         navigationBar.qrCodeBtnAction  = { (sender:UIButton) in
-            print(sender)
+            weakSelf?.pushVC(ScanCodeViewController())
         }
         
         homeRequestManger.reloadBannerClosure = { (bannerArr) in

@@ -31,6 +31,12 @@
 		150AE9D71DB9F195002EAFEA /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */; };
 		150AE9DA1DB9FC64002EAFEA /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9D91DB9FC64002EAFEA /* ModelManager.swift */; };
 		150AE9E61DBF55A1002EAFEA /* HomeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */; };
+		1539C6D41DE5D15400CA2B5C /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6D31DE5D15400CA2B5C /* ScanCodeViewController.swift */; };
+		1539C6DA1DE5E20400CA2B5C /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6D91DE5E20400CA2B5C /* Tool.swift */; };
+		1539C6DD1DE5E21B00CA2B5C /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6DB1DE5E21B00CA2B5C /* String+QRCode.swift */; };
+		1539C6DE1DE5E21B00CA2B5C /* UIImage+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6DC1DE5E21B00CA2B5C /* UIImage+QRCode.swift */; };
+		1539C6E01DE5E31200CA2B5C /* noticeMusic.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1539C6DF1DE5E31200CA2B5C /* noticeMusic.caf */; };
+		153BD0C11DE5E7B8008EDE3B /* QRCodeImg.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 153BD0C01DE5E7B8008EDE3B /* QRCodeImg.xcassets */; };
 		159942541DCD07F600BB3F98 /* GlobalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159942531DCD07F600BB3F98 /* GlobalColor.swift */; };
 		15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */; };
 		15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFC1DB85BAD00C8DD94 /* ViewController.swift */; };
@@ -1070,6 +1076,12 @@
 		150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowRootViewController.swift; sourceTree = "<group>"; };
 		150AE9D91DB9FC64002EAFEA /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchBar.swift; sourceTree = "<group>"; };
+		1539C6D31DE5D15400CA2B5C /* ScanCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
+		1539C6D91DE5E20400CA2B5C /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		1539C6DB1DE5E21B00CA2B5C /* String+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
+		1539C6DC1DE5E21B00CA2B5C /* UIImage+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QRCode.swift"; sourceTree = "<group>"; };
+		1539C6DF1DE5E31200CA2B5C /* noticeMusic.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = noticeMusic.caf; sourceTree = "<group>"; };
+		153BD0C01DE5E7B8008EDE3B /* QRCodeImg.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRCodeImg.xcassets; sourceTree = "<group>"; };
 		159942531DCD07F600BB3F98 /* GlobalColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalColor.swift; sourceTree = "<group>"; };
 		15C39CF71DB85BAD00C8DD94 /* CloudStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -2136,6 +2148,7 @@
 		150AE9AF1DB9F195002EAFEA /* SwiftLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				1539C6D81DE5E20400CA2B5C /* QRCode */,
 				15D906D91DC6E9F80065BD6E /* ImagePlayer */,
 				150AE9D81DB9FC64002EAFEA /* SwiftModel */,
 				150AE9B11DB9F195002EAFEA /* PKHUD */,
@@ -2175,6 +2188,18 @@
 				150AE9D91DB9FC64002EAFEA /* ModelManager.swift */,
 			);
 			path = SwiftModel;
+			sourceTree = "<group>";
+		};
+		1539C6D81DE5E20400CA2B5C /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				153BD0C01DE5E7B8008EDE3B /* QRCodeImg.xcassets */,
+				1539C6DF1DE5E31200CA2B5C /* noticeMusic.caf */,
+				1539C6DB1DE5E21B00CA2B5C /* String+QRCode.swift */,
+				1539C6DC1DE5E21B00CA2B5C /* UIImage+QRCode.swift */,
+				1539C6D91DE5E20400CA2B5C /* Tool.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 		15C39CEE1DB85BAD00C8DD94 = {
@@ -2247,6 +2272,7 @@
 				15C39D141DB8606A00C8DD94 /* HomeViewController.swift */,
 				15C39D491DB8948900C8DD94 /* MainNavigationController.swift */,
 				225015341DD73DA500928050 /* SearchViewController.swift */,
+				1539C6D31DE5D15400CA2B5C /* ScanCodeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3848,6 +3874,7 @@
 				15C3A2671DB8971A00C8DD94 /* icon_tab_abandon_pre@2x.png in Resources */,
 				15C3A3361DB8971A00C8DD94 /* new_bg_tip@2x.png in Resources */,
 				15C3A3FF1DB8971A00C8DD94 /* new_nav_search_bg@3x.png in Resources */,
+				153BD0C11DE5E7B8008EDE3B /* QRCodeImg.xcassets in Resources */,
 				15C3A2101DB8971900C8DD94 /* home_icon_main_ask_pre@2x.png in Resources */,
 				15C3A1A71DB8971900C8DD94 /* course_btn_comment_2_pre@3x.png in Resources */,
 				15C3A4611DB8971A00C8DD94 /* password_error@2x.png in Resources */,
@@ -4207,6 +4234,7 @@
 				15C3A4641DB8971A00C8DD94 /* password_point@2x.png in Resources */,
 				15C3A2CC1DB8971A00C8DD94 /* icon_tab_route@3x.png in Resources */,
 				15C3A32E1DB8971A00C8DD94 /* new_ask_tip_refuse@2x.png in Resources */,
+				1539C6E01DE5E31200CA2B5C /* noticeMusic.caf in Resources */,
 				15C3A3111DB8971A00C8DD94 /* login_icon_small_phone@3x.png in Resources */,
 				15C3A4B31DB8971A00C8DD94 /* train_icon_small_phone@3x.png in Resources */,
 				15C3A3991DB8971A00C8DD94 /* new_icon_more_report@3x.png in Resources */,
@@ -4855,6 +4883,7 @@
 				150AE9E61DBF55A1002EAFEA /* HomeSearchBar.swift in Sources */,
 				15C3A4CE1DB89C3300C8DD94 /* LoginViewController.swift in Sources */,
 				150AE9CD1DB9F195002EAFEA /* PKHUDAssets.swift in Sources */,
+				1539C6DE1DE5E21B00CA2B5C /* UIImage+QRCode.swift in Sources */,
 				15C96E941DCCF94B0076C37A /* ResearchMainViewController.swift in Sources */,
 				150AE93F1DB9AC11002EAFEA /* RULFile.swift in Sources */,
 				150AE9CB1DB9F195002EAFEA /* PKHUDAnimating.swift in Sources */,
@@ -4880,6 +4909,7 @@
 				150AE9D61DB9F195002EAFEA /* Window.swift in Sources */,
 				15C96E921DCCF9310076C37A /* LiveMainViewController.swift in Sources */,
 				15C39D031DB85BAD00C8DD94 /* CloudStudy.xcdatamodeld in Sources */,
+				1539C6DA1DE5E20400CA2B5C /* Tool.swift in Sources */,
 				15C39D171DB8613B00C8DD94 /* MainTabBarController.swift in Sources */,
 				150AE9D31DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift in Sources */,
 				15F72B241DC8415500A8FC6F /* HomeDataRequestObject.swift in Sources */,
@@ -4888,6 +4918,7 @@
 				15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */,
 				15C39D411DB8629000C8DD94 /* CourseViewController.swift in Sources */,
 				15C96E6B1DCC36AA0076C37A /* GlobalFont.swift in Sources */,
+				1539C6DD1DE5E21B00CA2B5C /* String+QRCode.swift in Sources */,
 				150AE9AD1DB9F01C002EAFEA /* DESUtils.m in Sources */,
 				15C39D151DB8606A00C8DD94 /* HomeViewController.swift in Sources */,
 				15C3A4D71DB8C59C00C8DD94 /* UIView+Frame.swift in Sources */,
@@ -4901,6 +4932,7 @@
 				15F72B301DC86BB800A8FC6F /* HomeTopContainer.swift in Sources */,
 				150AE9CE1DB9F195002EAFEA /* PKHUDErrorView.swift in Sources */,
 				150AE9CC1DB9F195002EAFEA /* PKHUDAnimation.swift in Sources */,
+				1539C6D41DE5D15400CA2B5C /* ScanCodeViewController.swift in Sources */,
 				150AE9C71DB9F195002EAFEA /* HUD.swift in Sources */,
 				15F72B361DC893F400A8FC6F /* RegionModel.swift in Sources */,
 				150AE9DA1DB9FC64002EAFEA /* ModelManager.swift in Sources */,

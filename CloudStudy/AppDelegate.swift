@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if #available(iOS 9.0, *) {
             let icon  = UIApplicationShortcutIcon(type: .share)
-            let item0 = UIApplicationShortcutItem(type: kFirstButton, localizedTitle: "First View", localizedSubtitle: nil, icon: icon, userInfo: nil)
+            let item0 = UIApplicationShortcutItem(type: kFirstButton, localizedTitle: "Scan Code", localizedSubtitle: nil, icon: icon, userInfo: nil)
             let item1 = UIApplicationShortcutItem(type: kSecondButton, localizedTitle: "Second View", localizedSubtitle: "There is no vc to push!", icon: icon, userInfo: nil)
             UIApplication.shared.shortcutItems = [item0,item1];
         }
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         if shortcutItem.type == kFirstButton {
-            /** Do something */
+            tabBarController.selectedViewController?.navigationController?.pushViewController(ScanCodeViewController(), animated: true)
         } else if shortcutItem.type == kSecondButton {
             /** Do something */
         }

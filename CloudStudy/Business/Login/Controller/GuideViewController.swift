@@ -74,6 +74,7 @@ class GuideViewController: UIViewController {
     func enterBtnAction() {
         self.removeFromParentViewController()
         UserDefaults.standard.set(true, forKey: kIsNotFirstLaunch)
+        UserDefaults.standard.synchronize()
         AppDelegate.shared.buildKeyWindow()
     }
     
