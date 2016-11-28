@@ -76,7 +76,7 @@ class HomeSearchBar: UIView {
         kInputView.setImage(UIImage(named:"new_head_search_right"), for: .normal)
         kInputView.setTitle("搜一搜", for: .normal)
         kInputView.layer.masksToBounds = true
-        kInputView.layer.cornerRadius  = 15
+        kInputView.layer.cornerRadius  = 5
         addSubview(kInputView)
         kInputView.snp.makeConstraints { (make) in
             make.top.equalTo(kBackgroundImg.snp.top).offset(25)

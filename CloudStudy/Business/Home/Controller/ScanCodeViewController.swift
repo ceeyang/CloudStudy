@@ -84,7 +84,8 @@ class ScanCodeViewController: UIViewController {
         scanPane.alpha = 0.5;
         view.addSubview(scanPane)
         scanPane.snp.makeConstraints { (make) in
-            make.centerY.centerX.equalTo(view)
+            make.centerX.equalTo(view)
+            make.centerY.equalTo(view.snp.centerY).offset(-20)
             make.height.equalTo(200)
             make.width.equalTo(kScreenWidth - 60)
         }

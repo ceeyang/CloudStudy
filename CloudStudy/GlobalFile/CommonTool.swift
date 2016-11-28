@@ -26,7 +26,9 @@ func delay(_ delay:Double, closure:@escaping ()->()) {
 }
 
 func printLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
-    print("\(file)[\(line)], \(method): \(message)")
+    let range = file.range(of: "CloudStudy")
+    let path  = file.substring(from: (range?.lowerBound)!)
+    print("\(path)[\(line)], \(method): \(message)")
 }
 
 func getDeviceVersion () -> String? {

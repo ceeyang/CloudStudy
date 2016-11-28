@@ -24,12 +24,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HMSegmentedControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MobilePlayer-MobilePlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MobilePlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,12 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>212E063D232DA96FF758820E10AB0D10</key>
+		<key>29DD99664D189A7CA206368F493B1E0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>29DD99664D189A7CA206368F493B1E0B</key>
+		<key>45080757C7258300A38982F7BEFFD28E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +102,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>71C1DF39EE1271EA1147F993CA1439A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE8D2404232D0476B0381B4DD40C2CE7</key>
+		<key>79E06489A2AB29243B3310B6BADFE034</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C4E70BB64168FAB91408AF7402CE1BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE652C5D343B9C57A9801792CECBA121</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7FD03F2F9887A477DDAD68157027298</key>
+		<key>C8AADD8EEDE3C6E201422ABDE0DB932F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA655AD4A7175B35552B5FDAF8EFFF52</key>
+		<key>DA8B9BEA8FD3D0B223F0F2C37E6BAA98</key>
 		<dict>
 			<key>primary</key>
 			<true/>

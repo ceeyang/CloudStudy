@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+/** 默认请求参数 */
+let kPageSize = 10
+
 class RequestManager: NSObject {
 
     static let shared = RequestManager()

@@ -15,4 +15,6 @@ pod 'SwiftyBase64'
 pod 'AlamofireObjectMapper', '~> 4.0'
 pod 'EZSwiftExtensions'
 pod 'MJRefresh'
+pod 'HMSegmentedControl'
+pod 'MobilePlayer'
 end

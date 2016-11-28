@@ -44,3 +44,7 @@ let MyCountDataURL = BaseURLStr + "user/personalInfo"
 let MessageDataURL   = BaseURLStr + "user/messageList"
 let MessageDetailURL = BaseURLStr + "user/messageDetail"
         
+
+//MARK: - Doc -
+let DocHotestListURL = BaseURLStr + "doc/hotestList"
+let DocNewestListURL = BaseURLStr + "doc/newestList"

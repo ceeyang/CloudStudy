@@ -37,6 +37,7 @@
 		1539C6DE1DE5E21B00CA2B5C /* UIImage+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6DC1DE5E21B00CA2B5C /* UIImage+QRCode.swift */; };
 		1539C6E01DE5E31200CA2B5C /* noticeMusic.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1539C6DF1DE5E31200CA2B5C /* noticeMusic.caf */; };
 		153BD0C11DE5E7B8008EDE3B /* QRCodeImg.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 153BD0C01DE5E7B8008EDE3B /* QRCodeImg.xcassets */; };
+		153BD0D81DE731CB008EDE3B /* BaseSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153BD0D71DE731CB008EDE3B /* BaseSegmentControl.swift */; };
 		159942541DCD07F600BB3F98 /* GlobalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159942531DCD07F600BB3F98 /* GlobalColor.swift */; };
 		15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */; };
 		15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFC1DB85BAD00C8DD94 /* ViewController.swift */; };
@@ -1043,6 +1044,12 @@
 		15F72B301DC86BB800A8FC6F /* HomeTopContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B2F1DC86BB800A8FC6F /* HomeTopContainer.swift */; };
 		15F72B321DC87FC300A8FC6F /* HomeDataModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B311DC87FC300A8FC6F /* HomeDataModelObject.swift */; };
 		15F72B361DC893F400A8FC6F /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F72B351DC893F400A8FC6F /* RegionModel.swift */; };
+		15FAF39E1DEB312E00891C27 /* DocNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF39D1DEB312E00891C27 /* DocNewViewController.swift */; };
+		15FAF3A01DEB314C00891C27 /* DOCHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF39F1DEB314C00891C27 /* DOCHotViewController.swift */; };
+		15FAF3A21DEB318200891C27 /* DocDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF3A11DEB318200891C27 /* DocDirectoryViewController.swift */; };
+		15FAF3A41DEB36E800891C27 /* BaseTableViewDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF3A31DEB36E800891C27 /* BaseTableViewDataObject.swift */; };
+		15FAF3A61DEB3C5400891C27 /* DocListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF3A51DEB3C5400891C27 /* DocListTableViewCell.swift */; };
+		15FAF3A81DEB3C6400891C27 /* DocFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF3A71DEB3C6400891C27 /* DocFileModel.swift */; };
 		225015351DD73DA500928050 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225015341DD73DA500928050 /* SearchViewController.swift */; };
 		F481345F13AAC9B24B7B651F /* Pods_CloudStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A659D1150A1F2B241D36597D /* Pods_CloudStudy.framework */; };
 /* End PBXBuildFile section */
@@ -1082,6 +1089,7 @@
 		1539C6DC1DE5E21B00CA2B5C /* UIImage+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QRCode.swift"; sourceTree = "<group>"; };
 		1539C6DF1DE5E31200CA2B5C /* noticeMusic.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = noticeMusic.caf; sourceTree = "<group>"; };
 		153BD0C01DE5E7B8008EDE3B /* QRCodeImg.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRCodeImg.xcassets; sourceTree = "<group>"; };
+		153BD0D71DE731CB008EDE3B /* BaseSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSegmentControl.swift; sourceTree = "<group>"; };
 		159942531DCD07F600BB3F98 /* GlobalColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalColor.swift; sourceTree = "<group>"; };
 		15C39CF71DB85BAD00C8DD94 /* CloudStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -2090,6 +2098,12 @@
 		15F72B2F1DC86BB800A8FC6F /* HomeTopContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTopContainer.swift; sourceTree = "<group>"; };
 		15F72B311DC87FC300A8FC6F /* HomeDataModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataModelObject.swift; sourceTree = "<group>"; };
 		15F72B351DC893F400A8FC6F /* RegionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
+		15FAF39D1DEB312E00891C27 /* DocNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocNewViewController.swift; sourceTree = "<group>"; };
+		15FAF39F1DEB314C00891C27 /* DOCHotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOCHotViewController.swift; sourceTree = "<group>"; };
+		15FAF3A11DEB318200891C27 /* DocDirectoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocDirectoryViewController.swift; sourceTree = "<group>"; };
+		15FAF3A31DEB36E800891C27 /* BaseTableViewDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewDataObject.swift; sourceTree = "<group>"; };
+		15FAF3A51DEB3C5400891C27 /* DocListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocListTableViewCell.swift; sourceTree = "<group>"; };
+		15FAF3A71DEB3C6400891C27 /* DocFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocFileModel.swift; sourceTree = "<group>"; };
 		225015341DD73DA500928050 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4D173FB5E8DBBBCDAE9DA8AC /* Pods-CloudStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudStudy/Pods-CloudStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8C7E698D9592A855CA7CA0 /* Pods-CloudStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudStudy/Pods-CloudStudy.release.xcconfig"; sourceTree = "<group>"; };
@@ -2148,6 +2162,7 @@
 		150AE9AF1DB9F195002EAFEA /* SwiftLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				153BD0D61DE731BB008EDE3B /* BaseSegmentControl */,
 				1539C6D81DE5E20400CA2B5C /* QRCode */,
 				15D906D91DC6E9F80065BD6E /* ImagePlayer */,
 				150AE9D81DB9FC64002EAFEA /* SwiftModel */,
@@ -2200,6 +2215,14 @@
 				1539C6D91DE5E20400CA2B5C /* Tool.swift */,
 			);
 			path = QRCode;
+			sourceTree = "<group>";
+		};
+		153BD0D61DE731BB008EDE3B /* BaseSegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				153BD0D71DE731CB008EDE3B /* BaseSegmentControl.swift */,
+			);
+			path = BaseSegmentControl;
 			sourceTree = "<group>";
 		};
 		15C39CEE1DB85BAD00C8DD94 = {
@@ -3535,6 +3558,9 @@
 			isa = PBXGroup;
 			children = (
 				15C96E8D1DCCF9040076C37A /* DocMainViewController.swift */,
+				15FAF39D1DEB312E00891C27 /* DocNewViewController.swift */,
+				15FAF39F1DEB314C00891C27 /* DOCHotViewController.swift */,
+				15FAF3A11DEB318200891C27 /* DocDirectoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3542,6 +3568,8 @@
 		15C96E7C1DCCF8B50076C37A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				15FAF3A31DEB36E800891C27 /* BaseTableViewDataObject.swift */,
+				15FAF3A71DEB3C6400891C27 /* DocFileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3549,6 +3577,7 @@
 		15C96E7D1DCCF8B50076C37A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				15FAF3A51DEB3C5400891C27 /* DocListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4886,15 +4915,18 @@
 				1539C6DE1DE5E21B00CA2B5C /* UIImage+QRCode.swift in Sources */,
 				15C96E941DCCF94B0076C37A /* ResearchMainViewController.swift in Sources */,
 				150AE93F1DB9AC11002EAFEA /* RULFile.swift in Sources */,
+				15FAF3A21DEB318200891C27 /* DocDirectoryViewController.swift in Sources */,
 				150AE9CB1DB9F195002EAFEA /* PKHUDAnimating.swift in Sources */,
 				150AE9CF1DB9F195002EAFEA /* PKHUDProgressView.swift in Sources */,
 				15C39D481DB8668F00C8DD94 /* CommonTool.swift in Sources */,
 				150AE9AE1DB9F01C002EAFEA /* NSData+Base64.m in Sources */,
+				15FAF3A01DEB314C00891C27 /* DOCHotViewController.swift in Sources */,
 				15C96EA61DCCFBA50076C37A /* TrainMainViewController.swift in Sources */,
 				15C96E6D1DCC50CD0076C37A /* GlobalClourse.swift in Sources */,
 				15C3A4D21DB89CEE00C8DD94 /* LoginView.swift in Sources */,
 				15F72B321DC87FC300A8FC6F /* HomeDataModelObject.swift in Sources */,
 				15C96E961DCCF9630076C37A /* StoreMainViewController.swift in Sources */,
+				15FAF39E1DEB312E00891C27 /* DocNewViewController.swift in Sources */,
 				150AE9D41DB9F195002EAFEA /* PKHUDTextView.swift in Sources */,
 				15C96EA01DCCFA080076C37A /* NewsMainViewController.swift in Sources */,
 				15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */,
@@ -4921,6 +4953,8 @@
 				1539C6DD1DE5E21B00CA2B5C /* String+QRCode.swift in Sources */,
 				150AE9AD1DB9F01C002EAFEA /* DESUtils.m in Sources */,
 				15C39D151DB8606A00C8DD94 /* HomeViewController.swift in Sources */,
+				153BD0D81DE731CB008EDE3B /* BaseSegmentControl.swift in Sources */,
+				15FAF3A61DEB3C5400891C27 /* DocListTableViewCell.swift in Sources */,
 				15C3A4D71DB8C59C00C8DD94 /* UIView+Frame.swift in Sources */,
 				15C3A4D01DB89CD600C8DD94 /* GuideViewController.swift in Sources */,
 				15D906DB1DC6E9F80065BD6E /* ImagePlayer.swift in Sources */,
@@ -4934,7 +4968,9 @@
 				150AE9CC1DB9F195002EAFEA /* PKHUDAnimation.swift in Sources */,
 				1539C6D41DE5D15400CA2B5C /* ScanCodeViewController.swift in Sources */,
 				150AE9C71DB9F195002EAFEA /* HUD.swift in Sources */,
+				15FAF3A41DEB36E800891C27 /* BaseTableViewDataObject.swift in Sources */,
 				15F72B361DC893F400A8FC6F /* RegionModel.swift in Sources */,
+				15FAF3A81DEB3C6400891C27 /* DocFileModel.swift in Sources */,
 				150AE9DA1DB9FC64002EAFEA /* ModelManager.swift in Sources */,
 				225015351DD73DA500928050 /* SearchViewController.swift in Sources */,
 				15C3A4DB1DB8C9D000C8DD94 /* RequestManager.swift in Sources */,
