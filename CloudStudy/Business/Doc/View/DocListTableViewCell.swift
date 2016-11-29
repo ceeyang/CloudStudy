@@ -92,7 +92,8 @@ class DocListTableViewCell: UITableViewCell {
     
     func configCellWith(_ model:DocFileModel) {
         let url = URL(string: model.cover!)
-        mCoverImgView?.kf.setImage(with: url,placeholder: UIImage(named: "default_doc"),options: nil,progressBlock: nil,completionHandler: nil)
+        let defaultImgName = getDefaultImageNameWith(model.type!)
+        mCoverImgView?.kf.setImage(with: url,placeholder: UIImage(named: defaultImgName),options: nil,progressBlock: nil,completionHandler: nil)
         mTitleLabel?.text  = model.name
         mDetailLabel?.text = (model.Description?.isBlank)! ? "暂无详细描述" : model.Description
         let countStr       = "浏览:" + model.browse_count!

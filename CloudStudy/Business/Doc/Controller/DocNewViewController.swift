@@ -117,6 +117,10 @@ class DocNewViewController: UIViewController {
         tableView.reloadData()
     }
     
+    deinit {
+        print("\(self) deinit success")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

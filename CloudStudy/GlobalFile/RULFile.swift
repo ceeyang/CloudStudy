@@ -30,11 +30,6 @@ let CourseCategoryURL = BaseURLStr + "course/category"
 //MARK: - Login && Register -
 let LoginURL       = BaseURLStr + "user/login"
 
-//MARK: - DOC -
-let DocNewDataURL  = BaseURLStr + "doc/newestList"
-let DocHotDataURL  = BaseURLStr + "doc/hotestList"
-let DocCategoryURL = BaseURLStr + "doc/category"
-
 
 //MARK: - My View -
 let MyCountDataURL = BaseURLStr + "user/personalInfo"
@@ -48,3 +43,4 @@ let MessageDetailURL = BaseURLStr + "user/messageDetail"
 //MARK: - Doc -
 let DocHotestListURL = BaseURLStr + "doc/hotestList"
 let DocNewestListURL = BaseURLStr + "doc/newestList"
+let DocCategoryURL   = BaseURLStr + "doc/category"

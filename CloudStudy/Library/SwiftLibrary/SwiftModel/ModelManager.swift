@@ -198,7 +198,7 @@ extension NSObject{
         if dic.first == nil {
             return nil
         }
-        var t = (self.classForCoder() as! NSObject.Type).init()
+        let t = (self.classForCoder() as! NSObject.Type).init()
         let properties = t.zz_modelPropertyClass()
         for (k,v) in dic{
             print("K:\(k),V:\(v)")

@@ -1050,6 +1050,8 @@
 		15FAF3A41DEB36E800891C27 /* BaseTableViewDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF3A31DEB36E800891C27 /* BaseTableViewDataObject.swift */; };
 		15FAF3A61DEB3C5400891C27 /* DocListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF3A51DEB3C5400891C27 /* DocListTableViewCell.swift */; };
 		15FAF3A81DEB3C6400891C27 /* DocFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF3A71DEB3C6400891C27 /* DocFileModel.swift */; };
+		15FAF3AB1DED1D5A00891C27 /* DirectoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF3AA1DED1D5A00891C27 /* DirectoryModel.swift */; };
+		15FAF3AD1DED801900891C27 /* DirectoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF3AC1DED801900891C27 /* DirectoryTableView.swift */; };
 		225015351DD73DA500928050 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225015341DD73DA500928050 /* SearchViewController.swift */; };
 		F481345F13AAC9B24B7B651F /* Pods_CloudStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A659D1150A1F2B241D36597D /* Pods_CloudStudy.framework */; };
 /* End PBXBuildFile section */
@@ -2104,6 +2106,8 @@
 		15FAF3A31DEB36E800891C27 /* BaseTableViewDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewDataObject.swift; sourceTree = "<group>"; };
 		15FAF3A51DEB3C5400891C27 /* DocListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocListTableViewCell.swift; sourceTree = "<group>"; };
 		15FAF3A71DEB3C6400891C27 /* DocFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocFileModel.swift; sourceTree = "<group>"; };
+		15FAF3AA1DED1D5A00891C27 /* DirectoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryModel.swift; sourceTree = "<group>"; };
+		15FAF3AC1DED801900891C27 /* DirectoryTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableView.swift; sourceTree = "<group>"; };
 		225015341DD73DA500928050 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4D173FB5E8DBBBCDAE9DA8AC /* Pods-CloudStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudStudy/Pods-CloudStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8C7E698D9592A855CA7CA0 /* Pods-CloudStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudStudy/Pods-CloudStudy.release.xcconfig"; sourceTree = "<group>"; };
@@ -3570,6 +3574,7 @@
 			children = (
 				15FAF3A31DEB36E800891C27 /* BaseTableViewDataObject.swift */,
 				15FAF3A71DEB3C6400891C27 /* DocFileModel.swift */,
+				15FAF3AA1DED1D5A00891C27 /* DirectoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3578,6 +3583,7 @@
 			isa = PBXGroup;
 			children = (
 				15FAF3A51DEB3C5400891C27 /* DocListTableViewCell.swift */,
+				15FAF3AC1DED801900891C27 /* DirectoryTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4934,6 +4940,7 @@
 				15C39D4A1DB8948900C8DD94 /* MainNavigationController.swift in Sources */,
 				15C96E901DCCF91E0076C37A /* ExamMainViewController.swift in Sources */,
 				150AE9D21DB9F195002EAFEA /* PKHUDSuccessView.swift in Sources */,
+				15FAF3AB1DED1D5A00891C27 /* DirectoryModel.swift in Sources */,
 				15CB85F81DC9EE9800CBA466 /* UIDeviceExtension.swift in Sources */,
 				150AE94D1DB9E982002EAFEA /* ConstString.swift in Sources */,
 				150AE9D51DB9F195002EAFEA /* PKHUDWideBaseView.swift in Sources */,
@@ -4966,6 +4973,7 @@
 				15F72B301DC86BB800A8FC6F /* HomeTopContainer.swift in Sources */,
 				150AE9CE1DB9F195002EAFEA /* PKHUDErrorView.swift in Sources */,
 				150AE9CC1DB9F195002EAFEA /* PKHUDAnimation.swift in Sources */,
+				15FAF3AD1DED801900891C27 /* DirectoryTableView.swift in Sources */,
 				1539C6D41DE5D15400CA2B5C /* ScanCodeViewController.swift in Sources */,
 				150AE9C71DB9F195002EAFEA /* HUD.swift in Sources */,
 				15FAF3A41DEB36E800891C27 /* BaseTableViewDataObject.swift in Sources */,

@@ -63,3 +63,34 @@ func getDeviceVersion () -> String? {
         return nil
     }
 }
+
+func getDefaultImageNameWith(_ fileType:String) -> String{
+    
+    if (fileType.isBlank) {
+        return "default_knowledge"
+    }else if (fileType.contains("pdf")) {
+        return "default_pdf"
+    }else if(fileType.contains("txt")) {
+        return "default_txt"
+    }else if(fileType.contains("ppt")) {
+        return "default_ppt";
+    }else if (fileType.contains("pptx")){
+        return "default_pptx";
+    }else if(fileType.contains("doc")) {
+        return "default_doc";
+    }else if (fileType.contains("docx")){
+        return "default_docx";
+    }else if(fileType.contains("xls")) {
+        return "default_xls";
+    }else if (fileType.contains("xlsx")){
+        return "default_xlsx";
+    }else if(fileType.contains("mp3")) {
+        return "default_mp3";
+    }else if(fileType.contains("mp4")) {
+        return "default_mp4";
+    }else if(fileType.contains("epub")) {
+        return "default_epub";
+    }else {
+        return "default_knowledge";
+    }
+}
