@@ -29,7 +29,6 @@
 		150AE9D51DB9F195002EAFEA /* PKHUDWideBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C21DB9F195002EAFEA /* PKHUDWideBaseView.swift */; };
 		150AE9D61DB9F195002EAFEA /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C31DB9F195002EAFEA /* Window.swift */; };
 		150AE9D71DB9F195002EAFEA /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */; };
-		150AE9DA1DB9FC64002EAFEA /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9D91DB9FC64002EAFEA /* ModelManager.swift */; };
 		150AE9E61DBF55A1002EAFEA /* HomeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */; };
 		1539C6D41DE5D15400CA2B5C /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6D31DE5D15400CA2B5C /* ScanCodeViewController.swift */; };
 		1539C6DA1DE5E20400CA2B5C /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6D91DE5E20400CA2B5C /* Tool.swift */; };
@@ -39,6 +38,8 @@
 		153BD0C11DE5E7B8008EDE3B /* QRCodeImg.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 153BD0C01DE5E7B8008EDE3B /* QRCodeImg.xcassets */; };
 		153BD0D81DE731CB008EDE3B /* BaseSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153BD0D71DE731CB008EDE3B /* BaseSegmentControl.swift */; };
 		156B8AD81DEFAF9400BBB3E9 /* DocDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B8AD71DEFAF9400BBB3E9 /* DocDetailViewController.swift */; };
+		156B8ADF1DEFBC3200BBB3E9 /* DocDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B8ADE1DEFBC3200BBB3E9 /* DocDetailModel.swift */; };
+		156B8AE11DEFC8E800BBB3E9 /* DocDetailMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B8AE01DEFC8E800BBB3E9 /* DocDetailMainView.swift */; };
 		159942541DCD07F600BB3F98 /* GlobalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159942531DCD07F600BB3F98 /* GlobalColor.swift */; };
 		15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */; };
 		15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFC1DB85BAD00C8DD94 /* ViewController.swift */; };
@@ -1084,7 +1085,6 @@
 		150AE9C21DB9F195002EAFEA /* PKHUDWideBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDWideBaseView.swift; sourceTree = "<group>"; };
 		150AE9C31DB9F195002EAFEA /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowRootViewController.swift; sourceTree = "<group>"; };
-		150AE9D91DB9FC64002EAFEA /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchBar.swift; sourceTree = "<group>"; };
 		1539C6D31DE5D15400CA2B5C /* ScanCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		1539C6D91DE5E20400CA2B5C /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
@@ -1094,6 +1094,8 @@
 		153BD0C01DE5E7B8008EDE3B /* QRCodeImg.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRCodeImg.xcassets; sourceTree = "<group>"; };
 		153BD0D71DE731CB008EDE3B /* BaseSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSegmentControl.swift; sourceTree = "<group>"; };
 		156B8AD71DEFAF9400BBB3E9 /* DocDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocDetailViewController.swift; sourceTree = "<group>"; };
+		156B8ADE1DEFBC3200BBB3E9 /* DocDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocDetailModel.swift; sourceTree = "<group>"; };
+		156B8AE01DEFC8E800BBB3E9 /* DocDetailMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocDetailMainView.swift; sourceTree = "<group>"; };
 		159942531DCD07F600BB3F98 /* GlobalColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalColor.swift; sourceTree = "<group>"; };
 		15C39CF71DB85BAD00C8DD94 /* CloudStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -2171,7 +2173,6 @@
 				153BD0D61DE731BB008EDE3B /* BaseSegmentControl */,
 				1539C6D81DE5E20400CA2B5C /* QRCode */,
 				15D906D91DC6E9F80065BD6E /* ImagePlayer */,
-				150AE9D81DB9FC64002EAFEA /* SwiftModel */,
 				150AE9B11DB9F195002EAFEA /* PKHUD */,
 			);
 			path = SwiftLibrary;
@@ -2201,14 +2202,6 @@
 				150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */,
 			);
 			path = PKHUD;
-			sourceTree = "<group>";
-		};
-		150AE9D81DB9FC64002EAFEA /* SwiftModel */ = {
-			isa = PBXGroup;
-			children = (
-				150AE9D91DB9FC64002EAFEA /* ModelManager.swift */,
-			);
-			path = SwiftModel;
 			sourceTree = "<group>";
 		};
 		1539C6D81DE5E20400CA2B5C /* QRCode */ = {
@@ -3578,6 +3571,7 @@
 				15FAF3A31DEB36E800891C27 /* BaseTableViewDataObject.swift */,
 				15FAF3A71DEB3C6400891C27 /* DocFileModel.swift */,
 				15FAF3AA1DED1D5A00891C27 /* DirectoryModel.swift */,
+				156B8ADE1DEFBC3200BBB3E9 /* DocDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3587,6 +3581,7 @@
 			children = (
 				15FAF3A51DEB3C5400891C27 /* DocListTableViewCell.swift */,
 				15FAF3AC1DED801900891C27 /* DirectoryTableView.swift */,
+				156B8AE01DEFC8E800BBB3E9 /* DocDetailMainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4947,6 +4942,7 @@
 				15FAF3AB1DED1D5A00891C27 /* DirectoryModel.swift in Sources */,
 				15CB85F81DC9EE9800CBA466 /* UIDeviceExtension.swift in Sources */,
 				150AE94D1DB9E982002EAFEA /* ConstString.swift in Sources */,
+				156B8ADF1DEFBC3200BBB3E9 /* DocDetailModel.swift in Sources */,
 				150AE9D51DB9F195002EAFEA /* PKHUDWideBaseView.swift in Sources */,
 				150AE9D71DB9F195002EAFEA /* WindowRootViewController.swift in Sources */,
 				150AE9D61DB9F195002EAFEA /* Window.swift in Sources */,
@@ -4983,11 +4979,11 @@
 				15FAF3A41DEB36E800891C27 /* BaseTableViewDataObject.swift in Sources */,
 				15F72B361DC893F400A8FC6F /* RegionModel.swift in Sources */,
 				15FAF3A81DEB3C6400891C27 /* DocFileModel.swift in Sources */,
-				150AE9DA1DB9FC64002EAFEA /* ModelManager.swift in Sources */,
 				225015351DD73DA500928050 /* SearchViewController.swift in Sources */,
 				15C3A4DB1DB8C9D000C8DD94 /* RequestManager.swift in Sources */,
 				15C39D3F1DB8628600C8DD94 /* AskViewController.swift in Sources */,
 				15C96EAC1DCCFBE80076C37A /* PathMainViewController.swift in Sources */,
+				156B8AE11DEFC8E800BBB3E9 /* DocDetailMainView.swift in Sources */,
 				159942541DCD07F600BB3F98 /* GlobalColor.swift in Sources */,
 				15C3A4D91DB8C5E600C8DD94 /* ExtensionFile.swift in Sources */,
 			);

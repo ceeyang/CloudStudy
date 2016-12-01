@@ -9,12 +9,12 @@
 import UIKit
 
 class DocFileModel: NSObject {
-    var id : String?
-    var name : String?
-    var cover : String?
-    var Description : String?
+    var id                  : String?
+    var name                : String?
+    var type                : String?
+    var cover               : String?
+    var rownum_             : String?
+    var Description         : String?
+    var browse_count        : String?
     var composite_avg_score : String?
-    var browse_count : String?
-    var type : String?
-    var rownum_ : String?
 }

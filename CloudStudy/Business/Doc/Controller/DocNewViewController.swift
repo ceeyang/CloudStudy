@@ -135,7 +135,7 @@ class DocNewViewController: UIViewController {
 
 }
 
-
+//MARK: - UITableViewDelegate & DataSource -
 extension DocNewViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return docArray.count
@@ -149,6 +149,39 @@ extension DocNewViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        printLog(indexPath)
+        let docModel  = docArray[indexPath.row] as DocFileModel
+        requestDocDetail(with: docModel)
+    }
+}
+
+
+//MARK: - Translate to DetailVC -
+extension DocNewViewController {
+    func requestDocDetail(with docFileModel:DocFileModel) {
+        HUD.show(.label("Loading..."))
+        
+        let parameters : NSMutableDictionary = [:]
+        parameters["sid"]             = UserInfo.shared.sid
+        parameters["id"]              = docFileModel.id
+        
+        RequestManager.shared.requestCommonDataWith(url: DocDetailUrl, parameters: parameters) { [weak self](response) in
+            
+            HUD.hide()
+            
+            self?.header.endRefreshing()
+            self?.footer.endRefreshing()
+            switch response.result {
+            case .success(let value):
+                let json          = JSON(value)
+                let detailModel   = DocDetailModel()
+                detailModel.parseData(json: json["data"], arrayValues: ["list"], descriptionName: "Description")
+                let detailVC      = DocDetailViewController()
+                detailVC.detailModel = detailModel
+                self?.navigationController?.pushViewController(detailVC, animated: true)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
