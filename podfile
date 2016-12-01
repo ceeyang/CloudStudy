@@ -17,4 +17,5 @@ pod 'EZSwiftExtensions'
 pod 'MJRefresh'
 pod 'HMSegmentedControl'
 pod 'MobilePlayer'
+pod 'FolioReaderKit'
 end
