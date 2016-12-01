@@ -10,10 +10,15 @@ import UIKit
 
 let DirectoryCellReusableIdentifier = "DirectoryCellReusableIdentifier"
 
+typealias DirectoryTableViewCellDidSelectedClosure = (_ directoryModel:DirectoryModel) -> Void
+
 class DirectoryTableView: UIView {
 
-    var mTableView        : UITableView?
-    var directoryModelArr : Array<DirectoryModel> = []
+    /** 目录点击事件 */
+    public var directoryDidSelectedClourse : DirectoryTableViewCellDidSelectedClosure?
+    
+    fileprivate var mTableView        : UITableView?
+    fileprivate var directoryModelArr : Array<DirectoryModel> = []
     
     convenience init() {
         self.init(frame:CGRect.zero)
@@ -30,6 +35,11 @@ class DirectoryTableView: UIView {
     public func createTableViewWith(_ directoryModelArr:Array<DirectoryModel>) {
         self.directoryModelArr = directoryModelArr
         setupUI()
+    }
+    
+    public func updateTableView(with directoryModelArr:Array<DirectoryModel>) {
+        self.directoryModelArr = directoryModelArr
+        mTableView?.reloadData()
     }
     
     fileprivate func setupUI() {
@@ -58,11 +68,18 @@ extension DirectoryTableView : UITableViewDelegate,UITableViewDataSource{
             cell.textLabel?.text = model.name
             if model.subDirectorys.count > 0 {
                 cell.accessoryType = .disclosureIndicator
+            } else {
+                cell.accessoryType = .none
             }
         }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        
+        let directoryModel = directoryModelArr[indexPath.row]
+        if directoryDidSelectedClourse != nil
+        {
+            directoryDidSelectedClourse!(directoryModel)
+        }
     }
 }

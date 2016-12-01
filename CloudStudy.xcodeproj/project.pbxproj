@@ -38,6 +38,7 @@
 		1539C6E01DE5E31200CA2B5C /* noticeMusic.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1539C6DF1DE5E31200CA2B5C /* noticeMusic.caf */; };
 		153BD0C11DE5E7B8008EDE3B /* QRCodeImg.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 153BD0C01DE5E7B8008EDE3B /* QRCodeImg.xcassets */; };
 		153BD0D81DE731CB008EDE3B /* BaseSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153BD0D71DE731CB008EDE3B /* BaseSegmentControl.swift */; };
+		156B8AD81DEFAF9400BBB3E9 /* DocDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B8AD71DEFAF9400BBB3E9 /* DocDetailViewController.swift */; };
 		159942541DCD07F600BB3F98 /* GlobalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159942531DCD07F600BB3F98 /* GlobalColor.swift */; };
 		15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */; };
 		15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39CFC1DB85BAD00C8DD94 /* ViewController.swift */; };
@@ -1092,6 +1093,7 @@
 		1539C6DF1DE5E31200CA2B5C /* noticeMusic.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = noticeMusic.caf; sourceTree = "<group>"; };
 		153BD0C01DE5E7B8008EDE3B /* QRCodeImg.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRCodeImg.xcassets; sourceTree = "<group>"; };
 		153BD0D71DE731CB008EDE3B /* BaseSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSegmentControl.swift; sourceTree = "<group>"; };
+		156B8AD71DEFAF9400BBB3E9 /* DocDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocDetailViewController.swift; sourceTree = "<group>"; };
 		159942531DCD07F600BB3F98 /* GlobalColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalColor.swift; sourceTree = "<group>"; };
 		15C39CF71DB85BAD00C8DD94 /* CloudStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C39CFA1DB85BAD00C8DD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -3565,6 +3567,7 @@
 				15FAF39D1DEB312E00891C27 /* DocNewViewController.swift */,
 				15FAF39F1DEB314C00891C27 /* DOCHotViewController.swift */,
 				15FAF3A11DEB318200891C27 /* DocDirectoryViewController.swift */,
+				156B8AD71DEFAF9400BBB3E9 /* DocDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4940,6 +4943,7 @@
 				15C39D4A1DB8948900C8DD94 /* MainNavigationController.swift in Sources */,
 				15C96E901DCCF91E0076C37A /* ExamMainViewController.swift in Sources */,
 				150AE9D21DB9F195002EAFEA /* PKHUDSuccessView.swift in Sources */,
+				156B8AD81DEFAF9400BBB3E9 /* DocDetailViewController.swift in Sources */,
 				15FAF3AB1DED1D5A00891C27 /* DirectoryModel.swift in Sources */,
 				15CB85F81DC9EE9800CBA466 /* UIDeviceExtension.swift in Sources */,
 				150AE94D1DB9E982002EAFEA /* ConstString.swift in Sources */,

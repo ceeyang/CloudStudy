@@ -27,6 +27,7 @@ class DocMainViewController: UIViewController {
     }
 
     func addChildVC() {
+        /** 目录视图 */
         let directoryVC = DocDirectoryViewController()
         let docNewVC    = DocNewViewController()
         let docHotVC    = DOCHotViewController()
@@ -34,6 +35,12 @@ class DocMainViewController: UIViewController {
         addChildViewController(directoryVC)
         addChildViewController(docNewVC)
         addChildViewController(docHotVC)
+        
+        directoryVC.setDirectoryDidSelected { [weak self](directory) in
+            self?.segmentControl.setSelectedSegmentIndex(1, animated: true)
+            self?.segmentControlIndexChangeActionWith(1)
+            docNewVC.updateTableViewData(with: directory)
+        }
     }
     
     func setupTopTabbar() {

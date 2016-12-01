@@ -12,16 +12,23 @@ import SwiftyJSON
 
 class DocNewViewController: UIViewController {
 
-    var tableView  = UITableView()
-    var header     = MJRefreshNormalHeader()
-    var footer     = MJRefreshAutoNormalFooter()
-    var dataObject : BaseTableViewDataObject?
-    var docArray   : Array<DocFileModel> = []
+    //MARK: - Public Method
+    public func updateTableViewData(with directoryModel:DirectoryModel) {
+        ruleID = directoryModel.rule_id!
+        header.beginRefreshing()
+    }
     
-    var pageNumber : Int    = 1
-    var ruleID     : String = ""
+    //MARK: - Private Method
+    fileprivate var tableView  = UITableView()
+    fileprivate var header     = MJRefreshNormalHeader()
+    fileprivate var footer     = MJRefreshAutoNormalFooter()
+    fileprivate var dataObject : BaseTableViewDataObject?
+    fileprivate var docArray   : Array<DocFileModel> = []
     
-    var isHeaderRefresh = true
+    fileprivate var pageNumber : Int    = 1
+    fileprivate var ruleID     : String = ""
+    
+    fileprivate var isHeaderRefresh = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +39,7 @@ class DocNewViewController: UIViewController {
         addRefrsh()
     }
     
-    func setupUI()  {
+    fileprivate func setupUI()  {
         
         /** main scrollview */
         tableView = UITableView()
@@ -55,7 +62,7 @@ class DocNewViewController: UIViewController {
     }
     
     //MARK: - Refresh -
-    func addRefrsh() {
+    fileprivate func addRefrsh() {
         header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
             self?.isHeaderRefresh = true
             self?.sendDocNewListDataRequestWith(page:1)
@@ -71,7 +78,7 @@ class DocNewViewController: UIViewController {
         header.beginRefreshing()
     }
     
-    func sendDocNewListDataRequestWith(page:Int) {
+    fileprivate func sendDocNewListDataRequestWith(page:Int) {
         HUD.show(.label("loading..."))
         
         let parameters : NSMutableDictionary = [:]
@@ -95,7 +102,7 @@ class DocNewViewController: UIViewController {
         }
     }
     
-    private func parseDocListDataWith(_ listArr:Array<JSON>) {
+    fileprivate func parseDocListDataWith(_ listArr:Array<JSON>) {
         var tempDocModelArr:Array<DocFileModel> = []
         for dic in listArr {
             let model = DocFileModel()
