@@ -65,20 +65,20 @@ class CourseLatestViewController: UIViewController {
     fileprivate func addRefrsh() {
         header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
             self?.isHeaderRefresh = true
-            self?.sendDocNewListDataRequestWith(page:1)
+            self?.sendCourseNewListDataRequestWith(page:1)
         })
         tableView.mj_header = header
         
         footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
             self?.isHeaderRefresh = false
             self?.pageNumber     += 1
-            self?.sendDocNewListDataRequestWith(page:(self?.pageNumber)!)
+            self?.sendCourseNewListDataRequestWith(page:(self?.pageNumber)!)
         })
         tableView.mj_footer = footer
         header.beginRefreshing()
     }
     
-    fileprivate func sendDocNewListDataRequestWith(page:Int) {
+    fileprivate func sendCourseNewListDataRequestWith(page:Int) {
         HUD.show(.label("loading..."))
         
         let parameters : NSMutableDictionary = [:]
@@ -162,7 +162,7 @@ extension CourseLatestViewController {
         
         let parameters : NSMutableDictionary = [:]
         parameters["sid"]             = UserInfo.shared.sid
-        parameters["id"]              = docFileModel.id
+        parameters["course_id"]              = docFileModel.id
         
         RequestManager.shared.requestCommonDataWith(url: CourseDetailUrl, parameters: parameters) { [weak self](response) in
             
@@ -173,16 +173,13 @@ extension CourseLatestViewController {
             switch response.result {
             case .success(let value):
                 let json          = JSON(value)
-                print(json)
-                return
-                let detailModel   = DocDetailModel()
+                let detailModel   = CourseDetailModel()
                 detailModel.parseData(json: json["data"], arrayValues: ["list"], descriptionName: "Description")
-                let detailVC      = DocDetailViewController()
+                let detailVC      = CourseDetailViewController()
                 detailVC.detailModel = detailModel
                 self?.navigationController?.pushViewController(detailVC, animated: true)
                 
             case .failure(let error):
-                HUD.hide()
                 print(error)
             }
         }
