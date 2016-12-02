@@ -10,11 +10,11 @@ import UIKit
 
 class DocListTableViewCell: UITableViewCell {
 
-    var mCoverImgView     : UIImageView?
-    var mTitleLabel       : UILabel?
-    var mDetailLabel      : UILabel?
-    var mStarView         : UIView?
-    var mPersonCountLabel : UILabel?
+    fileprivate var mCoverImgView     : UIImageView?
+    fileprivate var mTitleLabel       : UILabel?
+    fileprivate var mDetailLabel      : UILabel?
+    fileprivate var mStarView         : UIView?
+    fileprivate var mPersonCountLabel : UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +30,7 @@ class DocListTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupUI() {
+    fileprivate func setupUI() {
         let coverImg = UIImageView()
         contentView.addSubview(coverImg)
         coverImg.snp.makeConstraints { (make) in
@@ -90,15 +90,27 @@ class DocListTableViewCell: UITableViewCell {
         }
     }
     
-    func configCellWith(_ model:DocFileModel) {
-        let url = URL(string: model.cover!)
-        let defaultImgName = getDefaultImageNameWith(model.type!)
+    public func configCellWith(_ model:DocFileModel,isDoc:Bool) {
+        let url            = URL(string: model.cover!)
+        var defaultImgName = ""
+        var countStr       = ""
+        var length         = 0
+        if isDoc {
+            defaultImgName = getDefaultImageNameWith(model.type!)
+            countStr       = "浏览:" + model.browse_count!
+            length         = (model.browse_count?.length)!
+        } else {
+            defaultImgName = "default_course"
+            countStr       = "浏览:" + model.study_person_num!
+            length         = (model.study_person_num?.length)!
+        }
+        
         mCoverImgView?.kf.setImage(with: url,placeholder: UIImage(named: defaultImgName),options: nil,progressBlock: nil,completionHandler: nil)
         mTitleLabel?.text  = model.name
         mDetailLabel?.text = (model.Description?.isBlank)! ? "暂无详细描述" : model.Description
-        let countStr       = "浏览:" + model.browse_count!
+        
         let attributedStr  = NSMutableAttributedString(string: countStr)
-        attributedStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.orange, range:NSRange(location: 3, length: (model.browse_count?.length)!))
+        attributedStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.orange, range:NSRange(location: 3, length: length))
         mPersonCountLabel?.attributedText = attributedStr
     }
     

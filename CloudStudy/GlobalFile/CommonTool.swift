@@ -73,24 +73,24 @@ func getDefaultImageNameWith(_ fileType:String) -> String{
     }else if(fileType.contains("txt")) {
         return "default_txt"
     }else if(fileType.contains("ppt")) {
-        return "default_ppt";
+        return "default_ppt"
     }else if (fileType.contains("pptx")){
-        return "default_pptx";
+        return "default_pptx"
     }else if(fileType.contains("doc")) {
-        return "default_doc";
+        return "default_doc"
     }else if (fileType.contains("docx")){
-        return "default_docx";
+        return "default_docx"
     }else if(fileType.contains("xls")) {
-        return "default_xls";
+        return "default_xls"
     }else if (fileType.contains("xlsx")){
-        return "default_xlsx";
+        return "default_xlsx"
     }else if(fileType.contains("mp3")) {
-        return "default_mp3";
+        return "default_mp3"
     }else if(fileType.contains("mp4")) {
-        return "default_mp4";
+        return "default_mp4"
     }else if(fileType.contains("epub")) {
-        return "default_epub";
+        return "default_epub"
     }else {
-        return "default_knowledge";
+        return "default_knowledge"
     }
 }

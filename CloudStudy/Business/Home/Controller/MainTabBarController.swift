@@ -20,7 +20,7 @@ class MainTabBarController: UITabBarController {
         let homePage = HomeViewController()
         addChildVC(childVC: homePage, title: "Home", image: "new_tab_home_n", selectedImage: "new_tab_home")
         
-        let coursePage = CourseViewController()
+        let coursePage = CourseMainViewController()
         addChildVC(childVC: coursePage, title: "Course", image: "new_tab_course_n", selectedImage: "new_tab_course")
         
         let activityPage = ActivityViewController()

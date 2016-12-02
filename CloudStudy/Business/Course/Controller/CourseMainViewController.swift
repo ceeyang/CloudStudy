@@ -1,47 +1,57 @@
 //
-//  DocMainViewController.swift
+//  CourseMainViewController.swift
 //  CloudStudy
 //
-//  Created by pro on 2016/11/5.
+//  Created by pro on 2016/12/1.
 //  Copyright © 2016年 daisy. All rights reserved.
 //
 
 import UIKit
 import HMSegmentedControl
 
-class DocMainViewController: UIViewController {
+class CourseMainViewController: UIViewController {
 
-    var segmentControl = HMSegmentedControl()
-    var currentView    = UIView()
+    fileprivate var segmentControl = HMSegmentedControl()
+    fileprivate var currentView    = UIView()
+    fileprivate var navigationBar  = CourseSearchBarView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "doc"
-        view.backgroundColor = kAppBaseColor
         
         addChildVC()
-        setupTopTabbar()
+        setupUI()
     }
-
+    
     func addChildVC() {
         /** 目录视图 */
-        let directoryVC = DocDirectoryViewController()
-        let docNewVC    = DocNewViewController()
-        let docHotVC    = DOCHotViewController()
+        let directoryVC     = DocDirectoryViewController()
+        let courseLatestVC  = CourseLatestViewController()
+        let courseHottestVC = CourseHottestViewController()
         
         addChildViewController(directoryVC)
-        addChildViewController(docNewVC)
-        addChildViewController(docHotVC)
+        addChildViewController(courseLatestVC)
+        addChildViewController(courseHottestVC)
         
+        directoryVC.directoryType = .course
         directoryVC.setDirectoryDidSelected { [weak self](directory) in
             self?.segmentControl.setSelectedSegmentIndex(1, animated: true)
             self?.segmentControlIndexChangeActionWith(1)
-            docNewVC.updateTableViewData(with: directory)
+            courseLatestVC.updateTableViewData(with: directory)
         }
     }
-    
-    func setupTopTabbar() {
+    fileprivate func setupUI() {
+        
+        /** Search Bar */
+        let searchBar = CourseSearchBarView()
+        searchBar.setSearchBarTitle("Course")
+        view.addSubview(searchBar)
+        searchBar.snp.makeConstraints { (make) in
+            make.left.top.right.equalTo(view)
+            make.height.equalTo(64)
+        }
+        navigationBar = searchBar
+        
+        
         let titles = ["Category", "Latest", "Hottest"]
         segmentControl = HMSegmentedControl(sectionTitles: titles)
         segmentControl.selectionIndicatorHeight = 2
@@ -51,7 +61,8 @@ class DocMainViewController: UIViewController {
         segmentControl.selectionIndicatorColor = kNavigationBarColor
         view.addSubview(segmentControl)
         segmentControl.snp.makeConstraints { (make) in
-            make.left.right.top.equalTo(view)
+            make.left.right.equalTo(view)
+            make.top.equalTo(searchBar.snp.bottom)
             make.height.equalTo(44)
         }
         segmentControl.indexChangeBlock = {[weak self](index) in
@@ -71,8 +82,14 @@ class DocMainViewController: UIViewController {
         })
     }
     
-    deinit {
-        print("Deinit Success")
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,4 +97,3 @@ class DocMainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
-

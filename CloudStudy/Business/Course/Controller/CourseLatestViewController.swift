@@ -1,8 +1,8 @@
 //
-//  DocNewViewController.swift
+//  CourseLatestViewController.swift
 //  CloudStudy
 //
-//  Created by pro on 2016/11/27.
+//  Created by pro on 2016/12/1.
 //  Copyright © 2016年 daisy. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import UIKit
 import MJRefresh
 import SwiftyJSON
 
-class DocNewViewController: UIViewController {
-
+class CourseLatestViewController: UIViewController {
+    
     //MARK: - Public Method
     public func updateTableViewData(with directoryModel:DirectoryModel) {
         ruleID = directoryModel.rule_id!
@@ -23,7 +23,7 @@ class DocNewViewController: UIViewController {
     fileprivate var header     = MJRefreshNormalHeader()
     fileprivate var footer     = MJRefreshAutoNormalFooter()
     fileprivate var dataObject : BaseTableViewDataObject?
-    fileprivate var docArray   : Array<DocFileModel> = []
+    fileprivate var courseArray   : Array<DocFileModel> = []
     
     fileprivate var pageNumber : Int    = 1
     fileprivate var ruleID     : String = ""
@@ -34,7 +34,7 @@ class DocNewViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = kAppBaseColor
-
+        
         setupUI()
         addRefrsh()
     }
@@ -66,14 +66,14 @@ class DocNewViewController: UIViewController {
         header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
             self?.isHeaderRefresh = true
             self?.sendDocNewListDataRequestWith(page:1)
-            })
+        })
         tableView.mj_header = header
         
         footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
             self?.isHeaderRefresh = false
             self?.pageNumber     += 1
             self?.sendDocNewListDataRequestWith(page:(self?.pageNumber)!)
-            })
+        })
         tableView.mj_footer = footer
         header.beginRefreshing()
     }
@@ -87,13 +87,14 @@ class DocNewViewController: UIViewController {
         parameters["pageSize"]        = kPageSize
         parameters["pageNumber"]      = page
         
-        RequestManager.shared.requestCommonDataWith(url: DocNewestListURL, parameters: parameters) { [weak self](response) in
+        RequestManager.shared.requestCommonDataWith(url: CourseNewDataURL, parameters: parameters) { [weak self](response) in
             HUD.hide()
             self?.header.endRefreshing()
             self?.footer.endRefreshing()
             switch response.result {
             case .success(let value):
                 let json          = JSON(value)
+                print(json)
                 let listArr       = json["data"]["list"].arrayValue
                 self?.parseDocListDataWith(listArr)
             case .failure(let error):
@@ -111,11 +112,11 @@ class DocNewViewController: UIViewController {
             tempDocModelArr.append(model)
         }
         if isHeaderRefresh {
-            docArray.removeAll()
+            courseArray.removeAll()
         }
-        docArray.append(contentsOf: tempDocModelArr)
+        courseArray.append(contentsOf: tempDocModelArr)
         
-        if docArray.count < 0 {
+        if courseArray.count < 0 {
             //tableView.showDefaultView
         } else {
             //tableView.hidenDefaultView
@@ -132,31 +133,30 @@ class DocNewViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 
 //MARK: - UITableViewDelegate & DataSource -
-extension DocNewViewController:UITableViewDelegate,UITableViewDataSource{
+extension CourseLatestViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return docArray.count
+        return courseArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DocListCellReuseIdentifier, for: indexPath) as! DocListTableViewCell
-        cell.configCellWith(docArray[indexPath.row],isDoc: true)
+        cell.configCellWith(courseArray[indexPath.row],isDoc: false)
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let docModel  = docArray[indexPath.row] as DocFileModel
+        let docModel  = courseArray[indexPath.row] as DocFileModel
         requestDocDetail(with: docModel)
     }
 }
 
-
 //MARK: - Translate to DetailVC -
-extension DocNewViewController {
+extension CourseLatestViewController {
     func requestDocDetail(with docFileModel:DocFileModel) {
         HUD.show(.label("Loading..."))
         
@@ -164,7 +164,7 @@ extension DocNewViewController {
         parameters["sid"]             = UserInfo.shared.sid
         parameters["id"]              = docFileModel.id
         
-        RequestManager.shared.requestCommonDataWith(url: DocDetailUrl, parameters: parameters) { [weak self](response) in
+        RequestManager.shared.requestCommonDataWith(url: CourseDetailUrl, parameters: parameters) { [weak self](response) in
             
             HUD.hide()
             
@@ -173,6 +173,8 @@ extension DocNewViewController {
             switch response.result {
             case .success(let value):
                 let json          = JSON(value)
+                print(json)
+                return
                 let detailModel   = DocDetailModel()
                 detailModel.parseData(json: json["data"], arrayValues: ["list"], descriptionName: "Description")
                 let detailVC      = DocDetailViewController()

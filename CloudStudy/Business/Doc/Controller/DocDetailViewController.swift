@@ -10,12 +10,18 @@ import UIKit
 
 class DocDetailViewController: UIViewController {
 
-    var detailModel : DocDetailModel?
+    public var detailModel    : DocDetailModel?
+    
     var playButton  : UIButton!
+    
+    var detailMainView = DocDetailMainView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        detailMainView = DocDetailMainView(frame:view.frame,detailModel:detailModel!)
+        view.addSubview(detailMainView)
+        
     }
     
     func play() {

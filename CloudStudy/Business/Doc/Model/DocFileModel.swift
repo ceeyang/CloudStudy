@@ -17,4 +17,7 @@ class DocFileModel: NSObject {
     var Description         : String?
     var browse_count        : String?
     var composite_avg_score : String?
+    
+    /** 适用于 课程 */
+    var study_person_num    : String?
 }

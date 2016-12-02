@@ -12,9 +12,16 @@ import EZSwiftExtensions
 
 let CategoryCellReusableIdentifier = "CategoryCellReusableIdentifier"
 
+enum DirectoryViewVistorType : Int {
+    case course
+    case doc
+}
+
 class DocDirectoryViewController: UIViewController {
 
     //MARK: - Public Method
+    /** 目录来源,default is doc */
+    public var directoryType : DirectoryViewVistorType?
     /** 目录点击事件 */
     public var directoryDidSelectedClourse : DirectoryTableViewCellDidSelectedClosure?
 
@@ -63,7 +70,12 @@ class DocDirectoryViewController: UIViewController {
         let parameters : NSMutableDictionary = [:]
         parameters["sid"]             = UserInfo.shared.sid
         
-        RequestManager.shared.requestCommonDataWith(url: DocCategoryURL, parameters: parameters) { [weak self](response) in
+        var url = DocCategoryURL
+        if directoryType == .course {
+            url = CourseCategoryURL
+        }
+        
+        RequestManager.shared.requestCommonDataWith(url: url, parameters: parameters) { [weak self](response) in
             HUD.hide()
             
             switch response.result {

@@ -30,6 +30,10 @@
 		150AE9D61DB9F195002EAFEA /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C31DB9F195002EAFEA /* Window.swift */; };
 		150AE9D71DB9F195002EAFEA /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */; };
 		150AE9E61DBF55A1002EAFEA /* HomeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */; };
+		150D87901DF0679F00A985CB /* CourseSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D878F1DF0679F00A985CB /* CourseSearchBarView.swift */; };
+		150D87921DF0702800A985CB /* CourseMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D87911DF0702800A985CB /* CourseMainViewController.swift */; };
+		150D87941DF070CC00A985CB /* CourseLatestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D87931DF070CC00A985CB /* CourseLatestViewController.swift */; };
+		150D87961DF070D700A985CB /* CourseHottestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D87951DF070D700A985CB /* CourseHottestViewController.swift */; };
 		1539C6D41DE5D15400CA2B5C /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6D31DE5D15400CA2B5C /* ScanCodeViewController.swift */; };
 		1539C6DA1DE5E20400CA2B5C /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6D91DE5E20400CA2B5C /* Tool.swift */; };
 		1539C6DD1DE5E21B00CA2B5C /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6DB1DE5E21B00CA2B5C /* String+QRCode.swift */; };
@@ -51,7 +55,6 @@
 		15C39D171DB8613B00C8DD94 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39D161DB8613B00C8DD94 /* MainTabBarController.swift */; };
 		15C39D391DB8624A00C8DD94 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39D381DB8624A00C8DD94 /* ActivityViewController.swift */; };
 		15C39D3F1DB8628600C8DD94 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39D3E1DB8628600C8DD94 /* AskViewController.swift */; };
-		15C39D411DB8629000C8DD94 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39D401DB8629000C8DD94 /* CourseViewController.swift */; };
 		15C39D431DB8629D00C8DD94 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39D421DB8629D00C8DD94 /* PersonalViewController.swift */; };
 		15C39D481DB8668F00C8DD94 /* CommonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39D471DB8668F00C8DD94 /* CommonTool.swift */; };
 		15C39D4A1DB8948900C8DD94 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C39D491DB8948900C8DD94 /* MainNavigationController.swift */; };
@@ -1086,6 +1089,10 @@
 		150AE9C31DB9F195002EAFEA /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowRootViewController.swift; sourceTree = "<group>"; };
 		150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchBar.swift; sourceTree = "<group>"; };
+		150D878F1DF0679F00A985CB /* CourseSearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSearchBarView.swift; sourceTree = "<group>"; };
+		150D87911DF0702800A985CB /* CourseMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseMainViewController.swift; sourceTree = "<group>"; };
+		150D87931DF070CC00A985CB /* CourseLatestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseLatestViewController.swift; sourceTree = "<group>"; };
+		150D87951DF070D700A985CB /* CourseHottestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseHottestViewController.swift; sourceTree = "<group>"; };
 		1539C6D31DE5D15400CA2B5C /* ScanCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		1539C6D91DE5E20400CA2B5C /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		1539C6DB1DE5E21B00CA2B5C /* String+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
@@ -1109,7 +1116,6 @@
 		15C39D161DB8613B00C8DD94 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		15C39D381DB8624A00C8DD94 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		15C39D3E1DB8628600C8DD94 /* AskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
-		15C39D401DB8629000C8DD94 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		15C39D421DB8629D00C8DD94 /* PersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		15C39D471DB8668F00C8DD94 /* CommonTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonTool.swift; sourceTree = "<group>"; };
 		15C39D491DB8948900C8DD94 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -2366,7 +2372,9 @@
 		15C39D251DB8621100C8DD94 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				15C39D401DB8629000C8DD94 /* CourseViewController.swift */,
+				150D87911DF0702800A985CB /* CourseMainViewController.swift */,
+				150D87931DF070CC00A985CB /* CourseLatestViewController.swift */,
+				150D87951DF070D700A985CB /* CourseHottestViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2381,6 +2389,7 @@
 		15C39D291DB8621100C8DD94 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				150D878F1DF0679F00A985CB /* CourseSearchBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4913,6 +4922,7 @@
 				150AE9CA1DB9F195002EAFEA /* PKHUD.swift in Sources */,
 				15C96E8E1DCCF9040076C37A /* DocMainViewController.swift in Sources */,
 				150AE9C61DB9F195002EAFEA /* FrameView.swift in Sources */,
+				150D87961DF070D700A985CB /* CourseHottestViewController.swift in Sources */,
 				150AE9E61DBF55A1002EAFEA /* HomeSearchBar.swift in Sources */,
 				15C3A4CE1DB89C3300C8DD94 /* LoginViewController.swift in Sources */,
 				150AE9CD1DB9F195002EAFEA /* PKHUDAssets.swift in Sources */,
@@ -4923,6 +4933,7 @@
 				150AE9CB1DB9F195002EAFEA /* PKHUDAnimating.swift in Sources */,
 				150AE9CF1DB9F195002EAFEA /* PKHUDProgressView.swift in Sources */,
 				15C39D481DB8668F00C8DD94 /* CommonTool.swift in Sources */,
+				150D87901DF0679F00A985CB /* CourseSearchBarView.swift in Sources */,
 				150AE9AE1DB9F01C002EAFEA /* NSData+Base64.m in Sources */,
 				15FAF3A01DEB314C00891C27 /* DOCHotViewController.swift in Sources */,
 				15C96EA61DCCFBA50076C37A /* TrainMainViewController.swift in Sources */,
@@ -4937,7 +4948,9 @@
 				15C39D391DB8624A00C8DD94 /* ActivityViewController.swift in Sources */,
 				15C39D4A1DB8948900C8DD94 /* MainNavigationController.swift in Sources */,
 				15C96E901DCCF91E0076C37A /* ExamMainViewController.swift in Sources */,
+				150D87921DF0702800A985CB /* CourseMainViewController.swift in Sources */,
 				150AE9D21DB9F195002EAFEA /* PKHUDSuccessView.swift in Sources */,
+				150D87941DF070CC00A985CB /* CourseLatestViewController.swift in Sources */,
 				156B8AD81DEFAF9400BBB3E9 /* DocDetailViewController.swift in Sources */,
 				15FAF3AB1DED1D5A00891C27 /* DirectoryModel.swift in Sources */,
 				15CB85F81DC9EE9800CBA466 /* UIDeviceExtension.swift in Sources */,
@@ -4955,7 +4968,6 @@
 				15C39D431DB8629D00C8DD94 /* PersonalViewController.swift in Sources */,
 				15F72B261DC85DEE00A8FC6F /* BannerModel.swift in Sources */,
 				15C39CFB1DB85BAD00C8DD94 /* AppDelegate.swift in Sources */,
-				15C39D411DB8629000C8DD94 /* CourseViewController.swift in Sources */,
 				15C96E6B1DCC36AA0076C37A /* GlobalFont.swift in Sources */,
 				1539C6DD1DE5E21B00CA2B5C /* String+QRCode.swift in Sources */,
 				150AE9AD1DB9F01C002EAFEA /* DESUtils.m in Sources */,

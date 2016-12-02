@@ -71,7 +71,7 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
         if model.code == "news" {//新闻
             pushTabbarViewControllerWith(NewsMainViewController())
         } else if model.code == "course" {//课程
-            pushTabbarViewControllerWith(CourseViewController())
+            pushTabbarViewControllerWith(CourseMainViewController())
         } else if model.code == "subject" {//专题
             pushTabbarViewControllerWith(SubjectMainViewController())
         } else if model.code == "train" {//培训

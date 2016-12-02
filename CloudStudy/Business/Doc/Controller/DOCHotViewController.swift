@@ -138,7 +138,7 @@ extension DOCHotViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DocListCellReuseIdentifier, for: indexPath) as! DocListTableViewCell
-        cell.configCellWith(docArray[indexPath.row])
+        cell.configCellWith(docArray[indexPath.row],isDoc: true)
         cell.selectionStyle = .none
         return cell
     }

@@ -11,10 +11,9 @@ import UIKit
 
 class HomeSearchBar: UIView {
 
-    //var kBackgroundView : UIView!
     var kInputView      : UIButton!
     var kBackgroundImg  : UIImageView!
-    //var kApparentView   : UIImageView!
+    
     var kmessageBtn     : UIButton!
     var kQrCodeBtn      : UIButton!
     var kSearchBtn      : UIButton!

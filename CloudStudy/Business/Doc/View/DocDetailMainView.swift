@@ -28,6 +28,6 @@ class DocDetailMainView: UIView {
     }
     
     func setupUI() {
-        print(detailModel?.url!)
+        
     }
 }

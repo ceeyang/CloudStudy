@@ -25,6 +25,7 @@ let NewsURL        = BaseURLStr + "news/newsList"
 let CourseNewDataURL  = BaseURLStr + "course/newestList"
 let CourseHotDataURL  = BaseURLStr + "course/hotestList"
 let CourseCategoryURL = BaseURLStr + "course/category"
+let CourseDetailUrl   = BaseURLStr + "course/docDetail"
 
 
 //MARK: - Login && Register -
