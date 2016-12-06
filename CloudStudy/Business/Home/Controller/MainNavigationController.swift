@@ -12,8 +12,8 @@ enum ImageAlignment {
     case left,right
 }
 
-class MainNavigationController: UINavigationController,UINavigationControllerDelegate {
-
+class MainNavigationController: UINavigationController,UINavigationControllerDelegate,UIGestureRecognizerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,11 +29,13 @@ class MainNavigationController: UINavigationController,UINavigationControllerDel
         
     }
     
-    func backAction() {
+    func backAction()
+    {
         popViewController(animated: true)
     }
     
-    func searchAction() {
+    func searchAction()
+    {
         presentVC(SearchViewController())
     }
     
@@ -62,12 +64,28 @@ class MainNavigationController: UINavigationController,UINavigationControllerDel
 
 
 extension MainNavigationController {
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        if self.viewControllers.count > 0 {
+    override func pushViewController(_ viewController: UIViewController, animated: Bool)
+    {
+        if self.viewControllers.count > 0
+        {
             viewController.hidesBottomBarWhenPushed = true
             viewController.navigationItem.leftBarButtonItem  = BarButtonItemWithTarget(self, action: #selector(backAction), image: "public_nav_btn_return_n", selectedImg: "public_nav_btn_return_pre",imageAlignment:.left)
             viewController.navigationItem.rightBarButtonItem = BarButtonItemWithTarget(self, action: #selector(searchAction), image: "course_nav_btn_search_n", selectedImg: "course_nav_btn_search_n_pre",imageAlignment:.right)
         }
         super.pushViewController(viewController, animated: animated)
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool)
+    {
+        //实现滑动返回功能
+        //清空滑动返回手势的代理就能实现
+//        if viewController == self.viewControllers[0]
+//        {
+//            self.interactivePopGestureRecognizer!.delegate = self
+//        }
+//        else
+//        {
+//            self.interactivePopGestureRecognizer!.delegate = nil
+//        }
     }
 }

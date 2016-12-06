@@ -24,7 +24,8 @@ class HomeLayoutObject: NSObject {
         
     }
     
-    convenience init(module:HomeTableViewModule,layoutStyle:HomeTableViewLayoutStyle,dataArr:Array<AnyObject>) {
+    
+    convenience init(module:HomeLayoutContentCode,layoutStyle:HomeTableViewLayoutStyle,dataArr:Array<Any>) {
         self.init()
         HeightForStandardImage = kHomeStandardImageSize.height
         let width = kHomeAutoImageWidth
@@ -38,9 +39,61 @@ class HomeLayoutObject: NSObject {
         startToCalculateCellHeightWith(module: module, layoutStyle: layoutStyle, dataArr: dataArr)
     }
     
-    private func startToCalculateCellHeightWith(module:HomeTableViewModule,layoutStyle:HomeTableViewLayoutStyle,dataArr:Array<AnyObject>) {
+    private func startToCalculateCellHeightWith(module:HomeLayoutContentCode,layoutStyle:HomeTableViewLayoutStyle,dataArr:Array<Any>) {
         switch module {
-        case .Course:
+        case .recommended_courses: /** 推荐课程 */
+            switch layoutStyle {
+            case .PageDisableItemsForSingleCell:
+                
+                calculateCourseStyleOne()
+                break
+                
+            case .PageEnableItemsForSingleCell:
+                
+                calculateCourseStyleTwo()
+                break
+                
+            case .FourItemsForEachCell:
+               
+                calculateCourseStyleThree()
+                break
+                
+            case .ThreeItemsForSingleCell:
+                
+                calculateCourseStyleFour(with: dataArr)
+                break
+                
+            case .BlankPage:
+                break
+            }
+            break
+        case .hot_subject: /** 推荐专题 */
+            switch layoutStyle {
+            case .PageDisableItemsForSingleCell:
+                
+                calculateSubjectPageDisableItemsForSingleLayout()
+                break
+                
+            case .PageEnableItemsForSingleCell:
+                
+                calculateSubjectPageEnableItemsForSingleLayout()
+                break
+                
+            case .FourItemsForEachCell:
+                
+                calculateSubjectFourItemsForEachLayout()
+                break
+                
+            case .ThreeItemsForSingleCell:
+                
+                calculateSubjectThreeItemsForSingleLayout(with:dataArr)
+                break
+                
+            case .BlankPage:
+                break
+            }
+            break
+        case .hot_knowledge: /** 热门知识 */
             switch layoutStyle {
             case .PageDisableItemsForSingleCell:
                 break
@@ -54,7 +107,7 @@ class HomeLayoutObject: NSObject {
                 break
             }
             break
-        case .Subject:
+        case .hot_activity: /** 最新活动 */
             switch layoutStyle {
             case .PageDisableItemsForSingleCell:
                 break
@@ -68,7 +121,7 @@ class HomeLayoutObject: NSObject {
                 break
             }
             break
-        case .Knowlege:
+        case .my_required: /** 我的必修 */
             switch layoutStyle {
             case .PageDisableItemsForSingleCell:
                 break
@@ -82,7 +135,7 @@ class HomeLayoutObject: NSObject {
                 break
             }
             break
-        case .Activity:
+        case .lecturers_list: /** 讲师榜 */
             switch layoutStyle {
             case .PageDisableItemsForSingleCell:
                 break
@@ -96,35 +149,7 @@ class HomeLayoutObject: NSObject {
                 break
             }
             break
-        case .LearningPath:
-            switch layoutStyle {
-            case .PageDisableItemsForSingleCell:
-                break
-            case .PageEnableItemsForSingleCell:
-                break
-            case .FourItemsForEachCell:
-                break
-            case .ThreeItemsForSingleCell:
-                break
-            case .BlankPage:
-                break
-            }
-            break
-        case .RankingList:
-            switch layoutStyle {
-            case .PageDisableItemsForSingleCell:
-                break
-            case .PageEnableItemsForSingleCell:
-                break
-            case .FourItemsForEachCell:
-                break
-            case .ThreeItemsForSingleCell:
-                break
-            case .BlankPage:
-                break
-            }
-            break
-        case .RecommandActivity:
+        case .recommended_activity: /** 推荐活动 */
             switch layoutStyle {
             case .PageDisableItemsForSingleCell:
                 break
@@ -143,22 +168,57 @@ class HomeLayoutObject: NSObject {
         }
     }
     
+    //========================================================
+    // MARK: - Home Couse Style -
+    //========================================================
+
     private func calculateCourseStyleOne() {
-        
+        cellHeight = HeightForAutoImage! + 2 * HeightForLabel! + heightForRatingStar! + 20
     }
     
     private func calculateCourseStyleTwo() {
-        //
+        cellHeight = HeightForStandardImage! + 2 * HeightForLabel! + heightForRatingStar! + 20
     }
-    private func calculateCourseStyleFour(model:RegionModel) {
-        //
+    
+    private func calculateCourseStyleThree() {
+        cellHeight = 2 * (HeightForStandardImage! + 2 * HeightForLabel! + heightForRatingStar!) + 32
     }
-
+    
+    private func calculateCourseStyleFour(with dataArr:Array<Any>) {
+        let count = CGFloat(dataArr.count > 3 ? 3 : dataArr.count)
+        self.cellHeight = count * heightForMinImage! + count * 12 + 8;
+    }
+    
+    
+    //========================================================
+    // MARK: - Home Subject Style -
+    //========================================================
+    private func calculateSubjectPageDisableItemsForSingleLayout() {
+        cellHeight = HeightForAutoImage! + 2 * HeightForLabel! + 12
+    }
+    
+    private func calculateSubjectPageEnableItemsForSingleLayout() {
+        cellHeight = HeightForStandardImage! + 2 * HeightForLabel! + 12
+    }
+    private func calculateSubjectFourItemsForEachLayout() {
+        cellHeight = 2 * (HeightForStandardImage! + 2 * HeightForLabel!) + 24
+    }
+    
+    private func calculateSubjectThreeItemsForSingleLayout(with dataArr:Array<Any>) {
+        let count = CGFloat(dataArr.count > 3 ? 3 : dataArr.count)
+        cellHeight = count * heightForMinImage! + count * 12
+    }
+    
+    
+    //========================================================
+    // MARK: - Home Icon Style -
+    //========================================================
     convenience init(homeIconStyle layoutStyle:HomeIconLayoutStyle) {
         self.init()
         startCalculateMenuIconsHeightWithStyle(layoutStyle: layoutStyle)
     }
     
+    /** Private Method */
     private func startCalculateMenuIconsHeightWithStyle(layoutStyle:HomeIconLayoutStyle) {
         switch layoutStyle {
         case .FourPerRowForScrollingEnable:
@@ -178,6 +238,7 @@ class HomeLayoutObject: NSObject {
             break
         }
     }
+    
     /** 一行四个菜单的高度 */
     private func calculateIconStyleOne() {
         let sizeForItem          = kSizeForHomeMaxIcon

@@ -37,6 +37,7 @@
 		150D879E1DF1BA0D00A985CB /* CourseDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D879D1DF1BA0D00A985CB /* CourseDetailModel.swift */; };
 		150D87A01DF1C11700A985CB /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D879F1DF1C11700A985CB /* CourseDetailViewController.swift */; };
 		150D87A21DF1C9E400A985CB /* XCPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D87A11DF1C9E400A985CB /* XCPlayerView.swift */; };
+		150D87A61DF27DC900A985CB /* CourseDetailMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D87A51DF27DC900A985CB /* CourseDetailMainView.swift */; };
 		1539C6D41DE5D15400CA2B5C /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6D31DE5D15400CA2B5C /* ScanCodeViewController.swift */; };
 		1539C6DA1DE5E20400CA2B5C /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6D91DE5E20400CA2B5C /* Tool.swift */; };
 		1539C6DD1DE5E21B00CA2B5C /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539C6DB1DE5E21B00CA2B5C /* String+QRCode.swift */; };
@@ -1042,6 +1043,11 @@
 		15CB85F61DC9ED3B00CBA466 /* HomeStyleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CB85F51DC9ED3B00CBA466 /* HomeStyleConfig.swift */; };
 		15CB85F81DC9EE9800CBA466 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CB85F71DC9EE9800CBA466 /* UIDeviceExtension.swift */; };
 		15D906DB1DC6E9F80065BD6E /* ImagePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D906DA1DC6E9F80065BD6E /* ImagePlayer.swift */; };
+		15E5C4F61DF5B27300E72E33 /* HomeCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E5C4F51DF5B27300E72E33 /* HomeCourseCell.swift */; };
+		15E5C4FA1DF6480B00E72E33 /* ModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E5C4F91DF6480B00E72E33 /* ModelExtension.swift */; };
+		15E5C4FC1DF64D5800E72E33 /* HomeSubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E5C4FB1DF64D5800E72E33 /* HomeSubjectCell.swift */; };
+		15E5C4FE1DF6506B00E72E33 /* HomeSubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E5C4FD1DF6506B00E72E33 /* HomeSubjectModel.swift */; };
+		15E5C5001DF665BD00E72E33 /* HomeSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E5C4FF1DF665BD00E72E33 /* HomeSubjectView.swift */; };
 		15EF593A1DC48B5C005B7FED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59351DC48B5C005B7FED /* Default-568h@2x.png */; };
 		15EF593B1DC48B5C005B7FED /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59361DC48B5C005B7FED /* Default.png */; };
 		15EF593C1DC48B5C005B7FED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF59371DC48B5C005B7FED /* Default@2x.png */; };
@@ -1099,6 +1105,7 @@
 		150D879D1DF1BA0D00A985CB /* CourseDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailModel.swift; sourceTree = "<group>"; };
 		150D879F1DF1C11700A985CB /* CourseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
 		150D87A11DF1C9E400A985CB /* XCPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCPlayerView.swift; sourceTree = "<group>"; };
+		150D87A51DF27DC900A985CB /* CourseDetailMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailMainView.swift; sourceTree = "<group>"; };
 		1539C6D31DE5D15400CA2B5C /* ScanCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		1539C6D91DE5E20400CA2B5C /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		1539C6DB1DE5E21B00CA2B5C /* String+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
@@ -2106,6 +2113,11 @@
 		15CB85F51DC9ED3B00CBA466 /* HomeStyleConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStyleConfig.swift; sourceTree = "<group>"; };
 		15CB85F71DC9EE9800CBA466 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		15D906DA1DC6E9F80065BD6E /* ImagePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePlayer.swift; sourceTree = "<group>"; };
+		15E5C4F51DF5B27300E72E33 /* HomeCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCourseCell.swift; sourceTree = "<group>"; };
+		15E5C4F91DF6480B00E72E33 /* ModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtension.swift; sourceTree = "<group>"; };
+		15E5C4FB1DF64D5800E72E33 /* HomeSubjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSubjectCell.swift; sourceTree = "<group>"; };
+		15E5C4FD1DF6506B00E72E33 /* HomeSubjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSubjectModel.swift; sourceTree = "<group>"; };
+		15E5C4FF1DF665BD00E72E33 /* HomeSubjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSubjectView.swift; sourceTree = "<group>"; };
 		15EF59351DC48B5C005B7FED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		15EF59361DC48B5C005B7FED /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		15EF59371DC48B5C005B7FED /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2319,6 +2331,7 @@
 				15F72B251DC85DEE00A8FC6F /* BannerModel.swift */,
 				15F72B351DC893F400A8FC6F /* RegionModel.swift */,
 				15CB85F31DC9E8F900CBA466 /* HomeLayoutObject.swift */,
+				15E5C4FD1DF6506B00E72E33 /* HomeSubjectModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2329,6 +2342,9 @@
 				150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */,
 				15F72B2F1DC86BB800A8FC6F /* HomeTopContainer.swift */,
 				15C96E681DCC21180076C37A /* HomeIconCell.swift */,
+				15E5C4F51DF5B27300E72E33 /* HomeCourseCell.swift */,
+				15E5C4FB1DF64D5800E72E33 /* HomeSubjectCell.swift */,
+				15E5C4FF1DF665BD00E72E33 /* HomeSubjectView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2399,6 +2415,7 @@
 			children = (
 				150D878F1DF0679F00A985CB /* CourseSearchBarView.swift */,
 				150D87A11DF1C9E400A985CB /* XCPlayerView.swift */,
+				150D87A51DF27DC900A985CB /* CourseDetailMainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3507,6 +3524,7 @@
 				15C3A4D61DB8C59C00C8DD94 /* UIView+Frame.swift */,
 				15C3A4D81DB8C5E600C8DD94 /* ExtensionFile.swift */,
 				15CB85F71DC9EE9800CBA466 /* UIDeviceExtension.swift */,
+				15E5C4F91DF6480B00E72E33 /* ModelExtension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -3870,7 +3888,7 @@
 				TargetAttributes = {
 					15C39CF61DB85BAD00C8DD94 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = Y8MK4UJH8L;
+						DevelopmentTeam = 26T67SPN5U;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -4932,7 +4950,9 @@
 				15C96E8E1DCCF9040076C37A /* DocMainViewController.swift in Sources */,
 				150AE9C61DB9F195002EAFEA /* FrameView.swift in Sources */,
 				150D87961DF070D700A985CB /* CourseHottestViewController.swift in Sources */,
+				15E5C4FA1DF6480B00E72E33 /* ModelExtension.swift in Sources */,
 				150AE9E61DBF55A1002EAFEA /* HomeSearchBar.swift in Sources */,
+				15E5C4F61DF5B27300E72E33 /* HomeCourseCell.swift in Sources */,
 				15C3A4CE1DB89C3300C8DD94 /* LoginViewController.swift in Sources */,
 				150AE9CD1DB9F195002EAFEA /* PKHUDAssets.swift in Sources */,
 				1539C6DE1DE5E21B00CA2B5C /* UIImage+QRCode.swift in Sources */,
@@ -4941,6 +4961,7 @@
 				15FAF3A21DEB318200891C27 /* DocDirectoryViewController.swift in Sources */,
 				150AE9CB1DB9F195002EAFEA /* PKHUDAnimating.swift in Sources */,
 				150AE9CF1DB9F195002EAFEA /* PKHUDProgressView.swift in Sources */,
+				15E5C4FC1DF64D5800E72E33 /* HomeSubjectCell.swift in Sources */,
 				15C39D481DB8668F00C8DD94 /* CommonTool.swift in Sources */,
 				150D87901DF0679F00A985CB /* CourseSearchBarView.swift in Sources */,
 				150AE9AE1DB9F01C002EAFEA /* NSData+Base64.m in Sources */,
@@ -4963,6 +4984,7 @@
 				156B8AD81DEFAF9400BBB3E9 /* DocDetailViewController.swift in Sources */,
 				15FAF3AB1DED1D5A00891C27 /* DirectoryModel.swift in Sources */,
 				150D87A21DF1C9E400A985CB /* XCPlayerView.swift in Sources */,
+				15E5C5001DF665BD00E72E33 /* HomeSubjectView.swift in Sources */,
 				15CB85F81DC9EE9800CBA466 /* UIDeviceExtension.swift in Sources */,
 				150AE94D1DB9E982002EAFEA /* ConstString.swift in Sources */,
 				156B8ADF1DEFBC3200BBB3E9 /* DocDetailModel.swift in Sources */,
@@ -4973,6 +4995,7 @@
 				150D879E1DF1BA0D00A985CB /* CourseDetailModel.swift in Sources */,
 				15C39D031DB85BAD00C8DD94 /* CloudStudy.xcdatamodeld in Sources */,
 				1539C6DA1DE5E20400CA2B5C /* Tool.swift in Sources */,
+				150D87A61DF27DC900A985CB /* CourseDetailMainView.swift in Sources */,
 				15C39D171DB8613B00C8DD94 /* MainTabBarController.swift in Sources */,
 				150AE9D31DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift in Sources */,
 				15F72B241DC8415500A8FC6F /* HomeDataRequestObject.swift in Sources */,
@@ -4989,6 +5012,7 @@
 				15C3A4D01DB89CD600C8DD94 /* GuideViewController.swift in Sources */,
 				15D906DB1DC6E9F80065BD6E /* ImagePlayer.swift in Sources */,
 				15C3A4D41DB8C36400C8DD94 /* UserInfo.swift in Sources */,
+				15E5C4FE1DF6506B00E72E33 /* HomeSubjectModel.swift in Sources */,
 				150AE9D01DB9F195002EAFEA /* PKHUDRotatingImageView.swift in Sources */,
 				150D87A01DF1C11700A985CB /* CourseDetailViewController.swift in Sources */,
 				150AE9D11DB9F195002EAFEA /* PKHUDSquareBaseView.swift in Sources */,
@@ -5133,11 +5157,13 @@
 			baseConfigurationReference = 4D173FB5E8DBBBCDAE9DA8AC /* Pods-CloudStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y8MK4UJH8L;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 26T67SPN5U;
 				INFOPLIST_FILE = CloudStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daisy.CloudStudy;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.CloudStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudStudy/Library/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -5149,11 +5175,13 @@
 			baseConfigurationReference = 9E8C7E698D9592A855CA7CA0 /* Pods-CloudStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y8MK4UJH8L;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 26T67SPN5U;
 				INFOPLIST_FILE = CloudStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daisy.CloudStudy;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.CloudStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudStudy/Library/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

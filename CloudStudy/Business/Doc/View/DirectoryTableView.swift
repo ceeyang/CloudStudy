@@ -77,9 +77,6 @@ extension DirectoryTableView : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let directoryModel = directoryModelArr[indexPath.row]
-        if directoryDidSelectedClourse != nil
-        {
-            directoryDidSelectedClourse!(directoryModel)
-        }
+        directoryDidSelectedClourse?(directoryModel)
     }
 }

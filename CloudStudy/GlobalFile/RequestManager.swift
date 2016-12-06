@@ -35,7 +35,7 @@ class RequestManager: NSObject {
                 break
             case .failure(let error):
                 completion(response)
-                printLog("Request Failed Url:\(url) with errorInfo:\(error)")
+                printLog("Request Failed Url:\(url) \n errorInfo:\(error)")
                 break
             }
         }

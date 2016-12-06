@@ -16,7 +16,6 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     var topContainer  : HomeTopContainer!
     var tableView     : UITableView!
     var header        : MJRefreshNormalHeader!
-    var footer        : MJRefreshAutoNormalFooter!
     var dataSource    : HomeDataModelObject!
     let homeRequestManger = HomeDataRequestObject.shared
 
@@ -56,8 +55,11 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         tableView.dataSource      = dataSource
         tableView.separatorStyle  = .none
         tableView.backgroundColor = UIColor.clear
-        tableView.register(HomeIconCell.self, forCellReuseIdentifier: kHomeIconCellReuseIdentifier)
         view.addSubview(tableView)
+        
+        tableView.register(HomeIconCell.self, forCellReuseIdentifier: kHomeIconCellReuseIdentifier)
+        tableView.register(HomeCourseCell.self, forCellReuseIdentifier: kHomeCourseCellReuseIdentifier)
+        tableView.register(HomeSubjectCell.self, forCellReuseIdentifier: kHomeSubjectCellReuseIdentifier)
         
         /** Search Bar */
         let searchBar = HomeSearchBar()
@@ -109,13 +111,6 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         })
         tableView.mj_header = header
         
-        footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
-            let delayTime = DispatchTime.now() + Double(Int64(5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-            DispatchQueue.main.asyncAfter(deadline: delayTime) {
-                self?.footer.endRefreshing()
-            }
-        })
-        tableView.mj_footer = footer
         header.beginRefreshing()
     }
     
@@ -137,12 +132,6 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
                 header.endRefreshing()
             }
         }
-        if footer != nil {
-            if footer.isRefreshing() {
-                footer.endRefreshing()
-            }
-            
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -152,6 +141,5 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     
     deinit {
         header = nil
-        footer = nil
     }
 }

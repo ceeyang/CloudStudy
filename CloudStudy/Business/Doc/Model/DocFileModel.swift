@@ -20,4 +20,7 @@ class DocFileModel: NSObject {
     
     /** 适用于 课程 */
     var study_person_num    : String?
+    
+    /** 使用于 首页课程模型 */
+    var time                : String?
 }

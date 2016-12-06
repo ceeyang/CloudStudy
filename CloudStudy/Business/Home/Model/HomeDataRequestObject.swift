@@ -18,8 +18,9 @@ class HomeDataRequestObject: NSObject {
     public var reloadHomeDataClosure : ReloadHomeDataClosure?
     
     
-    private var regionDataArr  : Array<RegionModel> = []
-    private var layoutFinished : [String:Bool] = [:]  // 根据 content_code 判断该类是否加载完成
+    private var regionDataArr   : Array<RegionModel> = []
+    private var layoutFinished  : [String:Bool]      = [:]  // 根据 content_code 判断该类是否加载完成
+    private var finishedTempArr : Array<RegionModel> = []   /** 用于储存请求完成的模型个数 */
     
     public func sendUpdateFileRequest() {
         HUD.show(.label("loading..."))
@@ -51,7 +52,7 @@ class HomeDataRequestObject: NSObject {
             switch response.result {
             case .success(let value):
                 let json          = JSON(value)
-    
+                print(json)
                 let bannerListArr = json["data"]["banner_list"].arrayValue
                 self?.parseBanner(bannerListArr: bannerListArr)
                 
@@ -76,6 +77,7 @@ class HomeDataRequestObject: NSObject {
     }
     
     private func parseHomeLayoutData(regionListArr:Array<JSON>) {
+        finishedTempArr.removeAll()
         var regionArr:Array<RegionModel> = []
         for dic in regionListArr {
             let module = dic["content_code"].stringValue
@@ -92,6 +94,7 @@ class HomeDataRequestObject: NSObject {
                 let region = RegionModel()
                 region.parseData(json: dic)
                 regionArr.append(region)
+                /** 开子线程请求数据 */
                 DispatchQueue.global().async {[weak self] in
                     self?.startLoadingModelDetail(model:region)
                 }
@@ -103,9 +106,9 @@ class HomeDataRequestObject: NSObject {
     
     private func startLoadingIconData(model:RegionModel) {
         regionDataArr.removeObject(model)
-        let iconJsonArr  = model.nav_list
-        var iconModelArr:Array<IconModel> = []
-        for icon in iconJsonArr! {
+        let iconJsonArr  : Array<Any>       = model.nav_list
+        var iconModelArr : Array<IconModel> = []
+        for icon in iconJsonArr {
             let iconModel = IconModel()
             iconModel.parseData(json:icon as! JSON)
             iconModelArr.append(iconModel)
@@ -113,14 +116,48 @@ class HomeDataRequestObject: NSObject {
         model.nav_list = iconModelArr
         regionDataArr.append(model)
         layoutFinished[model.content_code!] = true
-        DispatchQueue.main.async { [weak self] in
-            if self?.reloadHomeDataClosure != nil {
-                self?.reloadHomeDataClosure!((self?.regionDataArr)!)
-            }
-        }
+//        DispatchQueue.main.async { [weak self] in
+//            if self?.reloadHomeDataClosure != nil {
+//                self?.reloadHomeDataClosure!((self?.regionDataArr)!)
+//            }
+//        }
     }
     
     private func startLoadingModelDetail(model:RegionModel) {
+    
+        RequestManager.shared.requestCommonDataWith(url: model.url!, completion: { [weak self](response) in
+            
+            switch response.result {
+            case .success(let value):
+                let json          = JSON(value)
+                print(json)
+                /** 更新数据刷新进度 */
+                for region in (self?.regionDataArr)!
+                {
+                    if region.seq == model.seq
+                    {
+                        region.dataSourceArr = json["data"].arrayValue
+                    }
+                }
+                
+                /** 判断是否解析请求完成 */
+                self?.finishedTempArr.append(model)
+                
+                /** 解析完成后主线程刷新界面, -2 : banner 和首页的 iocn 特别处理了,所以 -2 */
+                if self?.finishedTempArr.count == (self?.regionDataArr.count)! - 1
+                {
+                    DispatchQueue.main.async { [weak self] in
+                        if self?.reloadHomeDataClosure != nil
+                        {
+                            self?.reloadHomeDataClosure!((self?.regionDataArr)!)
+                        }
+                    }
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        })
     }
     
 }

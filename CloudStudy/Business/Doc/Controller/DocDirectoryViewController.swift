@@ -56,7 +56,12 @@ class DocDirectoryViewController: UIViewController {
         view.addSubview(scrollview)
         scrollview.contentSize = CGSize(width: kScreenWidth * 2, height: 0)
         scrollview.snp.makeConstraints { (make) in
-            make.edges.equalTo(view)
+            if directoryType == .course {
+                make.left.right.top.equalTo(view)
+                make.bottom.equalTo(view.snp.bottom).inset(44)
+            } else {
+                make.edges.equalTo(view)
+            }
         }
         mScrollView = scrollview
     }

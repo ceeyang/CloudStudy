@@ -88,21 +88,15 @@ class HomeSearchBar: UIView {
     
     func addAction() {
         kQrCodeBtn.addAction { [weak self](btn) in
-            if self?.qrCodeBtnAction != nil {
-                self?.qrCodeBtnAction!(btn)
-            }
+            self?.qrCodeBtnAction?(btn)
         }
         
         kmessageBtn.addAction { [weak self](btn) in
-            if self?.messageBtnAction != nil {
-                self?.messageBtnAction!(btn)
-            }
+            self?.messageBtnAction?(btn)
         }
         
         kInputView.addAction { [weak self](btn) in
-            if self?.searchBtnAction != nil {
-                self?.searchBtnAction!(btn)
-            }
+            self?.searchBtnAction?(btn)
         }
     }
     

@@ -55,10 +55,10 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
     }
     
     func layoutIconWith(style:HomeIconLayoutStyle,items:Array<IconModel>) {
-        var iconSize          = kSizeForHomeIcon
-        let heightForLabel    = kHeightForHomeIconTitleLabl
-        let heightForSpace    = kHeightForSpaceOfIconAndTitle;
-        var heightForIconItem = iconSize + heightForSpace + heightForLabel
+        var iconSize          : CGFloat = kSizeForHomeIcon
+        let heightForLabel    : CGFloat = kHeightForHomeIconTitleLabl
+        let heightForSpace    : CGFloat = kHeightForSpaceOfIconAndTitle;
+        var heightForIconItem : CGFloat = iconSize + heightForSpace + heightForLabel
         
         scrollView.isHidden = false
         switch style {
@@ -94,8 +94,8 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
             break
         }
         
-        let maxY    = scrollView.frame.maxY
-        let centerX = scrollView.centerX
+        let maxY    : CGFloat = scrollView.frame.maxY
+        let centerX : CGFloat = scrollView.centerX
         pageControl.frame = CGRect(origin: CGPoint(x:centerX-30, y:maxY), size: CGSize(width: 60, height: kHeightForHomePageControl))
     }
     
@@ -107,9 +107,7 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
             let homeIcon  = HomeIconView(frame: CGRect(x:CGFloat(index) * widthForItem,y:0,w:widthForItem,h:scrollView.height), layoutStyle: .FourPerRowForScrollingEnable)
             homeIcon.tag  = index
             homeIcon.addTapGesture(action: { [weak self](tap) in
-                if self?.iconDidSelectedAction != nil {
-                    self?.iconDidSelectedAction!(model)
-                }
+                self?.iconDidSelectedAction?(model)
             })
             homeIcon.setTitle(model.name!, imageName: getImageNameWith(model))
             scrollView.addSubview(homeIcon)
@@ -125,8 +123,8 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
     private func layoutIconStyleTwo(items:Array<IconModel>) {
         scrollView.removeSubviews()
         
-        let widthForItem  = kScreenWidth / 5
-        var index         = 0
+        let widthForItem : CGFloat = kScreenWidth / 5
+        var index        : Int     = 0
         for model in items {
             
             let homeIcon  = HomeIconView(frame: CGRect(x:CGFloat(index) * widthForItem,y:0,w:widthForItem,h:scrollView.height), layoutStyle: .FivePerRowForScrollingEnbale)
@@ -149,15 +147,15 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
     private func layoutIconStyleThree(items:Array<IconModel>) {
         scrollView.removeSubviews()
         
-        let widthForItem   = kScreenWidth / 4
-        let widthForPage   = self.scrollView.frame.size.width
-        let heightForItem  = self.scrollView.frame.size.height / 2
+        let widthForItem   : CGFloat = kScreenWidth / 4
+        let widthForPage   : CGFloat = scrollView.frame.size.width
+        let heightForItem  : CGFloat = scrollView.frame.size.height / 2
         
         var heightForSpace : CGFloat = 0
         var tempPageSpace  : CGFloat = 0
         
-        var tempIdx        = 0
-        var idx            = 0
+        var tempIdx        : Int     = 0
+        var idx            : Int     = 0
         
         for model in items {
             if(tempIdx != 0 && tempIdx % 8 == 0) {
@@ -187,7 +185,7 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
             idx     += 1
         }
         //1.总页数
-        let totalPage = items.count % 8 == 0 ? items.count / 8 : items.count / 8 + 1;
+        let totalPage : Int = items.count % 8 == 0 ? items.count / 8 : items.count / 8 + 1;
         //2.contentSize
         
         scrollView.contentSize = CGSize(width: widthForPage * CGFloat(totalPage), height: 0)
@@ -202,8 +200,8 @@ class HomeIconCell: UITableViewCell,UIScrollViewDelegate {
         let heightForItem  :CGFloat = scrollView.height / 2
         var heightForSpace :CGFloat = 0
         var tempPageSpace  :CGFloat = 0
-        var tempIndex               = 0
-        var index                   = 0
+        var tempIndex      :Int     = 0
+        var index          :Int     = 0
         for model in items {
             if tempIndex != 0 && tempIndex % 10 == 0 {
                 tempIndex = 0

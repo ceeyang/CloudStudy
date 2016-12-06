@@ -33,7 +33,7 @@ let kHeightForStarRating          : CGFloat = 14
 
 //MARK: - Enum -
 enum HomeTableViewModule : Int {
-    case Icon                //菜单模块
+    case Icon = 0            //菜单模块
     case Course              //课程模块
     case Subject             //专题模块
     case Knowlege            //知识模块
@@ -44,20 +44,30 @@ enum HomeTableViewModule : Int {
     case BlankPage           //空白页
 }
 
-enum HomeTableViewLayoutStyle : Int {
+enum HomeTableViewLayoutStyle : String {
     
-    case PageDisableItemsForSingleCell //一个cell里有若干个items，可以滚动，但不分页
-    case PageEnableItemsForSingleCell  //一个cell里有若干个items，可以滚动，分页，每页2个
-    case FourItemsForEachCell          //一个cell里有4个items，每行2个item，可左右滑动，分页，每页4个items
-    case ThreeItemsForSingleCell       //一个cell里有3个items，每行1个item，可左右滑动，分页，每页3个items
-    case BlankPage                     //空白页
+    case PageDisableItemsForSingleCell  = "0"   //一个cell里有若干个items，可以滚动，但不分页
+    case PageEnableItemsForSingleCell   = "1"   //一个cell里有若干个items，可以滚动，分页，每页2个
+    case FourItemsForEachCell           = "2"   //一个cell里有4个items，每行2个item，可左右滑动，分页，每页4个items
+    case ThreeItemsForSingleCell        = "3"   //一个cell里有3个items，每行1个item，可左右滑动，分页，每页3个items
+    case BlankPage                      = "4"   //空白页
 }
 
 enum HomeIconLayoutStyle : String {
-    case FourPerRowForScrollingEnable   = "1"   // 单行 x 4item ,可滚动
-    case FivePerRowForScrollingEnbale   = "2"   // 单行 x 5item ,可滚动
-    case EightPerPageForScrollingEnable = "3"   // 双行，每行4个，每页八个，可滚动
-    case TenPerPageForScrollingEnbale   = "4"   // 双行，每行5个，每页10个，可滚动
-    case HomeIconAreaBlankPage          = "5"   // 无数据，空白页
+    case FourPerRowForScrollingEnable   = "0"   // 单行 x 4item ,可滚动
+    case FivePerRowForScrollingEnbale   = "1"   // 单行 x 5item ,可滚动
+    case EightPerPageForScrollingEnable = "2"   // 双行，每行4个，每页八个，可滚动
+    case TenPerPageForScrollingEnbale   = "3"   // 双行，每行5个，每页10个，可滚动
+    case HomeIconAreaBlankPage          = "4"   // 无数据，空白页
 }
 
+enum HomeLayoutContentCode : String {
+    case navigation_module              = "navigation_module"      /** 导航模块 */
+    case recommended_courses            = "recommended_courses"    /** 推荐课程 */
+    case hot_subject                    = "hot_subject"            /** 推荐专题 */
+    case hot_knowledge                  = "hot_knowledge"          /** 热门知识 */
+    case hot_activity                   = "hot_activity"           /** 最新活动 */
+    case my_required                    = "my_required"            /** 我的必修 */
+    case lecturers_list                 = "lecturers_list"         /** 讲师榜 */
+    case recommended_activity           = "recommended_activity"   /** 推荐活动 */
+}

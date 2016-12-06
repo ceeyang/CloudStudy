@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 typealias UpdateNavigationBarStatusClosurce = (_ offSetY:CGFloat) -> Void
 typealias PushToControllerActionClourse = (_ viewController:UIViewController) -> Void
@@ -28,8 +29,15 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let model = dataArr[indexPath.section]
+        
+        let module  = HomeLayoutContentCode(rawValue: model.content_code!)!
+        let style   = HomeTableViewLayoutStyle(rawValue:model.display_mode_code!)!
+        
         if model.content_code == "navigation_module"{
             let layout = HomeLayoutObject(homeIconStyle: HomeIconLayoutStyle(rawValue: model.display_mode_code!)!)
+            return layout.cellHeight!
+        } else if model.content_code == "hot_subject" {
+            let layout = HomeLayoutObject(module: module, layoutStyle: style, dataArr: model.dataSourceArr)
             return layout.cellHeight!
         }
         return 60
@@ -39,7 +47,13 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
         
         let model = dataArr[indexPath.section]
         
-        if model.content_code == "navigation_module" {
+        let contentCode : HomeLayoutContentCode = HomeLayoutContentCode(rawValue: model.content_code!)!
+        
+        switch contentCode {
+            
+        case .navigation_module:
+            
+            /** 导航栏 icon */
             var cell = tableView.dequeueReusableCell(withIdentifier: kHomeIconCellReuseIdentifier, for: indexPath) as? HomeIconCell
             if cell == nil {
                 cell = HomeIconCell(style: .default, reuseIdentifier: kHomeIconCellReuseIdentifier)
@@ -49,6 +63,44 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
                 self?.homeIconDidSelectedWith(model)
             }
             return cell!
+            
+        case .recommended_courses:
+            
+            /** 推荐课程 */
+//            var cell = tableView.dequeueReusableCell(withIdentifier: kHomeCourseCellReuseIdentifier, for: indexPath) as? HomeCourseCell
+//            if cell == nil {
+//                cell = HomeCourseCell(style: .default, reuseIdentifier: kHomeCourseCellReuseIdentifier)
+//            }
+//            
+            
+            break
+        case .hot_subject:
+            
+            /** 推荐讲师 */
+            var cell = tableView.dequeueReusableCell(withIdentifier: kHomeSubjectCellReuseIdentifier, for: indexPath) as? HomeSubjectCell
+            if cell == nil {
+                cell = HomeSubjectCell(style: .default, reuseIdentifier: kHomeSubjectCellReuseIdentifier)
+            }
+            cell?.setupScrollView(with: HomeTableViewLayoutStyle(rawValue: model.display_mode_code!)!, items: model.dataSourceArr as! Array<JSON>)
+            cell?.itemClickActionClourse = { [weak self](subject) in
+                self?.homeSubjectDidSelected(with:subject)
+            }
+            return cell!
+        case .hot_knowledge:
+            
+            break
+        case .hot_activity:
+            
+            break
+        case .my_required:
+            
+            break
+        case .lecturers_list:
+            
+            break
+        case .recommended_activity:
+            
+            break
         }
         
         let cell = UITableViewCell(style: .default, reuseIdentifier: "CellIdentifier")
@@ -61,9 +113,7 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if updateSearchBarStatus != nil {
-            updateSearchBarStatus!(scrollView.offsetY)
-        }
+        updateSearchBarStatus?(scrollView.offsetY)
     }
     
     private func homeIconDidSelectedWith(_ model:IconModel) {
@@ -93,10 +143,11 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
         }
     }
     
+    private func homeSubjectDidSelected(with model:HomeSubjectModel) {
+        
+    }
+    
     private func pushTabbarViewControllerWith(_ viewController:UIViewController) {
-        //viewController.hidesBottomBarWhenPushed = true
-        if pushToControllerAction != nil {
-           pushToControllerAction!(viewController)
-        }
+        pushToControllerAction?(viewController)
     }
 }

@@ -24,6 +24,8 @@ class DocDetailViewController: UIViewController {
         
     }
     
+    
+    
     func play() {
 
     }

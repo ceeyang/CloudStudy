@@ -56,5 +56,22 @@ let NOTIFICATION_DirectoryIndicatorBtnDidSelected = "NOTIFICATION_DirectoryIndic
 let NOTIFICATION_DirectoryDidSelectedWithIndex = "NOTIFICATION_DirectoryDidSelectedWithIndex"
 
 
+/**    case navigation_module              = "navigation_module"      /** 导航模块 */
+ case recommended_courses            = "recommended_courses"    /** 推荐课程 */
+ case hot_subject                    = "hot_subject"            /** 推荐专题 */
+ case hot_knowledge                  = "hot_knowledge"          /** 热门知识 */
+ case hot_activity                   = "hot_activity"           /** 最新活动 */
+ case my_required                    = "my_required"            /** 我的必修 */
+ case lecturers_list                 = "lecturers_list"         /** 讲师榜 */
+ case recommended_activity  */
 
-let kHomeIconCellReuseIdentifier = "kHomeIconCellReuseIdentifier"
+
+let kHomeIconCellReuseIdentifier                = "kHomeIconCellReuseIdentifier"
+let kHomeCourseCellReuseIdentifier              = "kHomeCourseCellReuseIdentifier"
+let kHomeSubjectCellReuseIdentifier             = "kHomeSubjectCellReuseIdentifier"
+let kHomeKnowledgeCellReuseIdentifier           = "kHomeKnowledgeCellReuseIdentifier"
+let kHomeActivityCellReuseIdentifier            = "kHomeActivityCellReuseIdentifier"
+let kHomeMyRequiredCellReuseIdentifier          = "kHomeMyRequiredCellReuseIdentifier"
+let kHomeLecturersCellReuseIdentifier           = "kHomeLecturersCellReuseIdentifier"
+let kHomeRecommendedActivityCellReuseIdentifier = "kHomeRecommendedActivityCellReuseIdentifier"
+
