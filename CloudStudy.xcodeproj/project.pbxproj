@@ -1042,6 +1042,7 @@
 		15CB85F41DC9E8F900CBA466 /* HomeLayoutObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CB85F31DC9E8F900CBA466 /* HomeLayoutObject.swift */; };
 		15CB85F61DC9ED3B00CBA466 /* HomeStyleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CB85F51DC9ED3B00CBA466 /* HomeStyleConfig.swift */; };
 		15CB85F81DC9EE9800CBA466 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CB85F71DC9EE9800CBA466 /* UIDeviceExtension.swift */; };
+		15D8361F1DF796FF00F7CFDE /* HomeHeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8361E1DF796FF00F7CFDE /* HomeHeaderTitleView.swift */; };
 		15D906DB1DC6E9F80065BD6E /* ImagePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D906DA1DC6E9F80065BD6E /* ImagePlayer.swift */; };
 		15E5C4F61DF5B27300E72E33 /* HomeCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E5C4F51DF5B27300E72E33 /* HomeCourseCell.swift */; };
 		15E5C4FA1DF6480B00E72E33 /* ModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E5C4F91DF6480B00E72E33 /* ModelExtension.swift */; };
@@ -2112,6 +2113,7 @@
 		15CB85F31DC9E8F900CBA466 /* HomeLayoutObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeLayoutObject.swift; sourceTree = "<group>"; };
 		15CB85F51DC9ED3B00CBA466 /* HomeStyleConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStyleConfig.swift; sourceTree = "<group>"; };
 		15CB85F71DC9EE9800CBA466 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		15D8361E1DF796FF00F7CFDE /* HomeHeaderTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderTitleView.swift; sourceTree = "<group>"; };
 		15D906DA1DC6E9F80065BD6E /* ImagePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePlayer.swift; sourceTree = "<group>"; };
 		15E5C4F51DF5B27300E72E33 /* HomeCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCourseCell.swift; sourceTree = "<group>"; };
 		15E5C4F91DF6480B00E72E33 /* ModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtension.swift; sourceTree = "<group>"; };
@@ -2345,6 +2347,7 @@
 				15E5C4F51DF5B27300E72E33 /* HomeCourseCell.swift */,
 				15E5C4FB1DF64D5800E72E33 /* HomeSubjectCell.swift */,
 				15E5C4FF1DF665BD00E72E33 /* HomeSubjectView.swift */,
+				15D8361E1DF796FF00F7CFDE /* HomeHeaderTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5019,6 +5022,7 @@
 				15CB85F41DC9E8F900CBA466 /* HomeLayoutObject.swift in Sources */,
 				15C96E981DCCF9770076C37A /* SubjectMainViewController.swift in Sources */,
 				15F72B301DC86BB800A8FC6F /* HomeTopContainer.swift in Sources */,
+				15D8361F1DF796FF00F7CFDE /* HomeHeaderTitleView.swift in Sources */,
 				150AE9CE1DB9F195002EAFEA /* PKHUDErrorView.swift in Sources */,
 				150AE9CC1DB9F195002EAFEA /* PKHUDAnimation.swift in Sources */,
 				15FAF3AD1DED801900891C27 /* DirectoryTableView.swift in Sources */,

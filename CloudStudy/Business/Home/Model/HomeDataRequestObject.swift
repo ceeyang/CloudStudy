@@ -19,7 +19,6 @@ class HomeDataRequestObject: NSObject {
     
     
     private var regionDataArr   : Array<RegionModel> = []
-    private var layoutFinished  : [String:Bool]      = [:]  // 根据 content_code 判断该类是否加载完成
     private var finishedTempArr : Array<RegionModel> = []   /** 用于储存请求完成的模型个数 */
     
     public func sendUpdateFileRequest() {
@@ -71,37 +70,38 @@ class HomeDataRequestObject: NSObject {
             banner.parseData(json:dicJson)
             bannerResultArr.append(banner)
         }
-        if reloadBannerClosure != nil {
-            reloadBannerClosure!(bannerResultArr)
-        }
+        reloadBannerClosure?(bannerResultArr)
     }
     
     private func parseHomeLayoutData(regionListArr:Array<JSON>) {
         finishedTempArr.removeAll()
         var regionArr:Array<RegionModel> = []
         for dic in regionListArr {
-            let module = dic["content_code"].stringValue
-            layoutFinished[module] = false
             /** 首页 ICON 特殊处理 */
+            let region = RegionModel()
+            let module : String = dic["content_code"].stringValue
             if module == "navigation_module"  {
-                let region = RegionModel()
                 region.parseData(json: dic, arrayValues: ["nav_list"])
-                regionArr.append(region)
-                DispatchQueue.global().async { [weak self] in
-                    self?.startLoadingIconData(model:region)
-                }
             } else {
-                let region = RegionModel()
                 region.parseData(json: dic)
-                regionArr.append(region)
-                /** 开子线程请求数据 */
-                DispatchQueue.global().async {[weak self] in
+            }
+            regionArr.append(region)
+        }
+        regionDataArr.removeAll()
+        regionDataArr.append(contentsOf: regionArr)
+        
+        for region in regionDataArr {
+            
+            /** 开子线程请求数据 */
+            DispatchQueue.global().async {[weak self] in
+                let contentCode : String = region.content_code!
+                if contentCode == "navigation_module" {
+                    self?.startLoadingIconData(model:region)
+                } else {
                     self?.startLoadingModelDetail(model:region)
                 }
             }
         }
-        regionDataArr.removeAll()
-        regionDataArr.append(contentsOf: regionArr)
     }
     
     private func startLoadingIconData(model:RegionModel) {
@@ -115,12 +115,7 @@ class HomeDataRequestObject: NSObject {
         }
         model.nav_list = iconModelArr
         regionDataArr.append(model)
-        layoutFinished[model.content_code!] = true
-//        DispatchQueue.main.async { [weak self] in
-//            if self?.reloadHomeDataClosure != nil {
-//                self?.reloadHomeDataClosure!((self?.regionDataArr)!)
-//            }
-//        }
+        finishedTempArr.append(model)
     }
     
     private func startLoadingModelDetail(model:RegionModel) {
@@ -143,14 +138,17 @@ class HomeDataRequestObject: NSObject {
                 /** 判断是否解析请求完成 */
                 self?.finishedTempArr.append(model)
                 
-                /** 解析完成后主线程刷新界面, -2 : banner 和首页的 iocn 特别处理了,所以 -2 */
-                if self?.finishedTempArr.count == (self?.regionDataArr.count)! - 1
+                /** 解析完成后主线程刷新界面 */
+                if self?.finishedTempArr.count == (self?.regionDataArr.count)!
                 {
+                    /** 将数组根据 seq 从小到大排序 */
+                    self?.regionDataArr.sort(by: { (lastRegion:RegionModel, nextRegion:RegionModel) -> Bool in
+                        let seq0 : Int = lastRegion.seq!.toInt()!
+                        let seq1 : Int = nextRegion.seq!.toInt()!
+                        return seq0 < seq1
+                    })
                     DispatchQueue.main.async { [weak self] in
-                        if self?.reloadHomeDataClosure != nil
-                        {
-                            self?.reloadHomeDataClosure!((self?.regionDataArr)!)
-                        }
+                        self?.reloadHomeDataClosure?((self?.regionDataArr)!)
                     }
                 }
                 

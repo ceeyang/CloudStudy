@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 9.0, *) {
             if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
                 if shortcutItem.type == kFirstButton {
-                    /** Do something */
+                    tabBarController.selectedViewController?.navigationController?.pushViewController(ScanCodeViewController(), animated: true)
                 } else if shortcutItem.type == kSecondButton {
                     /** Do something */
                 }

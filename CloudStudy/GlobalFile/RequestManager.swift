@@ -17,6 +17,10 @@ class RequestManager: NSObject {
 
     static let shared = RequestManager()
     
+    func cancelTaskWithFlag(flag:Int)  {
+        
+    }
+    
     /**
      *  请求公共数据,只返回code 为0000 的情况,对请求失败后的错误代码进行了处理
      */

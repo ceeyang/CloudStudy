@@ -88,7 +88,7 @@ class TapGestureActionBlockWrapper: NSObject {
 }
 
 extension UITapGestureRecognizer {
-        
+    
     func addAction(block:@escaping TapGestureActionClosure) {
         objc_setAssociatedObject(self, &TapGestureActionBlockKey, TapGestureActionBlockWrapper(block:block),  objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         addTarget(self, action: #selector(block_handleAction(sender:)))

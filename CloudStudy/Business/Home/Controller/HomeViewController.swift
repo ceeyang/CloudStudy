@@ -12,11 +12,13 @@ import EZSwiftExtensions
 
 class HomeViewController: UIViewController,UIScrollViewDelegate {
     
-    var navigationBar : HomeSearchBar!
-    var topContainer  : HomeTopContainer!
-    var tableView     : UITableView!
-    var header        : MJRefreshNormalHeader!
-    var dataSource    : HomeDataModelObject!
+    var navigationBar  : HomeSearchBar!
+    var topContainer   : HomeTopContainer!
+    var tableView      : UITableView!
+    var header         : MJRefreshNormalHeader!
+    var dataSource     : HomeDataModelObject!
+    var refreshTimeOut : Double = 5
+    
     let homeRequestManger = HomeDataRequestObject.shared
 
     override func viewDidLoad() {
@@ -38,7 +40,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     }
     
     func setupUI() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = kAppBaseColor
         
         dataSource = HomeDataModelObject()
         
@@ -108,10 +110,17 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     func addRefrsh() {
         header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
             self?.homeRequestManger.sendHomeLayoutRequest()
+            self?.refreshTimeOutAction()
         })
         tableView.mj_header = header
         
         header.beginRefreshing()
+    }
+    
+    func refreshTimeOutAction() {
+        delay(refreshTimeOut, closure: { [weak self] in
+            self?.endRefresh()
+        })
     }
     
     func updateSearchBarStatusWith(offY:CGFloat) {

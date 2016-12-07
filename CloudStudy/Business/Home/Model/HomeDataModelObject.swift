@@ -27,8 +27,55 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        let model :RegionModel = dataArr[section]
+        let contentCode : HomeLayoutContentCode = HomeLayoutContentCode(rawValue: model.content_code!)!
+        if contentCode == .navigation_module {
+            return 0.0001
+        } else {
+            return kHeightForSectionTitle
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == dataArr.count - 1 {
+            return 0.0001
+        } else {
+            return 10
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let model :RegionModel = dataArr[section]
+        let contentCode : HomeLayoutContentCode = HomeLayoutContentCode(rawValue: model.content_code!)!
+        if contentCode == .navigation_module {
+            return nil
+        }
+        let header = UIView(frame: CGRect(x: 0, y: 0, w: kScreenWidth, h: kHeightForSectionTitle))
+        header.backgroundColor = UIColor.white
+        let sectionTitleView = HomeHeaderTitleView(frame: CGRect(x: 0, y: 0, w: kScreenWidth, h: kHeightForSectionTitle))
+        let title : String = model.region_name ?? ""
+        sectionTitleView.updateTitle(title)
+        header.addSubview(sectionTitleView)
+        sectionTitleView.moreBtn.addAction { [weak self](button) in
+            self?.moreBtnClickAction(with: model)
+        }
+        
+        return header;
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if(section == dataArr.count - 1) {
+            return nil
+        }
+        let footer = UIView(frame: CGRect(x: 0, y: 0, w: kScreenWidth, h: 10))
+        footer.backgroundColor = UIColor.clear
+        return footer
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let model = dataArr[indexPath.section]
+        let model : RegionModel = dataArr[indexPath.section]
         
         let module  = HomeLayoutContentCode(rawValue: model.content_code!)!
         let style   = HomeTableViewLayoutStyle(rawValue:model.display_mode_code!)!
@@ -45,7 +92,7 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let model = dataArr[indexPath.section]
+        let model : RegionModel = dataArr[indexPath.section]
         
         let contentCode : HomeLayoutContentCode = HomeLayoutContentCode(rawValue: model.content_code!)!
         
@@ -62,6 +109,7 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
             cell?.iconDidSelectedAction = { [weak self] (model) in
                 self?.homeIconDidSelectedWith(model)
             }
+            cell?.selectionStyle = .none
             return cell!
             
         case .recommended_courses:
@@ -85,6 +133,7 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
             cell?.itemClickActionClourse = { [weak self](subject) in
                 self?.homeSubjectDidSelected(with:subject)
             }
+            cell?.selectionStyle = .none
             return cell!
         case .hot_knowledge:
             
@@ -108,14 +157,18 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
-    }
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         updateSearchBarStatus?(scrollView.offsetY)
     }
     
+    
+    //MARK: - ↓↓↓ Actions ↓↓↓ -
+    /** More Button Action */
+    private func moreBtnClickAction(with model:RegionModel) {
+        
+    }
+    
+    //MARK: - Home Icon Action
     private func homeIconDidSelectedWith(_ model:IconModel) {
         
         if model.code == "news" {//新闻
@@ -143,9 +196,11 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
         }
     }
     
+    //MARK: - Subject
     private func homeSubjectDidSelected(with model:HomeSubjectModel) {
         
     }
+    
     
     private func pushTabbarViewControllerWith(_ viewController:UIViewController) {
         pushToControllerAction?(viewController)
