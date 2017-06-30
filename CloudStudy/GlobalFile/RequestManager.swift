@@ -54,7 +54,7 @@ class RequestManager: NSObject {
             return
         } else if  code == "0003" {
             print(msg)
-            HUD.flash(.label(msg), delay: 2.0)
+//            HUD.flash(.label(msg), delay: 2.0)
             UserDefaults.standard[kUSER_HADEVERLOGIN] = false
             AppDelegate.shared.buildKeyWindow()
         } else if  code == "0504" {
@@ -68,12 +68,12 @@ class RequestManager: NSObject {
             } else {
                 mobileType = "UnKnown"
             }
-            HUD.flash(.label("Your acount has logined by anthor \(mobileType) device at \(time)"), delay: 2.0)
+//            HUD.flash(.label("Your acount has logined by anthor \(mobileType) device at \(time)"), delay: 2.0)
             UserDefaults.standard[kUSER_HADEVERLOGIN] = false
             AppDelegate.shared.buildKeyWindow()
         } else {
             print(msg)
-            HUD.flash(.label(msg), delay: 2.0)
+//            HUD.flash(.label(msg), delay: 2.0)
         }
     }
 }

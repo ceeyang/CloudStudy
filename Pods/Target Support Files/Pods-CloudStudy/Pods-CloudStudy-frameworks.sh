@@ -59,7 +59,7 @@ code_sign_if_enabled() {
   if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
     # Use the current code_sign_identitiy
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
-    local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements "$1""
+    local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements '$1'"
 
     if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
       code_sign_cmd="$code_sign_cmd &"
@@ -89,50 +89,26 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AEXML/AEXML.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AlamofireObjectMapper/AlamofireObjectMapper.framework"
   install_framework "$BUILT_PRODUCTS_DIR/EZSwiftExtensions/EZSwiftExtensions.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FaveButton/FaveButton.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FolioReaderKit/FolioReaderKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FontBlaster/FontBlaster.framework"
   install_framework "$BUILT_PRODUCTS_DIR/HMSegmentedControl/HMSegmentedControl.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JSQWebViewController/JSQWebViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MJRefresh/MJRefresh.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MenuItemKit/MenuItemKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MobilePlayer/MobilePlayer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ObjectMapper/ObjectMapper.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SSZipArchive/SSZipArchive.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SwiftyBase64/SwiftyBase64.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ZFDragableModalTransition/ZFDragableModalTransition.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AEXML/AEXML.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AlamofireObjectMapper/AlamofireObjectMapper.framework"
   install_framework "$BUILT_PRODUCTS_DIR/EZSwiftExtensions/EZSwiftExtensions.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FaveButton/FaveButton.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FolioReaderKit/FolioReaderKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FontBlaster/FontBlaster.framework"
   install_framework "$BUILT_PRODUCTS_DIR/HMSegmentedControl/HMSegmentedControl.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JSQWebViewController/JSQWebViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MJRefresh/MJRefresh.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MenuItemKit/MenuItemKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MobilePlayer/MobilePlayer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ObjectMapper/ObjectMapper.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SSZipArchive/SSZipArchive.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SwiftyBase64/SwiftyBase64.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ZFDragableModalTransition/ZFDragableModalTransition.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

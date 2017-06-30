@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MobilePlayer
 
 class CourseDetailMainView: UIView {
     

@@ -114,13 +114,6 @@ class HomeDataModelObject: NSObject,UITableViewDelegate,UITableViewDataSource {
             
         case .recommended_courses:
             
-            /** 推荐课程 */
-//            var cell = tableView.dequeueReusableCell(withIdentifier: kHomeCourseCellReuseIdentifier, for: indexPath) as? HomeCourseCell
-//            if cell == nil {
-//                cell = HomeCourseCell(style: .default, reuseIdentifier: kHomeCourseCellReuseIdentifier)
-//            }
-//            
-            
             break
         case .hot_subject:
             

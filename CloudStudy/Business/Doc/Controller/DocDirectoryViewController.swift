@@ -70,7 +70,7 @@ class DocDirectoryViewController: UIViewController {
     
     fileprivate func loadCategoryInfo() {
         
-        HUD.show(.label("loading..."))
+//        HUD.show(.label("loading..."))
         
         let parameters : NSMutableDictionary = [:]
         parameters["sid"]             = UserInfo.shared.sid
@@ -81,7 +81,7 @@ class DocDirectoryViewController: UIViewController {
         }
         
         RequestManager.shared.requestCommonDataWith(url: url, parameters: parameters) { [weak self](response) in
-            HUD.hide()
+//            HUD.hide()
             
             switch response.result {
             case .success(let value):

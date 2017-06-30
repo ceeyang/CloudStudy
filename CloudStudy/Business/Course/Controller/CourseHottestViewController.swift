@@ -73,7 +73,7 @@ class CourseHottestViewController: UIViewController {
     }
     
     func sendDocNewListDataRequestWith(page:Int) {
-        HUD.show(.label("loading..."))
+//        HUD.show(.label("loading..."))
         
         let parameters : NSMutableDictionary = [:]
         parameters["sid"]             = UserInfo.shared.sid
@@ -82,7 +82,7 @@ class CourseHottestViewController: UIViewController {
         parameters["pageNumber"]      = page
         
         RequestManager.shared.requestCommonDataWith(url: CourseNewDataURL, parameters: parameters) { [weak self](response) in
-            HUD.hide()
+//            HUD.hide()
             self?.header.endRefreshing()
             self?.footer.endRefreshing()
             switch response.result {

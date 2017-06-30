@@ -79,7 +79,7 @@ class CourseLatestViewController: UIViewController {
     }
     
     fileprivate func sendCourseNewListDataRequestWith(page:Int) {
-        HUD.show(.label("loading..."))
+//        HUD.show(.label("loading..."))
         
         let parameters : NSMutableDictionary = [:]
         parameters["sid"]             = UserInfo.shared.sid
@@ -88,7 +88,7 @@ class CourseLatestViewController: UIViewController {
         parameters["pageNumber"]      = page
         
         RequestManager.shared.requestCommonDataWith(url: CourseNewDataURL, parameters: parameters) { [weak self](response) in
-            HUD.hide()
+//            HUD.hide()
             self?.header.endRefreshing()
             self?.footer.endRefreshing()
             switch response.result {
@@ -158,7 +158,7 @@ extension CourseLatestViewController:UITableViewDelegate,UITableViewDataSource{
 //MARK: - Translate to DetailVC -
 extension CourseLatestViewController {
     func requestDocDetail(with docFileModel:DocFileModel) {
-        HUD.show(.label("Loading..."))
+//        HUD.show(.label("Loading..."))
         
         let parameters : NSMutableDictionary = [:]
         parameters["sid"]             = UserInfo.shared.sid
@@ -166,7 +166,7 @@ extension CourseLatestViewController {
         
         RequestManager.shared.requestCommonDataWith(url: CourseDetailUrl, parameters: parameters) { [weak self](response) in
             
-            HUD.hide()
+//            HUD.hide()
             
             self?.header.endRefreshing()
             self?.footer.endRefreshing()

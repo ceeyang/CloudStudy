@@ -11,24 +11,6 @@
 		150AE94D1DB9E982002EAFEA /* ConstString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE94C1DB9E982002EAFEA /* ConstString.swift */; };
 		150AE9AD1DB9F01C002EAFEA /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9A91DB9F01C002EAFEA /* DESUtils.m */; };
 		150AE9AE1DB9F01C002EAFEA /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9AC1DB9F01C002EAFEA /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		150AE9C61DB9F195002EAFEA /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9B21DB9F195002EAFEA /* FrameView.swift */; };
-		150AE9C71DB9F195002EAFEA /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9B31DB9F195002EAFEA /* HUD.swift */; };
-		150AE9C81DB9F195002EAFEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 150AE9B41DB9F195002EAFEA /* Images.xcassets */; };
-		150AE9C91DB9F195002EAFEA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 150AE9B51DB9F195002EAFEA /* Info.plist */; };
-		150AE9CA1DB9F195002EAFEA /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9B71DB9F195002EAFEA /* PKHUD.swift */; };
-		150AE9CB1DB9F195002EAFEA /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9B81DB9F195002EAFEA /* PKHUDAnimating.swift */; };
-		150AE9CC1DB9F195002EAFEA /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9B91DB9F195002EAFEA /* PKHUDAnimation.swift */; };
-		150AE9CD1DB9F195002EAFEA /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BA1DB9F195002EAFEA /* PKHUDAssets.swift */; };
-		150AE9CE1DB9F195002EAFEA /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BB1DB9F195002EAFEA /* PKHUDErrorView.swift */; };
-		150AE9CF1DB9F195002EAFEA /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BC1DB9F195002EAFEA /* PKHUDProgressView.swift */; };
-		150AE9D01DB9F195002EAFEA /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BD1DB9F195002EAFEA /* PKHUDRotatingImageView.swift */; };
-		150AE9D11DB9F195002EAFEA /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BE1DB9F195002EAFEA /* PKHUDSquareBaseView.swift */; };
-		150AE9D21DB9F195002EAFEA /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9BF1DB9F195002EAFEA /* PKHUDSuccessView.swift */; };
-		150AE9D31DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C01DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift */; };
-		150AE9D41DB9F195002EAFEA /* PKHUDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C11DB9F195002EAFEA /* PKHUDTextView.swift */; };
-		150AE9D51DB9F195002EAFEA /* PKHUDWideBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C21DB9F195002EAFEA /* PKHUDWideBaseView.swift */; };
-		150AE9D61DB9F195002EAFEA /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C31DB9F195002EAFEA /* Window.swift */; };
-		150AE9D71DB9F195002EAFEA /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */; };
 		150AE9E61DBF55A1002EAFEA /* HomeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */; };
 		150D87901DF0679F00A985CB /* CourseSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D878F1DF0679F00A985CB /* CourseSearchBarView.swift */; };
 		150D87921DF0702800A985CB /* CourseMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D87911DF0702800A985CB /* CourseMainViewController.swift */; };
@@ -1079,25 +1061,6 @@
 		150AE9A91DB9F01C002EAFEA /* DESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESUtils.m; sourceTree = "<group>"; };
 		150AE9AB1DB9F01C002EAFEA /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		150AE9AC1DB9F01C002EAFEA /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		150AE9B21DB9F195002EAFEA /* FrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
-		150AE9B31DB9F195002EAFEA /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
-		150AE9B41DB9F195002EAFEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		150AE9B51DB9F195002EAFEA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		150AE9B61DB9F195002EAFEA /* PKHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKHUD.h; sourceTree = "<group>"; };
-		150AE9B71DB9F195002EAFEA /* PKHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUD.swift; sourceTree = "<group>"; };
-		150AE9B81DB9F195002EAFEA /* PKHUDAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimating.swift; sourceTree = "<group>"; };
-		150AE9B91DB9F195002EAFEA /* PKHUDAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimation.swift; sourceTree = "<group>"; };
-		150AE9BA1DB9F195002EAFEA /* PKHUDAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAssets.swift; sourceTree = "<group>"; };
-		150AE9BB1DB9F195002EAFEA /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
-		150AE9BC1DB9F195002EAFEA /* PKHUDProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDProgressView.swift; sourceTree = "<group>"; };
-		150AE9BD1DB9F195002EAFEA /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
-		150AE9BE1DB9F195002EAFEA /* PKHUDSquareBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSquareBaseView.swift; sourceTree = "<group>"; };
-		150AE9BF1DB9F195002EAFEA /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
-		150AE9C01DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSystemActivityIndicatorView.swift; sourceTree = "<group>"; };
-		150AE9C11DB9F195002EAFEA /* PKHUDTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDTextView.swift; sourceTree = "<group>"; };
-		150AE9C21DB9F195002EAFEA /* PKHUDWideBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDWideBaseView.swift; sourceTree = "<group>"; };
-		150AE9C31DB9F195002EAFEA /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
-		150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowRootViewController.swift; sourceTree = "<group>"; };
 		150AE9E51DBF55A1002EAFEA /* HomeSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchBar.swift; sourceTree = "<group>"; };
 		150D878F1DF0679F00A985CB /* CourseSearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSearchBarView.swift; sourceTree = "<group>"; };
 		150D87911DF0702800A985CB /* CourseMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseMainViewController.swift; sourceTree = "<group>"; };
@@ -2199,35 +2162,8 @@
 				153BD0D61DE731BB008EDE3B /* BaseSegmentControl */,
 				1539C6D81DE5E20400CA2B5C /* QRCode */,
 				15D906D91DC6E9F80065BD6E /* ImagePlayer */,
-				150AE9B11DB9F195002EAFEA /* PKHUD */,
 			);
 			path = SwiftLibrary;
-			sourceTree = "<group>";
-		};
-		150AE9B11DB9F195002EAFEA /* PKHUD */ = {
-			isa = PBXGroup;
-			children = (
-				150AE9B21DB9F195002EAFEA /* FrameView.swift */,
-				150AE9B31DB9F195002EAFEA /* HUD.swift */,
-				150AE9B41DB9F195002EAFEA /* Images.xcassets */,
-				150AE9B51DB9F195002EAFEA /* Info.plist */,
-				150AE9B61DB9F195002EAFEA /* PKHUD.h */,
-				150AE9B71DB9F195002EAFEA /* PKHUD.swift */,
-				150AE9B81DB9F195002EAFEA /* PKHUDAnimating.swift */,
-				150AE9B91DB9F195002EAFEA /* PKHUDAnimation.swift */,
-				150AE9BA1DB9F195002EAFEA /* PKHUDAssets.swift */,
-				150AE9BB1DB9F195002EAFEA /* PKHUDErrorView.swift */,
-				150AE9BC1DB9F195002EAFEA /* PKHUDProgressView.swift */,
-				150AE9BD1DB9F195002EAFEA /* PKHUDRotatingImageView.swift */,
-				150AE9BE1DB9F195002EAFEA /* PKHUDSquareBaseView.swift */,
-				150AE9BF1DB9F195002EAFEA /* PKHUDSuccessView.swift */,
-				150AE9C01DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift */,
-				150AE9C11DB9F195002EAFEA /* PKHUDTextView.swift */,
-				150AE9C21DB9F195002EAFEA /* PKHUDWideBaseView.swift */,
-				150AE9C31DB9F195002EAFEA /* Window.swift */,
-				150AE9C41DB9F195002EAFEA /* WindowRootViewController.swift */,
-			);
-			path = PKHUD;
 			sourceTree = "<group>";
 		};
 		1539C6D81DE5E20400CA2B5C /* QRCode */ = {
@@ -3891,7 +3827,7 @@
 				TargetAttributes = {
 					15C39CF61DB85BAD00C8DD94 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 26T67SPN5U;
+						DevelopmentTeam = Y8MK4UJH8L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -4001,7 +3937,6 @@
 				15C3A4A61DB8971A00C8DD94 /* train_giveup_class.png in Resources */,
 				15C3A3831DB8971A00C8DD94 /* new_icon_list_cream@3x.png in Resources */,
 				15C3A2AF1DB8971A00C8DD94 /* icon_tab_my_resource@2x.png in Resources */,
-				150AE9C81DB9F195002EAFEA /* Images.xcassets in Resources */,
 				15C3A1171DB8971900C8DD94 /* big_course_input_bg@2x.png in Resources */,
 				15C3A3241DB8971A00C8DD94 /* new_active_type_test@2x.png in Resources */,
 				15C3A45D1DB8971A00C8DD94 /* nwe_tab_ask_topic_pre@2x.png in Resources */,
@@ -4103,7 +4038,6 @@
 				15C3A3731DB8971A00C8DD94 /* new_head_search_right@3x.png in Resources */,
 				15C3A1441DB8971900C8DD94 /* common_btn_bg_pre@3x.png in Resources */,
 				15C3A3661DB8971A00C8DD94 /* new_head_arrow_left_pre@2x.png in Resources */,
-				150AE9C91DB9F195002EAFEA /* Info.plist in Resources */,
 				15C3A35E1DB8971A00C8DD94 /* new_finish@2x.png in Resources */,
 				15C3A27D1DB8971A00C8DD94 /* icon_tab_download_2@2x.png in Resources */,
 				15C3A12A1DB8971900C8DD94 /* common_actionbar_bg.png in Resources */,
@@ -4907,7 +4841,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		0F7F393F11C3C74D263DC88E /* [CP] Embed Pods Frameworks */ = {
@@ -4949,21 +4883,16 @@
 			files = (
 				15CB85F61DC9ED3B00CBA466 /* HomeStyleConfig.swift in Sources */,
 				15C96E691DCC21180076C37A /* HomeIconCell.swift in Sources */,
-				150AE9CA1DB9F195002EAFEA /* PKHUD.swift in Sources */,
 				15C96E8E1DCCF9040076C37A /* DocMainViewController.swift in Sources */,
-				150AE9C61DB9F195002EAFEA /* FrameView.swift in Sources */,
 				150D87961DF070D700A985CB /* CourseHottestViewController.swift in Sources */,
 				15E5C4FA1DF6480B00E72E33 /* ModelExtension.swift in Sources */,
 				150AE9E61DBF55A1002EAFEA /* HomeSearchBar.swift in Sources */,
 				15E5C4F61DF5B27300E72E33 /* HomeCourseCell.swift in Sources */,
 				15C3A4CE1DB89C3300C8DD94 /* LoginViewController.swift in Sources */,
-				150AE9CD1DB9F195002EAFEA /* PKHUDAssets.swift in Sources */,
 				1539C6DE1DE5E21B00CA2B5C /* UIImage+QRCode.swift in Sources */,
 				15C96E941DCCF94B0076C37A /* ResearchMainViewController.swift in Sources */,
 				150AE93F1DB9AC11002EAFEA /* RULFile.swift in Sources */,
 				15FAF3A21DEB318200891C27 /* DocDirectoryViewController.swift in Sources */,
-				150AE9CB1DB9F195002EAFEA /* PKHUDAnimating.swift in Sources */,
-				150AE9CF1DB9F195002EAFEA /* PKHUDProgressView.swift in Sources */,
 				15E5C4FC1DF64D5800E72E33 /* HomeSubjectCell.swift in Sources */,
 				15C39D481DB8668F00C8DD94 /* CommonTool.swift in Sources */,
 				150D87901DF0679F00A985CB /* CourseSearchBarView.swift in Sources */,
@@ -4975,14 +4904,12 @@
 				15F72B321DC87FC300A8FC6F /* HomeDataModelObject.swift in Sources */,
 				15C96E961DCCF9630076C37A /* StoreMainViewController.swift in Sources */,
 				15FAF39E1DEB312E00891C27 /* DocNewViewController.swift in Sources */,
-				150AE9D41DB9F195002EAFEA /* PKHUDTextView.swift in Sources */,
 				15C96EA01DCCFA080076C37A /* NewsMainViewController.swift in Sources */,
 				15C39CFD1DB85BAD00C8DD94 /* ViewController.swift in Sources */,
 				15C39D391DB8624A00C8DD94 /* ActivityViewController.swift in Sources */,
 				15C39D4A1DB8948900C8DD94 /* MainNavigationController.swift in Sources */,
 				15C96E901DCCF91E0076C37A /* ExamMainViewController.swift in Sources */,
 				150D87921DF0702800A985CB /* CourseMainViewController.swift in Sources */,
-				150AE9D21DB9F195002EAFEA /* PKHUDSuccessView.swift in Sources */,
 				150D87941DF070CC00A985CB /* CourseLatestViewController.swift in Sources */,
 				156B8AD81DEFAF9400BBB3E9 /* DocDetailViewController.swift in Sources */,
 				15FAF3AB1DED1D5A00891C27 /* DirectoryModel.swift in Sources */,
@@ -4991,16 +4918,12 @@
 				15CB85F81DC9EE9800CBA466 /* UIDeviceExtension.swift in Sources */,
 				150AE94D1DB9E982002EAFEA /* ConstString.swift in Sources */,
 				156B8ADF1DEFBC3200BBB3E9 /* DocDetailModel.swift in Sources */,
-				150AE9D51DB9F195002EAFEA /* PKHUDWideBaseView.swift in Sources */,
-				150AE9D71DB9F195002EAFEA /* WindowRootViewController.swift in Sources */,
-				150AE9D61DB9F195002EAFEA /* Window.swift in Sources */,
 				15C96E921DCCF9310076C37A /* LiveMainViewController.swift in Sources */,
 				150D879E1DF1BA0D00A985CB /* CourseDetailModel.swift in Sources */,
 				15C39D031DB85BAD00C8DD94 /* CloudStudy.xcdatamodeld in Sources */,
 				1539C6DA1DE5E20400CA2B5C /* Tool.swift in Sources */,
 				150D87A61DF27DC900A985CB /* CourseDetailMainView.swift in Sources */,
 				15C39D171DB8613B00C8DD94 /* MainTabBarController.swift in Sources */,
-				150AE9D31DB9F195002EAFEA /* PKHUDSystemActivityIndicatorView.swift in Sources */,
 				15F72B241DC8415500A8FC6F /* HomeDataRequestObject.swift in Sources */,
 				15C39D431DB8629D00C8DD94 /* PersonalViewController.swift in Sources */,
 				15F72B261DC85DEE00A8FC6F /* BannerModel.swift in Sources */,
@@ -5016,18 +4939,13 @@
 				15D906DB1DC6E9F80065BD6E /* ImagePlayer.swift in Sources */,
 				15C3A4D41DB8C36400C8DD94 /* UserInfo.swift in Sources */,
 				15E5C4FE1DF6506B00E72E33 /* HomeSubjectModel.swift in Sources */,
-				150AE9D01DB9F195002EAFEA /* PKHUDRotatingImageView.swift in Sources */,
 				150D87A01DF1C11700A985CB /* CourseDetailViewController.swift in Sources */,
-				150AE9D11DB9F195002EAFEA /* PKHUDSquareBaseView.swift in Sources */,
 				15CB85F41DC9E8F900CBA466 /* HomeLayoutObject.swift in Sources */,
 				15C96E981DCCF9770076C37A /* SubjectMainViewController.swift in Sources */,
 				15F72B301DC86BB800A8FC6F /* HomeTopContainer.swift in Sources */,
 				15D8361F1DF796FF00F7CFDE /* HomeHeaderTitleView.swift in Sources */,
-				150AE9CE1DB9F195002EAFEA /* PKHUDErrorView.swift in Sources */,
-				150AE9CC1DB9F195002EAFEA /* PKHUDAnimation.swift in Sources */,
 				15FAF3AD1DED801900891C27 /* DirectoryTableView.swift in Sources */,
 				1539C6D41DE5D15400CA2B5C /* ScanCodeViewController.swift in Sources */,
-				150AE9C71DB9F195002EAFEA /* HUD.swift in Sources */,
 				15FAF3A41DEB36E800891C27 /* BaseTableViewDataObject.swift in Sources */,
 				15F72B361DC893F400A8FC6F /* RegionModel.swift in Sources */,
 				15FAF3A81DEB3C6400891C27 /* DocFileModel.swift in Sources */,
@@ -5162,15 +5080,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 26T67SPN5U;
+				DEVELOPMENT_TEAM = Y8MK4UJH8L;
 				INFOPLIST_FILE = CloudStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swift.CloudStudy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceeyang.swift.basedemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudStudy/Library/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -5180,15 +5099,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 26T67SPN5U;
+				DEVELOPMENT_TEAM = Y8MK4UJH8L;
 				INFOPLIST_FILE = CloudStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swift.CloudStudy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceeyang.swift.basedemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudStudy/Library/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

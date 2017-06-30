@@ -22,10 +22,10 @@ class HomeDataRequestObject: NSObject {
     private var finishedTempArr : Array<RegionModel> = []   /** 用于储存请求完成的模型个数 */
     
     public func sendUpdateFileRequest() {
-        HUD.show(.label("loading..."))
+//        HUD.show(.label("loading..."))
         RequestManager.shared.requestCommonDataWith(url: KiOSVersionURL, parameters: nil) { response in
-            HUD.hide()
-    
+//            HUD.hide()
+            
             switch response.result {
             case .success(let value):
                 let json         = JSON(value)
@@ -45,9 +45,9 @@ class HomeDataRequestObject: NSObject {
     }
     
     public func sendHomeLayoutRequest() {
-        HUD.show(.label("loading..."))
+//        HUD.show(.label("loading..."))
         RequestManager.shared.requestCommonDataWith(url: HomeLayoutURL, parameters: ["sid":UserInfo.shared.sid]) { [weak self](response) in
-            HUD.hide()
+//            HUD.hide()
             switch response.result {
             case .success(let value):
                 let json          = JSON(value)

@@ -1,75 +1,37 @@
 PODS:
-  - AEXML (4.0.0)
   - Alamofire (4.2.0)
   - AlamofireObjectMapper (4.0.0):
     - Alamofire (~> 4.0)
     - ObjectMapper (~> 2.0)
   - EZSwiftExtensions (1.7)
-  - FaveButton (2.0.2)
-  - FolioReaderKit (1.0.0):
-    - AEXML (= 4.0)
-    - FontBlaster (= 3.0.0)
-    - JSQWebViewController (~> 5.0)
-    - MenuItemKit (= 2.0)
-    - RealmSwift (~> 1.0)
-    - SSZipArchive (= 1.5)
-    - ZFDragableModalTransition (~> 0.6)
-  - FontBlaster (3.0.0)
   - HMSegmentedControl (1.5.3)
-  - JSQWebViewController (5.0.0)
   - Kingfisher (3.2.1)
-  - MenuItemKit (2.0)
   - MJRefresh (3.1.12)
-  - MobilePlayer (1.2.0)
   - ObjectMapper (2.2.1)
-  - Realm (1.1.0):
-    - Realm/Headers (= 1.1.0)
-  - Realm/Headers (1.1.0)
-  - RealmSwift (1.1.0):
-    - Realm (= 1.1.0)
   - SnapKit (3.0.2)
-  - SSZipArchive (1.5)
-  - SwiftyBase64 (1.1.1)
   - SwiftyJSON (3.1.3)
-  - ZFDragableModalTransition (0.6)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - AlamofireObjectMapper (~> 4.0)
+  - Alamofire
+  - AlamofireObjectMapper
   - EZSwiftExtensions
-  - FaveButton (~> 2.0.0)
-  - FolioReaderKit
   - HMSegmentedControl
   - Kingfisher
   - MJRefresh
-  - MobilePlayer
-  - SnapKit (~> 3.0.2)
-  - SwiftyBase64
+  - SnapKit
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  AEXML: 6fc6433aa35bdc15dd8eb8d54eb7aa4520a010eb
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
   EZSwiftExtensions: 4afef248066a036903d8496bf07bc355b22ce766
-  FaveButton: e26f7964669b4befda7d92a6779be7b2a70ab161
-  FolioReaderKit: d3084e4e32428550c9203c12282ebbceada6a045
-  FontBlaster: 0f4a3e2f965968e2dfc3f7f5cec7214c3f3b2f07
   HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
-  JSQWebViewController: 0461aa42612b221571556df61d9c09f080cb2eef
   Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
-  MenuItemKit: 9af69953dc983803ee85230e205fadbac0f26213
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  MobilePlayer: 069b13482499f14c25b6ce53f63a91e17975b073
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
-  Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
-  RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
-  SSZipArchive: 29daace2bccb90a47de2837744da397728ff9207
-  SwiftyBase64: 8de4de96a08454e742fdda614dff12d2c62ecbe9
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
-  ZFDragableModalTransition: 0d294eaaba6edfcb9839595de765f9ca06a4b524
 
-PODFILE CHECKSUM: d92c286dbdc2ae1960e6ed41b8dea0215bd852aa
+PODFILE CHECKSUM: 6b12749271d92d7653cf6dd990e430d257e16548
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.2.1

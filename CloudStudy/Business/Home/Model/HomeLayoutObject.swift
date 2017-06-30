@@ -64,6 +64,7 @@ class HomeLayoutObject: NSObject {
                 break
                 
             case .BlankPage:
+                cellHeight = 60
                 break
             }
             break
@@ -90,6 +91,7 @@ class HomeLayoutObject: NSObject {
                 break
                 
             case .BlankPage:
+                cellHeight = 60
                 break
             }
             break
@@ -104,6 +106,7 @@ class HomeLayoutObject: NSObject {
             case .ThreeItemsForSingleCell:
                 break
             case .BlankPage:
+                cellHeight = 60
                 break
             }
             break
@@ -118,6 +121,7 @@ class HomeLayoutObject: NSObject {
             case .ThreeItemsForSingleCell:
                 break
             case .BlankPage:
+                cellHeight = 60
                 break
             }
             break
@@ -132,6 +136,7 @@ class HomeLayoutObject: NSObject {
             case .ThreeItemsForSingleCell:
                 break
             case .BlankPage:
+                cellHeight = 60
                 break
             }
             break
@@ -146,6 +151,7 @@ class HomeLayoutObject: NSObject {
             case .ThreeItemsForSingleCell:
                 break
             case .BlankPage:
+                cellHeight = 60
                 break
             }
             break
@@ -160,6 +166,7 @@ class HomeLayoutObject: NSObject {
             case .ThreeItemsForSingleCell:
                 break
             case .BlankPage:
+                cellHeight = 60
                 break
             }
             break
@@ -186,7 +193,7 @@ class HomeLayoutObject: NSObject {
     
     private func calculateCourseStyleFour(with dataArr:Array<Any>) {
         let count = CGFloat(dataArr.count > 3 ? 3 : dataArr.count)
-        self.cellHeight = count * heightForMinImage! + count * 12 + 8;
+        cellHeight = count * heightForMinImage! + count * 12 + 8;
     }
     
     

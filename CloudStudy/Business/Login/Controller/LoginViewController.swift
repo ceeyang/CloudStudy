@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
         //②: 在swift中 有特殊的写法 ,跟OC __weak 相似  [weak self]
         //③: weak var weakSelf = self
         loginView.loginBtnAction = { [weak self] (button) in
-            HUD.show(.labeledProgress(title: "", subtitle: "登录中···"))
+//            HUD.show(.labeledProgress(title: "", subtitle: "登录中···"))
             self?.loginRequest()
         }
     }
@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
    
         RequestManager.shared.requestCommonDataWith(url: LoginURL, parameters: dic) { response in
  
-            HUD.hide()
+//            HUD.hide()
             
             printLog(response)
             

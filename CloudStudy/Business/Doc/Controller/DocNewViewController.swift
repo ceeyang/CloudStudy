@@ -79,7 +79,7 @@ class DocNewViewController: UIViewController {
     }
     
     fileprivate func sendDocNewListDataRequestWith(page:Int) {
-        HUD.show(.label("loading..."))
+//        HUD.show(.label("loading..."))
         
         let parameters : NSMutableDictionary = [:]
         parameters["sid"]             = UserInfo.shared.sid
@@ -88,7 +88,7 @@ class DocNewViewController: UIViewController {
         parameters["pageNumber"]      = page
         
         RequestManager.shared.requestCommonDataWith(url: DocNewestListURL, parameters: parameters) { [weak self](response) in
-            HUD.hide()
+//            HUD.hide()
             self?.header.endRefreshing()
             self?.footer.endRefreshing()
             switch response.result {
@@ -158,7 +158,7 @@ extension DocNewViewController:UITableViewDelegate,UITableViewDataSource{
 //MARK: - Translate to DetailVC -
 extension DocNewViewController {
     func requestDocDetail(with docFileModel:DocFileModel) {
-        HUD.show(.label("Loading..."))
+//        HUD.show(.label("Loading..."))
         
         let parameters : NSMutableDictionary = [:]
         parameters["sid"]             = UserInfo.shared.sid
@@ -166,7 +166,7 @@ extension DocNewViewController {
         
         RequestManager.shared.requestCommonDataWith(url: DocDetailUrl, parameters: parameters) { [weak self](response) in
             
-            HUD.hide()
+//            HUD.hide()
             
             self?.header.endRefreshing()
             self?.footer.endRefreshing()
@@ -180,7 +180,7 @@ extension DocNewViewController {
                 self?.navigationController?.pushViewController(detailVC, animated: true)
                 
             case .failure(let error):
-                HUD.hide()
+//                HUD.hide()
                 print(error)
             }
         }

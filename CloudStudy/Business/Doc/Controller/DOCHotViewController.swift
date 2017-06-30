@@ -75,7 +75,7 @@ class DOCHotViewController: UIViewController {
     }
     
     func sendDocNewListDataRequestWith(page:Int) {
-        HUD.show(.label("loading..."))
+//        HUD.show(.label("loading..."))
         
         let parameters : NSMutableDictionary = [:]
         parameters["sid"]             = UserInfo.shared.sid
@@ -84,7 +84,7 @@ class DOCHotViewController: UIViewController {
         parameters["pageNumber"]      = page
         
         RequestManager.shared.requestCommonDataWith(url: DocHotestListURL, parameters: parameters) { [weak self](response) in
-            HUD.hide()
+//            HUD.hide()
             self?.header.endRefreshing()
             self?.footer.endRefreshing()
             switch response.result {
